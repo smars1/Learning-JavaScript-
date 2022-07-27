@@ -2,9 +2,9 @@
 
 ## We need some plugins for building our JavaScript work environment 
 
-- Editor de textos
-- postman 
-- nodeJS
+- Some text editor like VScode, SubblimeText, Atom, or the one of preference.
+- [postman](https://www.postman.com/downloads/) 
+- [nodeJS](https://nodejs.org/es/download/)
 
 ## Some knowledge in technologys as:
 
