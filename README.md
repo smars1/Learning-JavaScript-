@@ -1,6 +1,6 @@
 # Learning-JavaScript
 
-## We needs some plugins for building our JavaScript work enviroment 
+## We need some plugins for building our JavaScript work environment 
 
 - Editor de textos
 - postman 
@@ -8,7 +8,7 @@
 
 ## Some knowledge in technologys as:
 
-We learning all the following tecnologys while we deep in the class.
+we will learn the following technologies while will deep in the JavaScript
 
 - HMTL
 - CSS
