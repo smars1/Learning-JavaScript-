@@ -1,9 +1,10 @@
 # Basic HTMT5 
-
+###### Author: Diego Atzin Pineda cota 
+## Glossary
 - [Tags Useful body](https://github.com/smars1/Learning-JavaScript-/blob/main/Basic_HTML.md#other-basics-tags)
 - [Form tag basics](https://github.com/smars1/Learning-JavaScript-/blob/main/Basic_HTML.md#form-tag-basics)
-- [Tags image and links]()
-- [Tags list ordered and not ordered]()
+- [Tags image and links](https://github.com/smars1/Learning-JavaScript-/blob/main/Basic_HTML.md#tags-image-and-link)
+- [Tags list ordered and not ordered](https://github.com/smars1/Learning-JavaScript-/blob/main/Basic_HTML.md#tag-of-list-ordered-and-not-ordered)
 - [Tags tables, heading, foot, files and cell]()
 
 ## Tag ``<!doctype html>``
@@ -176,3 +177,52 @@ In the following template example, we can understand some tags and how to use fo
 </html>
 ```
     
+# Tags tables, heading, foot, files and cell
+
+The table is divided into three parts in the headboard, contained, and footer. In the following code template, we can look at how to create a table and like composed its three parts
+
+```.html
+<!DOCTYPE html>
+<head>
+    <title>Tables</title>
+</head>
+<body>
+    <!--Headboard-->
+    <table><!--table tag is the tag that will use when want to define a table -->
+        <thead>
+            <!--we must indicate how many rows we want to put-->
+            <tr>
+                <!--here we can indicate the contened what we want to have the headboard section -->
+                <!-- <tr> tag is for indicate how many rows we want in the contened section -->
+                <th>Months</th>
+                <th>saves</th>
+            </tr>
+        </thead>
+    <!--Headboard--> 
+    
+    <!-- contened -->
+    <tbody>
+        <tr>
+            <!-- <td> tag is for indicate how many rows we want in the contened section -->
+            <td>January</td>
+            <td>1000$</td>
+        </tr>
+        <tr>
+            <td>Febrary</td>
+            <td>500$</td>
+        </tr>
+    </tbody>
+    <!-- contened -->
+
+    <!-- footer -->
+    <tfoot>
+        <tr>
+            <td>sum total</td>
+            <td>1500$</td>
+        </tr>
+    </tfoot>
+    <!-- footer  -->
+    </table>
+</body>
+</html>
+```
