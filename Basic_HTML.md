@@ -81,3 +81,46 @@ also in the following code template, we can see some other examples of useful ta
 </html>
 
 ```
+
+# Form tag basics
+
+In this section, we can find some tags that it`s basics at the moment of creating a form in HMTL
+    
+```.html
+    <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form tag basics</title>
+</head>
+
+<body>
+    <form>
+        <fieldset><!--The fielset tag is to agroup elements in a box-->
+            <legend>Personals data</legend><!--legend tag allows writing a legend for the box created by fieldset tag-->
+            <label>age</label>
+            <input type="number" placeholder="Input you age" />
+            <br />
+            <label>password</label>
+            <input type="password" />
+            <br />
+            <label>Name</label>
+            <input type="text">
+            <br />
+            <input type="submit" value="accept" />
+            <textarea></textarea>
+            <button>Aceptar</button>
+            <select>
+                <option value="goku">Goku</option>
+                <option value="vegeta">Vegeta</option>
+                <option value="gohan">Gohan</option>
+            </select>
+        </fieldset>
+    </form>
+</body>
+
+</html>
+```
