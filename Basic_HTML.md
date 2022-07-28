@@ -1,6 +1,6 @@
 # Basic HTMT5 
 
-- [Tags Useful body](https://github.com/smars1/Learning-JavaScript-/blob/main/Basic_HTML.md#other-basics-tags)4
+- [Tags Useful body](https://github.com/smars1/Learning-JavaScript-/blob/main/Basic_HTML.md#other-basics-tags)
 - [Form tag basics](https://github.com/smars1/Learning-JavaScript-/blob/main/Basic_HTML.md#form-tag-basics)
 - [Tags image and links]()
 - [Tags list ordered and not ordered]()
@@ -131,7 +131,7 @@ In this section, we can find some tags that it`s basics at the moment of creatin
 </html>
 ```
 
-## tags image and link
+# tags image and link
 
 Here we can find a example of how to able use the tag image and link in the following HTML template.
 
@@ -148,3 +148,31 @@ Here we can find a example of how to able use the tag image and link in the foll
 </body>
 </html>
 ```
+    
+# Tag of list ordered and not ordered
+    
+In the following template example, we can understand some tags and how to use for to create a list ordered and not ordered 
+    
+ ```.html
+ <!DOCTYPE html>
+  <head>
+    <title>list</title>
+  </head>
+  <body>
+    <!--The tag <ul></ul> is to create lists don`t ordered -->
+    <ul>
+      <li>Element 1</li>
+      <li>Element 2</li>
+      <li>Element 3</li>
+    </ul>
+    <hr/>
+    <!--The tag <ol></ol> is to create lists ordered -->
+    <ol>
+        <li>Element 1</li>
+        <li>Element 2</li>
+        <li>Element 3</li>
+      </ol>
+  </body>
+</html>
+```
+    
