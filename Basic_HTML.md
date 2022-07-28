@@ -5,7 +5,7 @@
 - [Form tag basics](https://github.com/smars1/Learning-JavaScript-/blob/main/Basic_HTML.md#form-tag-basics)
 - [Tags image and links](https://github.com/smars1/Learning-JavaScript-/blob/main/Basic_HTML.md#tags-image-and-link)
 - [Tags list ordered and not ordered](https://github.com/smars1/Learning-JavaScript-/blob/main/Basic_HTML.md#tag-of-list-ordered-and-not-ordered)
-- [Tags tables, heading, foot, files and cell]()
+- [Tags tables, heading, foot, files and cell](https://github.com/smars1/Learning-JavaScript-/blob/main/Basic_HTML.md#tags-tables-heading-foot-files-and-cell)
 
 ## Tag ``<!doctype html>``
 This tag indicate that we use html5
