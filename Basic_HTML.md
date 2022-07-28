@@ -1,5 +1,11 @@
 # Basic HTMT5 
 
+- [Tags Useful body](https://github.com/smars1/Learning-JavaScript-/blob/main/Basic_HTML.md#other-basics-tags)4
+- [Form tag basics](https://github.com/smars1/Learning-JavaScript-/blob/main/Basic_HTML.md#form-tag-basics)
+- [Tags image and links]()
+- [Tags list ordered and not ordered]()
+- [Tags tables, heading, foot, files and cell]()
+
 ## Tag ``<!doctype html>``
 This tag indicate that we use html5
 ```.html
@@ -122,5 +128,23 @@ In this section, we can find some tags that it`s basics at the moment of creatin
     </form>
 </body>
 
+</html>
+```
+
+## tags image and link
+
+Here we can find a example of how to able use the tag image and link in the following HTML template.
+
+```.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <img src="http://placekitten.com/300/300" alt="cat">
+    <!--The following tag (<a><a/>) allows making references a link to go to another website -->>
+    <a href="https://www.google.com">Ir a Google</a> 
+</body>
 </html>
 ```
