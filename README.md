@@ -12,3 +12,4 @@ we will learn the following technologies while will deep in the JavaScript
 
 - HMTL
 - CSS
+- Flexbox
