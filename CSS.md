@@ -7,18 +7,6 @@
 
 ## Example: how to use css with html?
 
-Something properties of ``border-style``:
-- dashed
-- dotted
-- double
-- groove 
-- ridge 
-- inset 
-- outset 
-- hidden
-
-
-
 ```.css
 body {
     background-color: #eeeeee;
