@@ -48,3 +48,56 @@ before as in the following example with the tag class  */
 </body>
 </html>
 ```
+
+## Padding and margin in a box class
+we can give colors, sizes and another propeties a diffent elements or classes  
+
+Something properties of ``border-style``:
+- dashed
+- dotted
+- double
+- groove 
+- ridge 
+- inset 
+- outset 
+- hidden
+
+### CSS Template
+```.css
+/* other example of class, here give a structure for our box */
+.box{
+    margin: 8px;
+    padding: 8px;
+    /* border-style: dotted dashed solid double; */
+    border-style: solid;
+    border-width: 8px;
+    border-color: #faa;
+    border-left: 6px solid #afa;
+    background-color: #aaf;
+    border-bottom: 10px solid #f00000;
+    border-top: 10px solid #00aa00;
+    
+    border-radius: 4px;   
+    
+    /* height and width the box */
+    height: 100px;
+    width: 100px;
+    /* Text color */
+    color: #575;
+
+}
+```
+### HTML Template
+```.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css" type="text/css">
+</head>
+<body>
+    <div class="box"> Hellow Word!!!</div>
+
+</body>
+</html>
+```
