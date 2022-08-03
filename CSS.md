@@ -5,6 +5,7 @@
 [Example: how to use css with html?](https://github.com/smars1/Learning-JavaScript-/blob/main/CSS.md#example-how-to-use-css-with-html)
 [Padding and margin in a box class](https://github.com/smars1/Learning-JavaScript-/blob/main/CSS.md#padding-and-margin-in-a-box-class)
 [Text Font Types](https://github.com/smars1/Learning-JavaScript-/blob/main/CSS.md#css-template-this-templates-showing-somethings-text-propetie-examples)
+[Link, list and tables](https://github.com/smars1/Learning-JavaScript-/blob/main/CSS.md#link-list-and-tables)
 
 
 - Selector: ``id=""``
