@@ -1,5 +1,10 @@
 # Cascading Style Sheests (CSS)
 
+## Glossary
+- [Example: how to use css with html?]()
+- [Padding and margin in a box class]()
+- [Text Font Types]()
+
 - Selector: ``id=""``
   - This selector we can using to indicate that an element to has an unique value and just exist an element unique with this id  
 - Selector: ``class=""`` 
@@ -98,6 +103,55 @@ Something properties of ``border-style``:
 <body>
     <div class="box"> Hellow Word!!!</div>
 
+</body>
+</html>
+```
+
+# Text Font Types
+
+## CSS Template, this templates showing somethings text propetie examples.
+```.css
+/* Ist a good practice to use color codes for choosing colors */
+body{
+    background-color: #eee;
+}
+
+p{
+    /* propiedades de fuente */
+    font-family:"Arial", Helvetica, sans-serif;
+    font-weight: 900; /*900 until 100, the values we must increments of 100 in 100 */
+    font-style: oblique;
+    font-size: 1.5em;
+
+    color: #222fff;
+    text-align: left;
+    /* this does an indent in the first line of text */
+    text-indent: 15px;
+    /* text-decoration: underline; */
+    line-height: 1.4;
+
+    word-spacing: 10px;
+    text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+a{
+    /* The propietie none erasing the underlined from link with this propietie */
+    text-decoration: none;
+    text-transform: capitalize; /* uppercase lowercase, capitalize */ 
+    letter-spacing: 3px;
+}
+```
+## HTML Template
+```.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>CSS</title>
+    <link rel="stylesheet" href="02.color_aligned.css" type="text/css"> 
+</head>
+<body>
+    <p>Hellow I'm a paragraph!!!, un parrafo ira creciendo dependiendo de cuanto texto escribamos, vamos a escribir un poco mas para mostrar el texto modificado </p>
+    <a href="">Google!</a>
 </body>
 </html>
 ```
