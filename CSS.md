@@ -1,9 +1,12 @@
 # Cascading Style Sheests (CSS)
 
 ## Glossary
-- [Example: how to use css with html?]()
-- [Padding and margin in a box class]()
-- [Text Font Types]()
+- [Example: how to use css with html?](https://github.com/smars1/Learning-JavaScript-/blob/main/CSS.md#example-how-to-use-css-with-html
+)
+- [Padding and margin in a box class](https://github.com/smars1/Learning-JavaScript-/blob/main/CSS.md#padding-and-margin-in-a-box-class
+)
+- [Text Font Types](https://github.com/smars1/Learning-JavaScript-/blob/main/CSS.md#css-template-this-templates-showing-somethings-text-propetie-examples
+)
 
 - Selector: ``id=""``
   - This selector we can using to indicate that an element to has an unique value and just exist an element unique with this id  
