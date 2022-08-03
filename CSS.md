@@ -1,12 +1,11 @@
 # Cascading Style Sheests (CSS)
 
-## Glossary
-- [Example: how to use css with html?](https://github.com/smars1/Learning-JavaScript-/blob/main/CSS.md#example-how-to-use-css-with-html
-)
-- [Padding and margin in a box class](https://github.com/smars1/Learning-JavaScript-/blob/main/CSS.md#padding-and-margin-in-a-box-class
-)
-- [Text Font Types](https://github.com/smars1/Learning-JavaScript-/blob/main/CSS.md#css-template-this-templates-showing-somethings-text-propetie-examples
-)
+| Glossary |
+|------|
+[Example: how to use css with html?](https://github.com/smars1/Learning-JavaScript-/blob/main/CSS.md#example-how-to-use-css-with-html)
+[Padding and margin in a box class](https://github.com/smars1/Learning-JavaScript-/blob/main/CSS.md#padding-and-margin-in-a-box-class)
+[Text Font Types](https://github.com/smars1/Learning-JavaScript-/blob/main/CSS.md#css-template-this-templates-showing-somethings-text-propetie-examples)
+
 
 - Selector: ``id=""``
   - This selector we can using to indicate that an element to has an unique value and just exist an element unique with this id  
@@ -158,3 +157,69 @@ a{
 </body>
 </html>
 ```
+
+# Link, list and tables
+
+The tags ``<a>I'm a link</a>`` can to receive almost any CSS property  
+
+(we must traslate the following notes from Spanish to a English more late)
+
+Podemos llamar a los selectores de link de direntes manera, por ejemplo cuando el link no a sido visitado tenemos el selector ``a:link{}`` el cual es el estado normal del link, en general tenemos 4 estados los cuales se presentan debajo:
+
+## Selectores ``<a></a>``
+ - El link en su estado normal ``a:link{}``
+ - El link cuando a sido visitado ``a:visited{}``
+ - Cuando pasamos el cursor encima del link ``a:hover{}``
+ - Cuando damos click en el link ``a:active{}`` 
+
+Debajo mostramos una plantilla de CSS con su respectivo HTML como ejemplo para realizar operaciones con los selectores anteriores.
+
+### CSS Template
+```.CSS
+body{
+    background-color: #eee;
+}
+a{
+    color: hotpink;
+    border: solid 1px #d00;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+a:link{
+    background-color: pink;
+    text-decoration: none;
+}
+
+a:visited{
+    color: white;
+}
+
+a:hover{
+    color: #f55;
+}
+
+a:active{
+    color: #22f;
+    background-color: #f55;
+}
+
+```
+### HTML Template
+```.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>CSS</title>
+    <link rel="stylesheet" href="03.link_list_table.css" type="text/css">
+</head>
+<body>
+   <a href="https://www.google.com">Google.com</a> 
+</body>
+</html>
+```
+
+## Listas 
+
+
