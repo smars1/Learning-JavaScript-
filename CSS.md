@@ -289,7 +289,106 @@ In this section we going create a table, we will needing  the following tags:
 Podemos indicar en el selector ``tr`` si queremos seleccionar alguna clase hijo en especifico con el agrengando el siguiente comando al 
 selector ``tr:nth-child(even){}``
 
-podemos usar tambien la propiedad de ``border-collapse: collapse;`` para quitar el borde de las tablas
+Podemos usar tambien la propiedad de ``border-collapse: collapse;`` para quitar el borde de las tablas o ``border-collapse: separate;`` para separar las tablas
  
+```.css
+body{
+    background-color: #eee;
+}
 
+table{
+    width: 100%;
+    background-color: white;
+    border-collapse: collapse;
+}
+
+tr:nth-child(even){
+    background-color:  #f2f2f2;
+}
+
+td{
+    border: solid 1px #ddd;
+    padding: 8px;
+}
+
+table th{
+    background-color: #4ca054;
+    color: white;
+    text-align: left;
+    padding-top: 12px;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-bottom: 12px;
+}
+
+/* codigo propio comienza debajo*/
+div{
+    background-color: #58D68D;
+    border: solid 1px #ddd;
+    border-radius: 5px;
+    margin-top: 40px;
+    box-shadow: 2px 2px  blue;
+}
+
+div p{
+    text-align: center;
+    color: white;;
+}
+div:hover{
+    background-color: #45B39D;
+    border-style: inset;
+}
+
+div table tr th:hover{
+    background-color: #45B39D;
+    border-collapse: collapse;
+}
+```
+## HTML Template
+
+```.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>CSS</title>
+    <link rel="stylesheet" href="05.tablas.css" type="text/css">
+</head>
+<body>
+    <table>
+        <tr>
+            <th>Company</th>
+            <th>Contact</th>
+            <th>Country</th>
+        </tr>
+        <tr>
+            <td>ColmenaIoT</td>
+            <td>IoTiCs</td>
+            <td>Mexico</td>
+        </tr>
+        <tr>
+            <td>Chanchito feliz</td>
+            <td>Chanco</td>
+            <td>Chancholandia</td>
+        </tr>
+    </table>
+    
+    <!--notas personale debajo-->
+    <div>
+        <p>We can to use the propertie 
+            <code>
+                border-collapse: collapse;
+            </code> 
+            to erase the border lines
+        </p>
+        <table>
+            <tr>
+                <th>Company</th>
+                <th>Contact</th>
+                <th>Country</th>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
+```
 
