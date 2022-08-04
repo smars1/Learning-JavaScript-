@@ -222,5 +222,74 @@ a:active{
 ```
 
 ## Listas 
+Aqui veremos los tipos de estilos que pueden tener las listas no ordenadas 
+
+Cuando queremos seleccionar un elemento en especifico que se encuentre dentro de un otro tag deberemos dar su ruta de posicion en cascada, como en el siguiente ejemplo: 
+
+Si queremos seleccionar un el elemento ``li`` que se encuentra dentro de un tag ``ul``  deberemos dar la siguiente ruta como selector ``ul li{}``
+
+- List: ``ul``
+- List element: ``li`` 
+
+Podemos dar estilos a nuestros listados con el siguiente comando  ``list-style-type:`` algunas de sus propiedades son:
+- ``circle;``
+- ``square;``
+- ``upper-roman;``
+- ``lower-alpha``
+- ``none``
+
+## CSS Template
+
+```.css 
+body{
+    background-color: #eee;
+}
+
+ul{
+    list-style-type: none;
+    background-color: #fff;
+    border: solid 1px #ddd;
+    border-radius: 5px;
+    /* padding: 15px; */
+    padding-left: 0px ;
+}
+
+ul li{
+    border-bottom: solid 1px #ddd;
+    padding: 15px;
+}
+```
+
+## HTML Template
+```.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>CSS</title>
+    <link rel="stylesheet" href="04.list.css" type="text/css">
+</head>
+<body>
+  <ul>
+    <li>Element 1</li>
+    <li>Element 2</li>
+    <li>Element 3</li>
+  </ul>  
+</body>
+</html>
+```
+## Tablas 
+
+In this section we going create a table, we will needing  the following tags:
+
+- ``table``
+- ``tr``
+- ``th``
+- ``td``
+
+Podemos indicar en el selector ``tr`` si queremos seleccionar alguna clase hijo en especifico con el agrengando el siguiente comando al 
+selector ``tr:nth-child(even){}``
+
+podemos usar tambien la propiedad de ``border-collapse: collapse;`` para quitar el borde de las tablas
+ 
 
 
