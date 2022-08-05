@@ -6,6 +6,7 @@
 [Padding and margin in a box class](https://github.com/smars1/Learning-JavaScript-/blob/main/CSS.md#padding-and-margin-in-a-box-class)
 [Text Font Types](https://github.com/smars1/Learning-JavaScript-/blob/main/CSS.md#css-template-this-templates-showing-somethings-text-propetie-examples)
 [Link, list and tables](https://github.com/smars1/Learning-JavaScript-/blob/main/CSS.md#link-list-and-tables)
+[# CSS: Display, max-width, position, overflow, float, mas selector y opacidad]()
 
 
 - Selector: ``id=""``
@@ -290,7 +291,8 @@ Podemos indicar en el selector ``tr`` si queremos seleccionar alguna clase hijo 
 selector ``tr:nth-child(even){}``
 
 Podemos usar tambien la propiedad de ``border-collapse: collapse;`` para quitar el borde de las tablas o ``border-collapse: separate;`` para separar las tablas
- 
+
+## CSS Template
 ```.css
 body{
     background-color: #eee;
@@ -391,4 +393,112 @@ div table tr th:hover{
 </body>
 </html>
 ```
+
+# CSS: Display, max-width, position, overflow, float, mas selector y opacidad
+
+## Display
+
+Las propiedades de tipo bloque son aquellas que se imprimen con un salto de linea en la pantalla en lugar de aparecer a la derecha. 
+ALgunas propiedades que son se bloque son:
+- ``<p></p>``
+ 
+Las propiedades de tipo inline no dan un salto de linea se imprimen a la derecha. Comprendase en el siguiente ejemplo. 
+- ``<span></span>``
+
+Podemos cambiar esta propiedad con la propiedad ``display:``
+- ``inline;``  de block a inline
+- ``block;``   de inline a block 
+- ``none;``    volvemos invisible un elemento 
+
+## CSS Template
+```.css
+body{
+    background-color: #eee;
+    text-transform:capitalize;
+}
+
+p{display: inline;}
+
+span{
+    display: block;
+}
+
+.invisible{
+    display: none;
+}
+
+/* example */
+
+.example{
+    background-color: white;
+    padding-top: 1px;
+    padding-left: 10px;
+    margin-top: 30px;
+    margin-left: 30px;
+    margin-right: 30px;
+    border: solid 1px #eee;
+    border-style: outset;
+    border-radius: 10px;
+}
+
+.example .block{
+    display: inline;
+}
+
+.example .inline{
+    display: block;
+    padding-top: 10px;
+}
+```
+
+## HTML Template
+
+```.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>CSS</title>
+    <link rel="stylesheet" href="06.Display.css" type="text/css">
+</head>
+<body>
+    <!-- Block type -->
+    <p>tag p: soy tipo bloque</p>
+    <h1>Los tag h: son tipo bloque</h1>
+    <div>Tag div: es tipo bloque</div>
+    <form>Tag form:es tipo bloque</form>
+    <header>Tag header: es tipo bloque</header>
+    <footer>Tag footer: es tipo bloque</footer>
+    <section>Tag section: es tipo bloque</section>
+    <!-- Inline type -->
+    <span>Tag span: soy tipo inline</span>
+    <a>Tag a: soy tipo inline</a>
+    <div class="invisible">Soy invisible</div>
+    <hr>
+
+    <div class="example">
+        <!-- Ejemplo -->
+        <p class="block">Este texto esta</p>
+        <p class="block">pasando de block a inline</p>
+
+        <span class="inline">Este texto de tipo inline</span>
+        <span class="inline">Esta pasando a ser de tipo block</span>
+    </div>
+
+
+
+</body>
+</html>
+```
+
+## max-width y position 
+``max-width`` nos permite inidicar el mancho maximo que del elemento que esta dentro del padding, la diferencia con width es es que width no se adapta a la pantalla
+mientras que ``width-max`` nos permite dar un tamaño maximo pero este cambiara si el tamaño de la pantalla cambia.
+
+- Podemos indicar el ancho que esta dentro del padding con la propiedad ``max-with: 200px;``
+- ``margin: auto`` nos permite centrar los elementos de forma automatica siempre y cuando tenga una display block
+
+por defecto todos los elementos de html vienen con la propiedad ``static``, se puede cambiar esta propiedad usando la propiedad  ``position:relative`` esto nos permitira cambiar toda la posicion del elemento o tambien podriamos usar ``fixed`` este deja el contenido fijo en la pantalla independientemente de cuanto contenido 
+haya en la pantalla
+
+
 
