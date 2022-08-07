@@ -531,5 +531,32 @@ Si le utilizamos el valor ``scroll`` y le agremos un ``-y`` o ``-x`` a la propid
 - ``overflow-y: scroll;``
 - ``overflow-x: scroll;``
 
+## Propiedad float, opacity, selector hijo
 
+La propiedad CSS ``float`` ubica un elemento al lado izquierdo o derecho de su contenedor, permitiendo a los elementos de texto y en línea aparecer a su costado. El elemento es removido del normal flujo de la página, aunque aún sigue siendo parte del flujo (a diferencia del posicionamiento absoluto).
 
+La propiedad CSS ``opacity`` define la transparencia de un elemento, esto es, en qué grado se superpone el fondo al elemento. Este va de 0 a 1 como 100%
+
+## Template CSS 
+
+```.css
+body{
+    background-color: #eee;
+}
+
+img{
+    float: right;
+    opacity: 0.5;
+}
+
+p{
+    text-align: justify;
+    padding-right: 220px ;
+    padding-left: 20px;
+    font-size: 150%;
+}
+
+div p{
+    color:brown
+}
+```
