@@ -1,12 +1,12 @@
 # Cascading Style Sheests (CSS)
-
+###### Autor: Diego Atzin Pineda Cota
 | Glossary |
 |------|
 [Example: how to use css with html?](https://github.com/smars1/Learning-JavaScript-/blob/main/CSS.md#example-how-to-use-css-with-html)
 [Padding and margin in a box class](https://github.com/smars1/Learning-JavaScript-/blob/main/CSS.md#padding-and-margin-in-a-box-class)
 [Text Font Types](https://github.com/smars1/Learning-JavaScript-/blob/main/CSS.md#css-template-this-templates-showing-somethings-text-propetie-examples)
 [Link, list and tables](https://github.com/smars1/Learning-JavaScript-/blob/main/CSS.md#link-list-and-tables)
-[# CSS: Display, max-width, position, overflow, float, mas selector y opacidad]()
+[CSS: Display, max-width, position, overflow, float, mas selector y opacidad](https://github.com/smars1/Learning-JavaScript-/blob/main/CSS.md#css-display-max-width-position-overflow-float-mas-selector-y-opacidad)
 
 
 - Selector: ``id=""``
@@ -484,8 +484,6 @@ span{
         <span class="inline">Esta pasando a ser de tipo block</span>
     </div>
 
-
-
 </body>
 </html>
 ```
@@ -499,6 +497,39 @@ mientras que ``width-max`` nos permite dar un tamaño maximo pero este cambiara 
 
 por defecto todos los elementos de html vienen con la propiedad ``static``, se puede cambiar esta propiedad usando la propiedad  ``position:relative`` esto nos permitira cambiar toda la posicion del elemento o tambien podriamos usar ``fixed`` este deja el contenido fijo en la pantalla independientemente de cuanto contenido 
 haya en la pantalla
+
+## Modificando un tag ``<p></p>``
+
+```.css
+/* max-width se adapta a la pantalla hasta el maximo del valor dado mientras que width no se ajusta ala pantalla */
+p{
+    max-width: 600px;
+    /* width: 600px; */
+    background-color: crimson;
+    /* Centramos el margin de forma automatica */
+    margin:auto;
+    /* La propiedad position relative nos permite cambiar de posicion el tag */
+    position: relative;
+    left: 30px;
+    top: 0px
+    bottom: 0px;
+}
+```
+La propiedad ``position`` viene por default como static lo que nos deja el tag estatico, para poderlo cambiar de posicion nesecitamos la propiedad ``position:relative`` 
+
+algunas propiedades de este tag son :
+- ``static`` : Deja el contenido estatico en la posicio predeterminada
+- ``relative`` : Permite cambiar la posicion contenido
+- ``fixed`` :  Deja el contenido en la pantalla sin importar el tamaño este.
+
+## Propiedad de overflow
+
+La propiedad CSS ``overflow`` especifica: si recortar contenido, dibujar barras de desplazamiento o mostrar el contenido excedente en un elemento a nivel de bloque. Usando la propiedad ``overflow`` con un valor distinto a ``visible`` , valor por defecto, creará un nuevo contexto de formatos de bloques.
+
+Si le utilizamos el valor ``scroll`` y le agremos un ``-y`` o ``-x`` a la propidad ``overflow`` podemos decidir si agregar el scroll al eje y o x  
+
+- ``overflow-y: scroll;``
+- ``overflow-x: scroll;``
 
 
 
