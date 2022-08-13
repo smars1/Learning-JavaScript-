@@ -1,0 +1,48 @@
+body{
+    background-color:#eee;
+}
+
+ul{
+    list-style-type: none;
+    /* Reiniciamos el contenido dentro de la lista */
+    margin: 0px;
+    padding: 0px;
+    /* Si existe un cotenido que se escape de nuestro margen de vista lo escondemos */
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    /* seleccionamos el ancho del elemento <ul>; */
+    width: 100%;
+    background-color: #333;
+}
+
+/* damos estilos a los elementos de nuestra lista */
+li{
+    /* volvemos flotantes los elementos con cualquiera de las siguientes propiedades */
+    
+    /* display: inline; */
+    float: left;
+}
+
+a{
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px;
+    text-decoration: none;
+}
+
+
+li:hover{
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.active{
+    background-color: #4caf50;
+}
+
+.content{
+    margin-top: 50px;
+    text-align: center;
+}
