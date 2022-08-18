@@ -560,3 +560,50 @@ div p{
     color:brown
 }
 ```
+
+# Transformaciones en 2D
+    
+    Transformaciones en 2D
+
+la propiedad de transform solo funcionan con elementos tipo block, si es de tipo inline deveremos aplicar display: block
+
+podemos rotar en grados un elemento
+```.css
+transform: rotate(-45deg);
+```
+podemos mover un elemento en eje x y eje y
+
+                                                 eje x    eje y  
+```.css
+transform: translate(100px, 10px);
+```
+podemos indicar la escala del size horizontal y vertical
+
+ejemplo de scale a 200%
+```.css    
+
+transform: scale(2, 2);
+```
+podemos usar transform con la propiedad hover por ejemplo si pasamos con el maus encima de un elemento podemos hacer que este cresca o se enconja
+
+ejemplo:
+```.css
+.box:hover{
+
+                     transform: scale(2, 2);
+
+        }
+```
+
+tambien podemos usar scaley(2) y scalex(2) para seleccionar que eje quieres modificar
+
+Podemos tocer un elemento con la propiedad skew
+
+seleccionamos el eje que deseamos modificar X o Y con:
+```.css
+skewx:(45deg);
+
+skewy:(45deg);
+```
+
+
