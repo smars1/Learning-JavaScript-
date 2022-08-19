@@ -11,6 +11,7 @@
 [ Grandientes de colores](https://github.com/smars1/Learning-JavaScript-/blob/main/CSS.md#grandientes-de-colores)
 [Sombras](https://github.com/smars1/Learning-JavaScript-/blob/main/CSS.md#grandientes-de-colores)
 [Transform in 2D and 3D](https://github.com/smars1/Learning-JavaScript-/blob/main/CSS.md#transformaciones-en-2d)
+[Transiciones animadas]()
 
 
 - Selector: ``id=""``
@@ -705,4 +706,49 @@ skewx:(45deg);
 skewy:(45deg);
 ```
 
+# Transiciones animadas
+Las transiciones nos permiten ir de un valor a otro de manera suave podemos hacer esto con la propiedad ``transition:``
 
+## Algunos ejemplos:
+
+Hacer creacer un elemento cuando pasamos el mouse sobre el, en un plazo de 0.3 segundos
+
+```.css
+
+.box{
+
+     transition: width 0.3s;
+
+     }
+
+box.hover{
+
+        transition width 15px;
+
+}
+
+```
+
+Hacer cambiar la escala y el color en un plazo de 0.3s segundos a un elemento cuando pasamos el mouse sobre dicho elemento, tamien podemos indicar delays con la propiedad ``transition-delay: ;``
+
+
+
+```.css
+
+.box{
+
+     transition: width 0.3s;
+
+     transition-delay: 1s;
+
+     }
+
+box.hover{
+
+        transform: scale(1.05 , 1.05 );
+
+        background-color: rgba(0, 0, 0, 0.1);
+
+}
+
+```
