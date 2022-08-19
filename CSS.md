@@ -7,7 +7,9 @@
 [Text Font Types](https://github.com/smars1/Learning-JavaScript-/blob/main/CSS.md#css-template-this-templates-showing-somethings-text-propetie-examples)
 [Link, list and tables](https://github.com/smars1/Learning-JavaScript-/blob/main/CSS.md#link-list-and-tables)
 [CSS: Display, max-width, position, overflow, float, mas selector y opacidad](https://github.com/smars1/Learning-JavaScript-/blob/main/CSS.md#css-display-max-width-position-overflow-float-mas-selector-y-opacidad)
-[Cambiar de color, repetir, mover una imagen]()
+[Cambiar de color, repetir, mover una imagen](https://github.com/smars1/Learning-JavaScript-/blob/main/CSS.md#cambiar-de-color-repetir-mover-una-imagen)
+[ Grandientes de colores](https://github.com/smars1/Learning-JavaScript-/blob/main/CSS.md#grandientes-de-colores)
+[Sombras](https://github.com/smars1/Learning-JavaScript-/blob/main/CSS.md#grandientes-de-colores)
 [Transform in 2D and 3D](https://github.com/smars1/Learning-JavaScript-/blob/main/CSS.md#transformaciones-en-2d)
 
 
@@ -594,7 +596,7 @@ para que la imagen baje cuando hacemos scroll podemos usar la propiedad de:
 background-attachment: scroll;
 ```
 
-# Total image brackground 
+## Total image brackground 
 Podemos indicar el size de una imagen de manera que utilice todo el ancho pero se vea de forma natural, se puede hacer con la propiedad de:
 ```.css
 background-size : cover;
@@ -645,9 +647,9 @@ Indicamos una sombra para un div  o con cualquier otro elemento que haga de caja
 ```.css
 box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3) inset ;
 ```
-                            Rigth    Bot     difuminar
-
-
+```
+             Rigth    Bot     difuminar
+```
 
 ## Efecto de sombras para texto
 ```.css
