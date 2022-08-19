@@ -665,7 +665,12 @@ podemos rotar en grados un elemento
 ```.css
 transform: rotate(-45deg);
 ```
-podemos mover un elemento en eje x y eje y
+Podemos rotarlo en los 3 ejes X, Y, Z ejemplo:
+```.css
+transform: rotatex(-45deg);
+```
+
+podemos mover un elemento en eje x y eje 
 
                                                  eje x    eje y  
 ```.css
