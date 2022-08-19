@@ -7,6 +7,7 @@
 [Text Font Types](https://github.com/smars1/Learning-JavaScript-/blob/main/CSS.md#css-template-this-templates-showing-somethings-text-propetie-examples)
 [Link, list and tables](https://github.com/smars1/Learning-JavaScript-/blob/main/CSS.md#link-list-and-tables)
 [CSS: Display, max-width, position, overflow, float, mas selector y opacidad](https://github.com/smars1/Learning-JavaScript-/blob/main/CSS.md#css-display-max-width-position-overflow-float-mas-selector-y-opacidad)
+[Cambiar de color, repetir, mover una imagen]()
 [Transform in 2D and 3D](https://github.com/smars1/Learning-JavaScript-/blob/main/CSS.md#transformaciones-en-2d)
 
 
@@ -562,11 +563,101 @@ div p{
 }
 ```
 
-# Transformaciones en 2D
-    
-    Transformaciones en 2D
+# Cambiar de color, repetir, mover una imagen
 
-la propiedad de transform solo funcionan con elementos tipo block, si es de tipo inline deveremos aplicar display: block
+- Cambiar de color
+
+- repetir una imagen
+
+- mover imagen
+
+## Image background
+```.css
+background-image: url('http://');
+```
+## Dejar de repetir imagen de background 
+```.css
+background-repeat: no-repeat;
+```
+
+Podemos elegir en que eje se repite tambien con ``:repeat-x`` o ``:repeat-y``
+
+## mover imagen 
+Podemos mover la imagen con la siguiente propiedad
+
+```.css
+background-position: left top;
+```
+## Fijar imagen scroll
+para que la imagen baje cuando hacemos scroll podemos usar la propiedad de:
+```.css
+background-attachment: scroll;
+```
+
+# Total image brackground 
+Podemos indicar el size de una imagen de manera que utilice todo el ancho pero se vea de forma natural, se puede hacer con la propiedad de:
+```.css
+background-size : cover;
+```
+
+## simplificar code 
+Podemos escribir todas esta propiedes en una sola linea con la propiedad de:
+
+```.css
+background: 
+```
+
+pero es importante llevar un orden adecuado
+
+
+# Grandientes de colores
+
+Es posible combinar mas de uno o mas colores de background esto es posible con la propiedad gradiente 
+
+```.css
+background-image: linear-gradient(direction, color1, color2);
+```
+
+ejemplo de direccion: 
+
+- ``to left`` el color viene por la izquierda.
+
+- ``to bottom right`` este es de forma diagonal
+
+- Por grados ``: -45deg``
+
+El numero de colores que podemos usar no esta limitado podemos usar mas de 2
+
+Podemos tambien repetir el color pero deberemos usar la propiedad de:
+
+```.css
+repeating-linear-gradient(direction, color1 20%, color2 20%)
+```
+
+
+# Sombras
+
+Indicamos una sombra para un div  o con cualquier otro elemento que haga de caja los cuales pueden ser todos: 
+
+```
+            pixeles            color            posicion de sobra
+```
+```.css
+box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3) inset ;
+```
+                            Rigth    Bot     difuminar
+
+
+
+## Efecto de sombras para texto
+```.css
+text-shadow : 0px 1px 2px;  rgba(0, 0, 0, 0.5);
+```
+
+
+# Transformaciones en 2D
+
+La propiedad de transform solo funcionan con elementos tipo block, si es de tipo inline deveremos aplicar ``display: block``
 
 podemos rotar en grados un elemento
 ```.css
