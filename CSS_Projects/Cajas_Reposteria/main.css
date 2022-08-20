@@ -1,0 +1,63 @@
+body{
+    background-color: #eee;
+}
+
+.boxR{
+    background-color: white;
+    max-width: 350px;
+    max-height: 100px;
+    border-left: 4px solid red;
+    border-radius: 2px;
+    margin-left: 20px;
+    padding: 5px;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);
+    /*es necesario border sizing: contenbox para poder sumar el padding al total size del div */
+    box-sizing: content-box;
+    transition:0.3s;
+}
+
+.boxR:hover{
+    transform: scale(1.1, 1.1);
+}
+
+.boxG{
+    background-color: white;
+    border-left: 4px solid green;
+    border-radius: 2px;
+    margin-left: 20px;
+    padding: 5px;
+    max-width: 350px;
+    max-height: 100px;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);
+    box-sizing: content-box;
+    transition: 0.3s;
+}
+
+.boxG:hover{
+    box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.3);
+}
+
+/*.boxB: Este seria el orden adecuado para ir visualizando los cambios
+de una manera mas optima*/
+.boxB{
+    background-color: white;
+    box-sizing: content-box;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);
+    max-width: 350px;
+    max-height: 100px;
+    margin-left: 20px;
+    padding: 5px;
+    border-left: 4px solid blue;
+    border-radius: 2px;
+    transition: 0.3s;
+}
+
+.boxB:hover{
+    background-color: rgba(68, 166, 232, 0.2);
+}
+
+.inbox
+{
+    text-align: center;
+    font-size: 20px;
+}
