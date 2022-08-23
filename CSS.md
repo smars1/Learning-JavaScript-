@@ -755,7 +755,7 @@ box.hover{
 
 ```
 
-#CSS GRID
+# CSS GRID
 
 | Glossary |
 |------|
