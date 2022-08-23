@@ -828,21 +828,23 @@ Se puede asignar mas valores a esta propiedad
 grid-template-columns:  15px repeat(3, 1fr) 30x;
 ```
 
-## Repetir dimensiones
+
+## Brechas entre elementos
+Es posible agregar espacio entre los elementos del grid con las propiedades ``grid-rows-gap`` para las filas ,  ``grid-columns-gap:`` para las columnas y ``grid-gap`` para filas y columnas
 
 
-Es posible asignar un alto y un ancho indefinido para todas las filas y todas las columnas o tambien utilizarlo en partes intermedia del grid, podemos hacer esto con la funcion ``repeat()`` esta funcion acepta 2 argumentos el 1ro es cuantas veces quiero repetir el valor que le dare como 2do argumento.
-
-
-- Ejemplo:
+- Separando filas
 ```.css
-
-grid-template-rows: repeat(4, 50px);
-
+grid-rows-gap: 20px
 ```
-***Nota: tambien se puede haver con columnas ``grid-template-columns:``***
 
-Se puede asignar mas valores a esta propiedad
+- Separando colomnas
 ```.css
-grid-template-columns:  15px repeat(3, 1fr) 30x;
+grid-columns-gap: 10px
 ```
+
+- Definiendo separacio para filas y columnas
+```.css
+grid-gap: 20x 10px
+```
+Si dejamos un solo valor en lugar de 2 filas y columnas tomaran el mismo valor dado.
