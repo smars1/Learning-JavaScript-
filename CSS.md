@@ -12,7 +12,7 @@
 [Sombras](https://github.com/smars1/Learning-JavaScript-/blob/main/CSS.md#grandientes-de-colores)
 [Transform in 2D and 3D](https://github.com/smars1/Learning-JavaScript-/blob/main/CSS.md#transformaciones-en-2d)
 [Transiciones animadas](https://github.com/smars1/Learning-JavaScript-/blob/main/CSS.md#transiciones-animadas)
-[CSS GRID]()
+[CSS GRID](https://github.com/smars1/Learning-JavaScript-/blob/main/CSS.md#css-grid)
 
 
 
@@ -759,11 +759,11 @@ box.hover{
 
 | Glossary |
 |------|
-[CSS GRID]()
-[Columonas y filas]()
-[Tamaño minimo y maximo]()
-[Repetir dimensiones de filas y columnas]()
-[Repetir dimensiones]()
+[CSS GRID](https://github.com/smars1/Learning-JavaScript-/blob/main/CSS.md#css-grid)
+[Columonas y filas](https://github.com/smars1/Learning-JavaScript-/blob/main/CSS.md#columonas-y-filas)
+[Tamaño minimo y maximo](https://github.com/smars1/Learning-JavaScript-/blob/main/CSS.md#tama%C3%B1o-minimo-y-maximo)
+[Repetir dimensiones de filas y columnas](https://github.com/smars1/Learning-JavaScript-/blob/main/CSS.md#repetir-dimensiones-de-filas-y-columnas)
+[Repetir dimensiones](https://github.com/smars1/Learning-JavaScript-/blob/main/CSS.md#brechas-entre-elementos)
 []()
 []()
 []()
