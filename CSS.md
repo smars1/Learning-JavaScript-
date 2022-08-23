@@ -12,6 +12,8 @@
 [Sombras](https://github.com/smars1/Learning-JavaScript-/blob/main/CSS.md#grandientes-de-colores)
 [Transform in 2D and 3D](https://github.com/smars1/Learning-JavaScript-/blob/main/CSS.md#transformaciones-en-2d)
 [Transiciones animadas](https://github.com/smars1/Learning-JavaScript-/blob/main/CSS.md#transiciones-animadas)
+[CSS GRID]()
+
 
 
 - Selector: ``id=""``
@@ -751,4 +753,96 @@ box.hover{
 
 }
 
+```
+
+#CSS GRID
+
+| Glossary |
+|------|
+[CSS GRID]()
+[Columonas y filas]()
+[Tamaño minimo y maximo]()
+[Repetir dimensiones de filas y columnas]()
+[Repetir dimensiones]()
+[]()
+[]()
+[]()
+
+
+Grid es un sistema que se implementa en css3 para poder entregar una distribucion mas homogenea. Grid vendria a ser un sistema de celdas como si fuera un excel.
+
+- Definimos nuestra etiqueta de box con
+
+``display: grid;`` 
+
+Esto va hacer que todos los elementos que contienen la propiedad o estan dentro de un tag con la propiedad ``display: grid;`` se van a desplegar como un ``grid`` , esto se visualiza en forma de columna.
+
+
+
+- Podemos ajustar para que la caja de ajuste al contenido del tag con :
+
+``display: inline-grid;``
+
+
+#  Columonas y filas
+
+La propiedad de  ``grid-template-rows: 50px 100px ...n `` nos permite asignar la altura de las filas una por una, si no indicamos el alto este se dara de forma automatica por el predeterminado.
+```.css
+grid-template-rows: 50px 100px ;
+```
+***Podemos usar fr, rem, %, px, para indicar el valor del dimencionado.***
+
+
+La propiedad de ``grid-template-columns: 50px 100px ...n`` nos permite asignar el ancho de las filas de misma manera que con ``grid-template-rows``
+```.css
+grid-template-columns: 50px 100px ;
+```
+
+##  Tamaño minimo y maximo
+Podemos indicar tambien el tamaño minimo y maximo si usamos el valor ``minmax()`` a las propiedades de ``grid-template-rows`` y ``grid-template-columns`` 
+
+
+Es posible definir una dimencion minima y establecer en auto para que esta adapte la dimecion a la pantalla, pero el valor no podra bajar de 100 px solo podra aumentar.
+```.css
+grid-template-rows: minmax(100px auto);
+```
+
+
+Tambien es posible definir un tamaño minimo automatico el cual se ajuste a la pantalla y definir el limite del tamaño maximo como por ejemplo al 50% de la pantalla.
+```.css
+grid-template-columns: minmax(auto 50%) ;
+```
+
+## Repetir dimensiones de filas y columnas
+Es posible asignar un alto y un ancho indefinido para todas las filas y todas las columnas o tambien utilizarlo en partes intermedia del grid, podemos hacer esto con la funcion ``repeat()`` esta funcion acepta 2 argumentos el 1ro es cuantas veces quiero repetir el valor que le dare como 2do argumento.
+
+- Ejemplo:
+```.css
+grid-template-rows: repeat(4, 50px);
+```
+***Nota: tambien se puede haver con columnas ``grid-template-columns:``***
+
+
+Se puede asignar mas valores a esta propiedad
+```.css
+grid-template-columns:  15px repeat(3, 1fr) 30x;
+```
+
+## Repetir dimensiones
+
+
+Es posible asignar un alto y un ancho indefinido para todas las filas y todas las columnas o tambien utilizarlo en partes intermedia del grid, podemos hacer esto con la funcion ``repeat()`` esta funcion acepta 2 argumentos el 1ro es cuantas veces quiero repetir el valor que le dare como 2do argumento.
+
+
+- Ejemplo:
+```.css
+
+grid-template-rows: repeat(4, 50px);
+
+```
+***Nota: tambien se puede haver con columnas ``grid-template-columns:``***
+
+Se puede asignar mas valores a esta propiedad
+```.css
+grid-template-columns:  15px repeat(3, 1fr) 30x;
 ```
