@@ -764,9 +764,12 @@ box.hover{
 [Tamaño minimo y maximo](https://github.com/smars1/Learning-JavaScript-/blob/main/CSS.md#tama%C3%B1o-minimo-y-maximo)
 [Repetir dimensiones de filas y columnas](https://github.com/smars1/Learning-JavaScript-/blob/main/CSS.md#repetir-dimensiones-de-filas-y-columnas)
 [Repetir dimensiones](https://github.com/smars1/Learning-JavaScript-/blob/main/CSS.md#brechas-entre-elementos)
-[]()
-[]()
-[]()
+[Areas de grid]()
+[Grid implicita]()
+[Alineando y justificando todos los elementos de un grid]()
+[Alinear y justifcar un solo  elemento de grid]()
+[Alineando el grid completo]()
+
 
 
 Grid es un sistema que se implementa en css3 para poder entregar una distribucion mas homogenea. Grid vendria a ser un sistema de celdas como si fuera un excel.
@@ -852,12 +855,7 @@ Si dejamos un solo valor en lugar de 2 filas y columnas tomaran el mismo valor d
 
 ## Expandir elementos de grilla
 
-
-Las siguientes propiedades no pueden ser aplicadas a la grilla, si no que a un elemento en particular.
-
-
-
-Es posible poder selecionar en que fila o columna comenzaran o comenzaran nuestros elementos, esto es posible de la siguiente manera.
+Las siguientes propiedades no pueden ser aplicadas a la grilla, si no que a un elemento en particular. Es posible poder selecionar en que fila o columna comenzaran nuestros elementos, esto es posible de la siguiente manera.
 
 ```.css
 .header{
@@ -876,3 +874,76 @@ Se da la fila o columna inicial y despues la final, tambien es posible hacer est
 }
 ```
 donde 1 es la fila o columna inicial y el 6 es la final.
+
+## Areas de grid
+Una buena forma para distribuir el contenido de una pagina web es manejando el area de grid, para redistribuir nuestro grid deberemos declarar como se va distribuir nuestra area, para ello deberemos utilzar   ``display:grid;`` y  ``grid-template-areas:`` de la siguiente manera:
+
+- Ejemplo:
+```.css
+.grid{
+       display: grid;
+       grid-template-areas: "header header"
+                            "content content" 
+                            "footer  footer" ;
+       grid-template-rows: 150px 1fr 100px;
+       grid-template-columns: 1fr 200px        
+}
+```
+Para visualizar mejor los cambios podemos asignar un ``background-color`` diferente a los tag header, content y footer.
+
+## Grid implicita
+El grid explicito se refiere a todo contenido que se encuentre dentro del grid y que este este definido en sus dimenciones de columnas y filas, con el fin de que estos tengan un comportamiento determinado, sin embargo tambien existe los elementos de grid implicita, los cuales son todos quellos elementos que se encuentran dentro del grid pero estos no estan definidos por las propiedades de ``grid-template-rows, columns , areas,`` etc.
+
+
+Existen de maneras de poder darle dimenciones a los elementos de grid implicitos con la propiedad ``grid-auto-rows`` o usando  ``grid-auto-flow`` podemos indicar el flujo de nuestro contenido ya sea  ``grid-auto-flow: columns;``  o ``grid-auto-flow: rows;`` el  cual ya viene por defecto. Cuando indicamos ``rows`` , el flujo ira de arriba hacia abajo y cuando indicamos ``columns`` el flujo ira de izquierda a derecha.
+
+
+## Alineando y justificando todos los elementos de un grid
+Con la propiedad de ``justify-items: ;`` podemos modificar la posicion de nuestro contenido, esta propiedad puede tomar los siguientes valores
+
+- ``start``: Este es el valor por defecto, establece todo el contenido en la izquierda
+- ``center``: Este mueve al centro todo el contenido del grid
+- ``end``: Establece todo el contenido lo mas posible para el lado derecho
+- ``stretch``: Este valor establece que el fondo de los elementos del grid se estire y se utilice, hasta ocupar todo el espacio que el elemento tenga disponible.
+
+Tambien podemos alinear todos nuestros items con el eje vertical con la propiedad ``align-items: ;`` la cual tiene valores similares a ``justify-items`` pero con la diferencia de que ``align-items`` tiene por defecto el valor de ``stretch``.
+
+**Nota: estos deben usarse en el elemento de .grid{}**
+
+
+## Alinear y justifcar un solo  elemento de grid
+Al igual que podemos modificar y justificar todos los elementos de una grid podemos hacelo mismo para un solo elemento con las propiedades de ``justify-self: ;`` y  ``align-self: ;``, solo que estos tienen por defecto el valor ``stretch``, para  hacer uso de esta propiedad se debera hacer en una subclase{} , no en el grid{}
+
+- Ejemplo:
+```.css
+.grid{
+    display: grid;
+    grid-auto-rows: 140px;
+    grid-auto-flow:row;
+}
+ 
+.item-1{
+    justify-self:center ;
+    aling-self:center ;
+}
+ 
+.red{
+    background-color:red;
+}
+```
+
+##  Alineando el grid completo
+
+Podemos las propiedades de ``justify-content`` y ``align-content`` al igual que con las propiedades anteriores solo que esta tienen el valor por defecto ``start``, el ancho real de nuestra grid sera el dado por el ``body``, se pueden usar los siguientes valores dentro del grid para:
+
+### Para ``justify-content``
+
+Deberemos indicar un ``width: 100%;`` en nuestra etiqueta ``body``
+
+- ``space-around``: Serpara las columnas de un grid  una forma no uniforme.
+- ``space-between`` :  Separa las columnas de forma que nuestro contenido se expande al margen de su caja.
+- ``space-evenly``: Separa el contenido entre columnas de manera uniforme.
+
+### Para ``align-content`` (eje vertical)
+
+podemos manejar los mismo valores que con ``justify-content`` solo que deberemos darle un ``height : 100%;`` a la etiqueta de ``html`` y ``body`` para poder utilizar esta propiedad.
