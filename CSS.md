@@ -763,12 +763,13 @@ box.hover{
 [Columonas y filas](https://github.com/smars1/Learning-JavaScript-/blob/main/CSS.md#columonas-y-filas)
 [Tamaño minimo y maximo](https://github.com/smars1/Learning-JavaScript-/blob/main/CSS.md#tama%C3%B1o-minimo-y-maximo)
 [Repetir dimensiones de filas y columnas](https://github.com/smars1/Learning-JavaScript-/blob/main/CSS.md#repetir-dimensiones-de-filas-y-columnas)
-[Repetir dimensiones](https://github.com/smars1/Learning-JavaScript-/blob/main/CSS.md#brechas-entre-elementos)
-[Areas de grid]()
-[Grid implicita]()
-[Alineando y justificando todos los elementos de un grid]()
-[Alinear y justifcar un solo  elemento de grid]()
-[Alineando el grid completo]()
+[Brechas entre elementos](https://github.com/smars1/Learning-JavaScript-/blob/main/CSS.md#brechas-entre-elementos)
+[Expandir elementos de grilla]()
+[Areas de grid](https://github.com/smars1/Learning-JavaScript-/blob/main/CSS.md#areas-de-grid)
+[Grid implicita](https://github.com/smars1/Learning-JavaScript-/blob/main/CSS.md#grid-implicita)
+[Alineando y justificando todos los elementos de un grid](https://github.com/smars1/Learning-JavaScript-/blob/main/CSS.md#alineando-y-justificando-todos-los-elementos-de-un-grid)
+[Alinear y justifcar un solo  elemento de grid](https://github.com/smars1/Learning-JavaScript-/blob/main/CSS.md#alinear-y-justifcar-un-solo--elemento-de-grid)
+[Alineando el grid completo](https://github.com/smars1/Learning-JavaScript-/blob/main/CSS.md#alineando-el-grid-completo)
 
 
 
