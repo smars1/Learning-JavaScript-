@@ -848,3 +848,31 @@ grid-columns-gap: 10px
 grid-gap: 20x 10px
 ```
 Si dejamos un solo valor en lugar de 2 filas y columnas tomaran el mismo valor dado.
+
+
+## Expandir elementos de grilla
+
+
+Las siguientes propiedades no pueden ser aplicadas a la grilla, si no que a un elemento en particular.
+
+
+
+Es posible poder selecionar en que fila o columna comenzaran o comenzaran nuestros elementos, esto es posible de la siguiente manera.
+
+```.css
+.header{
+    grid-column-start: 1;
+    grid-column-end:  6;
+    grid-row-start: 1 ; 
+    grid-row-end: 3;
+}
+```
+Se da la fila o columna inicial y despues la final, tambien es posible hacer esto de una manera corta de la siguiente manera
+
+```.css
+.header{
+    grid-column: 1 / 6;
+    grid-row: 1 / 6;
+}
+```
+donde 1 es la fila o columna inicial y el 6 es la final.
