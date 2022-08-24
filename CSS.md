@@ -764,7 +764,7 @@ box.hover{
 [Tamaño minimo y maximo](https://github.com/smars1/Learning-JavaScript-/blob/main/CSS.md#tama%C3%B1o-minimo-y-maximo)
 [Repetir dimensiones de filas y columnas](https://github.com/smars1/Learning-JavaScript-/blob/main/CSS.md#repetir-dimensiones-de-filas-y-columnas)
 [Brechas entre elementos](https://github.com/smars1/Learning-JavaScript-/blob/main/CSS.md#brechas-entre-elementos)
-[Expandir elementos de grilla]()
+[Expandir elementos de grilla](https://github.com/smars1/Learning-JavaScript-/blob/main/CSS.md#expandir-elementos-de-grilla)
 [Areas de grid](https://github.com/smars1/Learning-JavaScript-/blob/main/CSS.md#areas-de-grid)
 [Grid implicita](https://github.com/smars1/Learning-JavaScript-/blob/main/CSS.md#grid-implicita)
 [Alineando y justificando todos los elementos de un grid](https://github.com/smars1/Learning-JavaScript-/blob/main/CSS.md#alineando-y-justificando-todos-los-elementos-de-un-grid)
