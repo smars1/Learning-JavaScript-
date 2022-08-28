@@ -11,7 +11,8 @@ node index.js
 | Glosary |
 |------------|
 [Tipos de datos](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#tipos-de-datos)
-[Variables]()
+[Variables](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#variables)
+[Objetos]()
 
 
 # Hola munndo 
@@ -174,4 +175,19 @@ fuerzaEnemigo=10;
 console.log(fuerzaEnemigo);
 ```
 
+# Objetos 
+
+Un objeto es una agrupacion de datos, estos datos hacen sentidos entre si. los objetos no tienen variables, tienen propiedades ``llave - valor``, los valores de asignan de forma primitiva. Se muestra el siguiente ejemplo de sintaxis al crear un objeto:
+
+
+
+```.js
+//objeto
+const miObjeto = {
+    unNumero: 24,
+    unString: 'Esta es una cadena de caracteres',
+    unaCondicion: true,};
+ 
+console.log(miObjeto);
+```
 
