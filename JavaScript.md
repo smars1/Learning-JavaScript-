@@ -12,7 +12,7 @@ node index.js
 |------------|
 [Tipos de datos](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#tipos-de-datos)
 [Variables](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#variables)
-[Objetos]()
+[Objetos](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#objetos)
 
 
 # Hola munndo 
