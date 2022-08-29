@@ -15,7 +15,8 @@ node index.js
 [Objetos](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#objetos)
 [Arreglos](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#arreglos)
 [Operadores matematicos](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#incrementos-decrementos-y-operadores-de-asignacion)
-[Operadores de comparacion](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#operadores-logicos)
+[Operadores de comparacion](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#operadores-de-comparacion)
+[Operadores logicos]()
 
 # Hola munndo 
 
@@ -360,3 +361,29 @@ Comparamos si ``valor`` es mayor o igual que 5
 const valor = 5  => 5;
 ```
 Se retorna un ``true`` debido a que 5 es igual o mayor que 5.
+
+# Operadores logicos 
+JavaScript posee  3 operadores logicos:
+
+![image](https://user-images.githubusercontent.com/42829215/187148366-24dcd7ce-c25e-4c33-91c4-8473acf63386.png)
+
+## OR
+El operaror or evaluada el primer valor que retorne  un ``true``. La unica forma de que el resultado de ``or`` sea  ``false`` es que todos sus valores sean ``false``
+```.js
+const resultado = false || true
+const resultado = false || false || false || false || true
+```
+
+##  AND
+And va funcionar de forma similar a or, pero and lo que hara sera buscar el primer false,  por lo que si queremos que and nos arroje un valor booleano ``true`` todos nuestos valores deberan ser true.
+```.js
+const resultado = true && true
+```
+Regresa un ``true``.
+
+## NOT
+Not lo que hace es negar la salida que se tiene y la cambia por el valor contrario.
+```.js
+const resultado =  !false
+```
+Regresa un ``true`` debido a que la salida ``false`` es negada por ``!``.
