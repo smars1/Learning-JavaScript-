@@ -15,7 +15,7 @@ node index.js
 [Objetos](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#objetos)
 [Arreglos](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#arreglos)
 [Operadores matematicos](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#incrementos-decrementos-y-operadores-de-asignacion)
-[Operadores de logicos]()
+[Operadores de comparacion](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#operadores-logicos)
 
 # Hola munndo 
 
@@ -291,7 +291,7 @@ num -=5;
 ```
 La salida de ``num`` sera de 10 ya que estamos decrementando su valor 2 veces en pasos de 5.
 
-# Operadores logicos
+# Operadores de comparacion
 
 Los operadores logicos nos ayudan a poder realizar comparaciones entre distintos tipos de datos o elemetos, esto es importante debido a que esto nos ayuda de dirigir el flujo de nuestro codigo.
 
@@ -331,10 +331,7 @@ Devuelve un ``false`` debido a que la desigualdad no estricta toma  que `5` es i
 
 ## Menor, mayor que ``<, >, =<, =>``
 
-
 JavaScript nos permite comparar si el valor de una variable es menor o mayor a otro valor diferente.
-
-
 
 ## Menor que
 Comparamos si ``valor`` es menor que 6.
