@@ -16,7 +16,7 @@ node index.js
 [Arreglos](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#arreglos)
 [Operadores matematicos](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#incrementos-decrementos-y-operadores-de-asignacion)
 [Operadores de comparacion](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#operadores-de-comparacion)
-[Operadores logicos]()
+[Operadores logicos](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#operadores-logicos)
 
 # Hola munndo 
 
