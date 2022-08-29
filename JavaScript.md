@@ -14,7 +14,8 @@ node index.js
 [Variables](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#variables)
 [Objetos](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#objetos)
 [Arreglos](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#arreglos)
-[Operadores matematicos]()
+[Operadores matematicos](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#incrementos-decrementos-y-operadores-de-asignacion)
+[Operadores de logicos]()
 
 # Hola munndo 
 
@@ -290,3 +291,75 @@ num -=5;
 ```
 La salida de ``num`` sera de 10 ya que estamos decrementando su valor 2 veces en pasos de 5.
 
+# Operadores logicos
+
+Los operadores logicos nos ayudan a poder realizar comparaciones entre distintos tipos de datos o elemetos, esto es importante debido a que esto nos ayuda de dirigir el flujo de nuestro codigo.
+
+
+
+## Igualdad estricta y no estricta
+
+La igualdad estricta nos permite compar  tipos de datos similares un ``number`` con un ``number``, un ``string`` con un ``string``, su simbolo esta dado por ``===`` mientras que la igualdad no estricta nos permite comparar si el valor de un dato es igual o no sin importar el tipo de dato con el que se compara de puede comparar si un dato ``number`` es igual a un dato ``string`` por ejemplo. El simbolo del la igualdad no estricta esta dado por ``==``. Los operadores logicos devuelven un valor booleano ``true`` o ``false`` dependiendo si se cumple o no lo que se esta comparando.
+
+- Igualdad estricta:
+```.js
+const resultado = 5 === 5;
+```
+Devuelve un ``true``
+
+- Igualdad no estricta:
+Comparamos un number ocn un string.
+```.js
+const resultado = 5 == `5`;
+```
+Devuelve un ``true`` debido a que la igualdad no estricta lo permite a diferencua de la estricta la cual devolveria un false.
+
+## Desigualdades
+Las desigualdades se tratan de manera similar que las igualdade, tenemos desigualdad estricta y no estricta.
+
+- Desigualdad estricta:
+```.js
+const resultado = 5 !== 4;
+```
+Devuelve un ``true`` ya que 5 es diferente de 4
+
+- Desigualdad no estricta:
+```.js
+const resultado = 5 != '5';
+```
+Devuelve un ``false`` debido a que la desigualdad no estricta toma  que `5` es igual  a `5` ya que la sintaxis de esta lo permite, a defirencia del modo estricto que regresaria un ``true`` al estos ser difentes tipos de dato.
+
+## Menor, mayor que ``<, >, =<, =>``
+
+
+JavaScript nos permite comparar si el valor de una variable es menor o mayor a otro valor diferente.
+
+
+
+## Menor que
+Comparamos si ``valor`` es menor que 6.
+```.js
+const valor = 5 < 6;
+```
+Se retorna un ``true`` debido a que 5 es menor a 6
+
+### Menor igual que
+Comparamos si ``valor`` es menor que 6.
+```.js
+const valor = 5  =< 5;
+```
+Se retorna un ``true`` debido a que 5 es igual o menor 5
+
+### Mayor que
+Comparamos si ``valor`` es mayor que 4
+```.js
+const valor = 5 > 4;
+```
+Se retorna un ``true`` debido a que 5 es mayor a 4
+
+### Mayor igual que
+Comparamos si ``valor`` es mayor o igual que 5
+```.js
+const valor = 5  => 5;
+```
+Se retorna un ``true`` debido a que 5 es igual o mayor que 5.
