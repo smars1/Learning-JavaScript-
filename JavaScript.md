@@ -13,8 +13,8 @@ node index.js
 [Tipos de datos](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#tipos-de-datos)
 [Variables](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#variables)
 [Objetos](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#objetos)
-[Arreglos]()
-
+[Arreglos](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#arreglos)
+[Operadores matematicos]()
 
 # Hola munndo 
 
@@ -222,3 +222,71 @@ la siguiente no es una lista, si no un array dado a que tiene diferentes tipos d
 ```.js
 const array = [1, '2', 'hola', 'mundo'];
 ```
+
+# Operadores matematicos
+JavaScript tambien nos permite usar sintaxis para operaciones matematicas basicas.
+
+- ``Suma``: 
+```.js
+ const suma =  1  +  2; 
+```
+
+- ``Resta`` 
+```.js
+ const resta =  1  -  2; 
+```
+
+- ``Multiplicacion``:
+```.js
+ const multi =  1  *  2; 
+```
+
+- ``Division``: 
+```.js
+ const division =  1  /  2; 
+```
+
+- ``modulo``:
+```.js
+ const modulo =  9 % 2; 
+```
+
+## Incrementos, decrementos y operadores de asignacion
+- ``Incremento``:
+```.js
+let num = 5;
+num++;
+num++;
+```
+La salida de este pequeño script deberia terminar con ``num = 7`` debido a que estamos incrementando num 2 veses en pasos de 1.
+
+- ``Decremento``:
+```.js
+let num = 5;
+num--;
+num--;
+```
+La salida de este pequeño script deberia terminar con ``num = 3`` debido a que estamos decrementando num 2 veses en pasos de 1.
+
+- ``Operadores de asignacion``:
+
+Un operador de asignacion sirbe para poder defenir en cuanto queremos incrementar o decrementar una variable. Anteriormente vimos el incremento y decremento estos vienen por defecto en pasos de 1, pero gracias a los operadores de asignacion podemos modificar este valor.
+
+- Ejemplo para incremento:
+
+```.js
+let num = 5;
+num += 5 ;
+num += 5 ;
+```
+La salida de ``num`` sera de 15 ya que estamos incrementado su valor 2 veces en pasos de 5.
+
+- Ejemplo para decremento:
+
+```.js
+let num 20;
+num -= 5;
+num -=5;
+```
+La salida de ``num`` sera de 10 ya que estamos decrementando su valor 2 veces en pasos de 5.
+
