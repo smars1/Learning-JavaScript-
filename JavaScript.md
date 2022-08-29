@@ -13,6 +13,7 @@ node index.js
 [Tipos de datos](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#tipos-de-datos)
 [Variables](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#variables)
 [Objetos](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#objetos)
+[Arreglos]()
 
 
 # Hola munndo 
@@ -191,3 +192,33 @@ const miObjeto = {
 console.log(miObjeto);
 ```
 
+# Arreglos
+El ``array`` puede contener elementos de cualquier tipo  dentro de el . Para agregar elementos a un arreglo podemos usar el metodo ``.push``, (``<nombre del array>.push``)
+
+-Ejemplo: 
+
+Podemos agragar desde numeros, cadenas hasta variables.
+```.js
+array.push(5);
+
+array.push('Hola');
+
+array.push(Variable);
+```
+
+## Listas
+La dieferencia entre listas y arrays consiste que para que una array sea considerado lista  todo su contenido debe se del mismo tipo de dato,
+
+- Ejemplo:
+
+Se muestra una lista de numeros.
+
+```.js
+const lista = [1,2,3,4,5];
+```
+
+la siguiente no es una lista, si no un array dado a que tiene diferentes tipos de datos dentro de ella;
+
+```.js
+const array = [1, '2', 'hola', 'mundo'];
+```
