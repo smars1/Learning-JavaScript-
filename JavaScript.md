@@ -22,6 +22,7 @@ node index.js
 [Estructura while](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#estructura-while)
 [Estructura switch](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#estructuraswitch)
 [Estructura for](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#estructura-for)
+[Funciones JavaScript]()
 
 
 # Hola munndo 
@@ -502,4 +503,31 @@ for (let i = 0; i < numeros.length; i++){
 
 }
 
+```
+
+# Funciones JavaScript
+
+Podemos crear lineas de codigo las cuales realizen una tarea en especifico y podamos llamarlas cada vez que sea necesario con el fin de reutilizar y simplificar codigo.
+
+
+
+Estructura de una funcion:
+
+```.js
+function iterar (arg1){   
+
+     for (let i = 0; i < arg1.length; i++;){       
+
+           console.log(arg1[i]); 
+
+     }
+
+}
+
+const numeros = [1, 2, ,3 ,  'hola', 5];
+const nombres = ['diego', 'atzin',  'daniel,  'enrique', 'max', 'alex'];
+
+// llamamos a nuestra funcion
+iterar(numeros);
+iterar(nombres);
 ```
