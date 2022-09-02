@@ -22,7 +22,7 @@ node index.js
 [Estructura while](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#estructura-while)
 [Estructura switch](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#estructuraswitch)
 [Estructura for](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#estructura-for)
-[Funciones JavaScript]()
+[Funciones JavaScript](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#funciones-javascript)
 
 
 # Hola munndo 
@@ -481,7 +481,7 @@ La instruccion for es algo similar a while puesto que nos permitira crear un buc
 
 Estructura de ``for``:
 ```.js
-for (let i = 0; 1<10; i++; ){
+for (let i = 0; 1<10; i++){
       console.log(i);
 }
 ```
@@ -516,7 +516,7 @@ Estructura de una funcion:
 ```.js
 function iterar (arg1){   
 
-     for (let i = 0; i < arg1.length; i++;){       
+     for (let i = 0; i < arg1.length; i++){       
 
            console.log(arg1[i]); 
 
