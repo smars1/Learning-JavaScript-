@@ -546,3 +546,21 @@ resultadosuma2 = suma(5, 6);
 resultadosuma3 = suma(resultadosuma1, resultadosuma2);
 console.log('El resultado es: ',resultadosuma3);
 ```
+
+# Callbacks
+Un callback es una funcion que se va ejecutar al final de una funcion.
+
+Ejemplo:
+```.js
+function sumar (a, b, cb){
+       const r = a + b;
+       // cb es el callback
+       cb(r);
+}
+
+function callback(result){
+       console.log('resultado: ', result);
+}
+sumar(2, 3 , callback);
+```
+Cuando pasamos el tercer valor lo asignamos a la funcion callback, nota no lo estamos ejecutando  le estamos asignando valor de referencia para que luego pase a ejecutarse en el ``cd(r)``
