@@ -485,3 +485,21 @@ for (let i = 0; 1<10; i++; ){
 }
 ```
 La instruccion ``for`` es bastante util cuando nosostros recien estamos comenzando a desarrollar ya que podra permitirnos iterar sobre nuestros arreglos.
+
+## Accediendo a los elementos de un arreglo mediante for
+
+Todos los arreglos que definimos en JavaScript tienen la propiedad de ``length`` esta propiedad nos permite regresar el tamaño de un arreglo. 
+
+Estructura accendiendo a los elemenos de un arreglo mendiante for y ``length`` :
+
+```.js 
+
+const numeros = [1, 2, ,3 ,  'hola', 5];
+
+for (let i = 0; i < numeros.length; i++){
+
+      console.log(numeros[i]);
+
+}
+
+```
