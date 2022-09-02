@@ -17,11 +17,11 @@ node index.js
 [Operadores matematicos](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#incrementos-decrementos-y-operadores-de-asignacion)
 [Operadores de comparacion](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#operadores-de-comparacion)
 [Operadores logicos](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#operadores-logicos)
-[Control de flujo]()
-[Estructura if]()
-[Estructura while]()
-[Estructura switch]()
-[Estructura for]()
+[Control de flujo](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#control-de-flujo)
+[Estructura if](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#estructura-if)
+[Estructura while](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#estructura-while)
+[Estructura switch](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#estructuraswitch)
+[Estructura for](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#estructura-for)
 
 
 # Hola munndo 
