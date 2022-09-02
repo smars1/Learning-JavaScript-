@@ -524,8 +524,8 @@ function iterar (arg1){
 
 }
 
-const numeros = [1, 2, ,3 ,  'hola', 5];
-const nombres = ['diego', 'atzin',  'daniel,  'enrique', 'max', 'alex'];
+const numeros = [1, 2, 3 ,  'hola', 5];
+const nombres = ['diego', 'atzin',  'daniel',  'enrique', 'max', 'alex'];
 
 // llamamos a nuestra funcion
 iterar(numeros);
