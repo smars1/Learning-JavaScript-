@@ -21,6 +21,7 @@ node index.js
 [Estructura if]()
 [Estructura while]()
 [Estructura switch]()
+[Estructura for]()
 
 
 # Hola munndo 
@@ -472,3 +473,16 @@ switch(x){
                 break;
 }
 ```
+
+# Estructura for
+
+La instruccion for es algo similar a while puesto que nos permitira crear un bucle hasta que se cumpla cierta condicion. La estructura del ``for`` necesitara un valor inicial, una condicion inicial, y una instruccion que se realize en cada repeticion del loop.
+
+Estructura de ``for``:
+```.js
+for (let i = 0; 1<10; i++; ){
+      console.log(i);
+}
+```
+
+La instruccion ``for`` es bastante util cuando nosostros recien estamos comenzando a desarrollar ya que podra permitirnos iterar sobre nuestros arreglos.
