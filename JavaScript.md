@@ -531,3 +531,18 @@ const nombres = ['diego', 'atzin',  'daniel',  'enrique', 'max', 'alex'];
 iterar(numeros);
 iterar(nombres);
 ```
+
+Una funcion necesitara de un ``return`` para poder regresar un valor definido de no ser asi regresara un valor ``undefined``  cuando queremos reutilzar la funcion.
+
+Ejemplo.
+```.js
+function suma (a,b){
+        return a + b;
+}
+
+resultadosuma1 = suma(1, 2);
+resultadosuma2 = suma(5, 6);
+
+resultadosuma3 = suma(resultadosuma1, resultadosuma2);
+console.log('El resultado es: ',resultadosuma3);
+```
