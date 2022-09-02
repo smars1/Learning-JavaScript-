@@ -17,6 +17,11 @@ node index.js
 [Operadores matematicos](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#incrementos-decrementos-y-operadores-de-asignacion)
 [Operadores de comparacion](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#operadores-de-comparacion)
 [Operadores logicos](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#operadores-logicos)
+[Control de flujo]()
+[Estructura if]()
+[Estructura while]()
+[Estructura switch]()
+
 
 # Hola munndo 
 
@@ -387,3 +392,83 @@ Not lo que hace es negar la salida que se tiene y la cambia por el valor contrar
 const resultado =  !false
 ```
 Regresa un ``true`` debido a que la salida ``false`` es negada por ``!``.
+
+
+# Control de flujo
+
+El control de flujo nos permite realizar iteraciones o evaluar condiciones, podemos evaluar una condicion en caso de que tenga un valor true o false con el fin de seguir cierta logica.
+
+# Estructura if
+
+Estructura de if en JavaScript
+```.js
+if (true){
+console.log('Estoy dentro de un if')
+}
+```
+
+``if`` no solo recibe valores booleano, si no que puede recibir comparaciones como por ejemplo:
+```.js
+edad = 15;
+if(edad => 5 && edad =< 18){
+console.log('El niño puede jugar');
+}
+else {
+console.log('El niño puede jugar');
+}
+```
+
+# Estructura while
+El ``while`` permite crear un bucle el cual se seguira repetiendo hasta que una condicion de ya no se cumpla.
+
+
+Estructuctura while:
+```.js
+let x = 0 ;
+while (x =<5 ){
+console.log(x);
+x++;
+}
+```
+El bucle se repetira hasta que x sea mayor igual a 5.
+
+Debemos tener cuidado tambien de no dejar un bucle infinito al olvidar finalizar la condicion inicial.
+
+```.js
+let x = true;
+while (x){
+console.log(x);
+x = false;
+}
+```
+Por ejemplo si olvidamos cambiar el valor de ``x`` a ``false`` el bucle while seguiria repitiendose de forma infinita, esto es con lo que hay que tener cuidado al usar while.
+
+# Estructura switch 
+
+El ``switch`` nos permitira crear un menu de flujo de intrucciones por medio de ``case`` y un valor pode ``default`` en caso de que no se encuentre la opcion en el menu de flujo.
+
+Estructura de switch
+
+```.js
+
+let x= 1;
+
+switch(x){
+
+                case 1:{
+                console.log('Yo soy el caso 1');
+                break;
+                }
+                case 2:{
+                console.log('Yo soy el caso 2');
+                break;
+                }
+                case 3:{
+                console.log('Yo soy el caso 3');
+                break;
+                }
+                default:
+                console.log('No se encuentra este caso');
+                break;
+}
+```
