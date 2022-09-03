@@ -564,4 +564,4 @@ function callback(result){
 }
 sumar(2, 3 , callback);
 ```
-Cuando pasamos el tercer valor lo asignamos a la funcion callback, nota no lo estamos ejecutando  le estamos asignando valor de referencia para que luego pase a ejecutarse en el ``cd(r)``
+Cuando pasamos el tercer valor lo asignamos a la funcion callback, nota no lo estamos ejecutando  le estamos asignando valor de referencia para que luego pase a ejecutarse en el ``cd(r)`` , esto lo que permite es que podamos pasar la funciones como argumentos en otras funciones con el fin de poder reutilzar nuestro codigo.
