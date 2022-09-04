@@ -26,7 +26,7 @@ node index.js
 [Callbacks](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#callbacks)
 [Fat Arrow Function](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#fat-arrow-function)
 [Function anonimas](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#function-anonima)
-[Intro a Dom]()
+[Intro a Dom](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#dom-javascript)
 
 
 # Hola munndo 
