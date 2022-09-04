@@ -24,7 +24,7 @@ node index.js
 [Estructura for](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#estructura-for)
 [Funciones JavaScript](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#funciones-javascript)
 [Callbacks](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#callbacks)
-[Fat Arrow Function]()
+[Fat Arrow Function](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#fat-arrow-function)
 
 # Hola munndo 
 
@@ -575,7 +575,7 @@ Estructura de una  ``fat arrow function`` de una sola linea:
 const miFatArrowFucntion = (a, b) => a + b;
 
 // Le damos como parametros el valor 1 y 2 a la arrow function:
-cosnt r = miFatArrowFucntion(1, 2);
+const r = miFatArrowFucntion(1, 2);
 console.log(r);
 ``` 
 Como se puede ver no es necesario agregar un ``return`` cuando la function es de una solo linea de codigo.
@@ -583,11 +583,11 @@ Como se puede ver no es necesario agregar un ``return`` cuando la function es de
 
 Estructura de una  ``fat arrow function`` mas de una linea de codigo:
 ```.js
-cosnt miFatArrowFucntion = (a, b) => a + b {
+const miFatArrowFucntion = (a, b) => a + b {
           return a + b;
 }
 // pasamos para parametros a nuestra fat arrow function:
-cosnt r = miFatArrowFucntion(1, 2);
+const r = miFatArrowFucntion(1, 2);
 console.log(r);
 ``` 
 
