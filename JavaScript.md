@@ -24,7 +24,7 @@ node index.js
 [Estructura for](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#estructura-for)
 [Funciones JavaScript](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#funciones-javascript)
 [Callbacks](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#callbacks)
-
+[Fat Arrow Function]()
 
 # Hola munndo 
 
@@ -565,3 +565,29 @@ function callback(result){
 sumar(2, 3 , callback);
 ```
 Cuando pasamos el tercer valor lo asignamos a la funcion callback, nota no lo estamos ejecutando  le estamos asignando valor de referencia para que luego pase a ejecutarse en el ``cd(r)`` , esto lo que permite es que podamos pasar la funciones como argumentos en otras funciones con el fin de poder reutilzar nuestro codigo.
+
+# Fat arrow function
+Tienen 2 principales benificios a diferencia de function, no se tiene que usar la palabra reservada ``function`` para declarar una funcion, si la funcion solo tiene una sola linea, no se necesitara la palabra reservada ``return`` se llaman ``fat arrow function`` por que se definen con un ``=>``.
+
+Estructura de una  ``fat arrow function`` de una sola linea:
+```.js
+// definimos la arrow function:
+const miFatArrowFucntion = (a, b) => a + b;
+
+// Le damos como parametros el valor 1 y 2 a la arrow function:
+cosnt r = miFatArrowFucntion(1, 2);
+console.log(r);
+``` 
+Como se puede ver no es necesario agregar un ``return`` cuando la function es de una solo linea de codigo.
+
+
+Estructura de una  ``fat arrow function`` mas de una linea de codigo:
+```.js
+cosnt miFatArrowFucntion = (a, b) => a + b {
+          return a + b;
+}
+// pasamos para parametros a nuestra fat arrow function:
+cosnt r = miFatArrowFucntion(1, 2);
+console.log(r);
+``` 
+
