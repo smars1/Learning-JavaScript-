@@ -621,7 +621,7 @@ El ``dom`` se refiere al todo el arbol de html que nosotros vamos a tener dentro
 
 | Glosary |
 |------------|
-[Agregando JS a html]()
+[Agregando JS a html](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#agregando-js-a-html)
 
 ## Agregando JS a html
 El tag ``script`` nos permite ejecutar codigo JavaScript en html, tambien nos permite mandar a llamar codigo ``JS`` desde un archivo ``.js``.
