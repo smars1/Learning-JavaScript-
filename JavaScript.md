@@ -25,6 +25,7 @@ node index.js
 [Funciones JavaScript](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#funciones-javascript)
 [Callbacks](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#callbacks)
 [Fat Arrow Function](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#fat-arrow-function)
+[Function anonimas]()
 
 # Hola munndo 
 
@@ -591,3 +592,21 @@ const r = miFatArrowFucntion(1, 2);
 console.log(r);
 ``` 
 
+
+# Function anonima
+Una funcion anonima es una funcion que no tiene  ningun nombre, por lo genereal la utilzamos en un contexto, donde nuestra funcion anonima va a ser utilzada por otra funcion, como por ejemplo con un ``callback``. una funcion anonima se utilza cuando no vamos a utilizar la logica de esta parte de codigo ya que una funcion anonima no nos permite reutilzar codigo, pero si nos permite se mas implicitos.
+
+
+Ejemplo de funcion anonima:
+```.js
+// Utilzamos una function anonima con un callback
+function sumar (a, b cb){
+          const r = a + b ;
+          cb(r);
+}
+
+// funcion anonima
+sumar (2, 3, function (r) {
+          console.log('Soy una funcion anonima y el resultado es :', r);
+})
+```
