@@ -26,6 +26,8 @@ node index.js
 [Callbacks](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#callbacks)
 [Fat Arrow Function](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#fat-arrow-function)
 [Function anonimas](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#function-anonima)
+[Intro a Dom]()
+
 
 # Hola munndo 
 
@@ -610,3 +612,41 @@ sumar (2, 3, function (r) {
           console.log('Soy una funcion anonima y el resultado es :', r);
 })
 ```
+
+# Dom JavaScript
+
+El ``dom`` se refiere al todo el arbol de html que nosotros vamos a tener dentro de una pagina web una vez que nosotros la hayamos construido. El dom es un estandar de como nosotros podemos, ver, agregar, cambiar, o eleminar elementos html de nuestra aplicacion web.
+
+## Glosario
+
+| Glosary |
+|------------|
+[Agregando JS a html]()
+
+## Agregando JS a html
+El tag ``script`` nos permite ejecutar codigo JavaScript en html, tambien nos permite mandar a llamar codigo ``JS`` desde un archivo ``.js``.
+
+Ejemplo:
+```.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intro a DOM</title>
+</head>
+<body>
+    <p>Intro a DOM</p>
+</body>
+<!-- etiqueta para desarrollar codigo .JS en html -->
+<script>
+    alert('Intro a DOM');
+    console.log('Intro a ')
+</script>
+
+<!-- Importamos codigo desde una archivo .js -->
+<script src="main.js"></script>
+</html>
+```
+Es importante colocar los tags ``script`` despues del body del html para asegurar que el codigo html cargue primero y luego cargue el codigo ``JS``.
