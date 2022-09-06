@@ -622,6 +622,11 @@ El ``dom`` se refiere al todo el arbol de html que nosotros vamos a tener dentro
 | Glosary |
 |------------|
 [Agregando JS a html](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#agregando-js-a-html)
+[getElementByld y window.onload]()
+[Manipular text metodo .innertext]()
+[Agregando Elementos HTML a otro elemento HTML metodo .innerHTML]()
+
+
 
 ## Agregando JS a html
 El tag ``script`` nos permite ejecutar codigo JavaScript en html, tambien nos permite mandar a llamar codigo ``JS`` desde un archivo ``.js``.
@@ -650,3 +655,136 @@ Ejemplo:
 </html>
 ```
 Es importante colocar los tags ``script`` despues del body del html para asegurar que el codigo html cargue primero y luego cargue el codigo ``JS``.
+
+## getElementByld y window.onload
+
+La funcion  ``getElementById (`< Class ID from html>`)  `` nos permite acceder a una etiqueta de un archivo ``html`` mediante la su ``id clase`` desde un archivo ``.js``
+
+Estructura:
+
+HTML
+
+Creamos el ``id = "text"`` .
+
+```.html 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Intro a DOM</title>
+</head>
+<body>
+    <p id="text">Intro a DOM</p>
+</body>
+<script src="main.js"></script>
+</html>
+```
+
+JS
+```.js
+const parrafo = document.getElementById('text');
+
+// imprime todo el tag p incluyendo el codigo html
+console.log(parrafo); 
+
+// el metodo .innerHTML omite el codigo html e imprime solo el contenido en la cosola
+console.log(parrafo.innerHTML);
+
+// el metodo .innerText omite el codigo html e imprime solo el contenido en la cosola
+console.log(parrafo.innerText);
+```
+![image](https://user-images.githubusercontent.com/42829215/188554736-9304e851-4f62-4fd7-ba50-7add5519b6d8.png)
+
+Los metodos ``.innerHTML`` e ``.innerText`` nos permiten acceder solo al contenido del tag del html, omitiendo el codigo del tag, solo imprimen el contenido sin codigo html como se muestra en la figura las tres salidas.
+
+## Window.onload
+
+La funcion ``window.oload`` nos permite hacer esperar la ejecucion de nuestro codigo JavaScript, para que este se ejecute hasta que nuestro codigo html haya terminado de cargar, esto puede prevenir varios problemas de ejecucion, incluso puede permitirnos colocar tags de ``script`` arriba del cuerpo del html o en cual quier otra parte, ojo no es una buena practica pero esto lo permite. Podemos usar la funcion ``window.onload`` como una medida de prevencion de errores de ejecucion.
+
+Estructura 
+Podemos crear una fat arrow y agregarlo como una funcion, ejemplo:
+```.js
+window.onload = () => {
+    const parrafo = document.getElementById('text');
+
+    // imprime todo el tag p incluyendo el codigo html
+    console.log(parrafo); 
+
+    // el metodo .innerHTML omite el codigo html e imprime solo el contenido en la cosola
+    console.log(parrafo.innerHTML);
+
+    // el metodo .innerText omite el codigo html e imprime solo el contenido en la cosola
+    console.log(parrafo.innerText);
+}
+```
+Esta plantilla se comprende con la plantilla de html anterior ya que el codigo de js anterior solo se conloco dentro del fat arrow del metodo ``window.onload``.
+
+## Manipular texto, propiedad .innertext
+La propiedad ``.innertext`` tambien nos permite actualizar el contenido interior de un tag de html.
+
+
+
+Estructura:
+
+HTML
+
+```.html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Intro a DOM</title>
+</head>
+<body>
+    <p id="text">Intro a DOM</p>
+</body>
+<script src="main.js"></script>
+</html>
+```
+
+JS 
+
+```js
+
+window.onload = () => {
+    //Guardamos el constenido del tag id text en una variable
+    const parrafo = document.getElementById('text');
+ 
+    //Actualizamos el valor de parrafo
+    parrafo.innerText = "Parrafo actualizado";
+}
+```
+### salida:
+![image](https://user-images.githubusercontent.com/42829215/188559197-5c5f1625-57c6-4817-8408-cac448eb2e35.png)
+
+## Agregando Elementos HTML a otro elemento HTML, propiedad .innerHTML
+
+La propiedad ``.innerHTML`` nos permite agregar mas codigo HTML desde un java script
+
+Estructura:
+
+HTML
+
+```.html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Intro a DOM</title>
+</head>
+<body>
+    <p id="text">Intro a DOM</p>
+</body>
+<script src="main.js"></script>
+</html>
+```
+
+JS 
+```.js
+window.onload = () => {
+    //Guardamos el constenido del tag id text en una variable
+    const parrafo = document.getElementById('text');
+
+    //Actualizamos Agregamos 2 elemtos tipo lista desde JS a HTML
+    parrafo.innerHTML = '<li>element 1</li><li>element 2</li>';
+}
+```
