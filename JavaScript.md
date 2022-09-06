@@ -788,3 +788,6 @@ window.onload = () => {
     parrafo.innerHTML = '<li>element 1</li><li>element 2</li>';
 }
 ```
+### Salida: 
+![image](https://user-images.githubusercontent.com/42829215/188562056-5c62bdeb-3270-4235-8c68-7cbd15c75716.png)
+
