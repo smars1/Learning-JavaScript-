@@ -626,7 +626,7 @@ El ``dom`` se refiere al todo el arbol de html que nosotros vamos a tener dentro
 [Manipular text metodo .innertext](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#manipular-texto-propiedad-innertext)
 [Agregando Elementos HTML a otro elemento HTML metodo .innerHTML](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#agregando-elementos-html-a-otro-elemento-html-propiedad-innerhtml)
 [Agregando elementos a un array con ``.map``](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#agregando-elemntos-a-un-array-con-map)
-[Eliminando elementos de un array con ``.splice()``]
+[Eliminando elementos de un array con ``.splice()``]()
 
 ## Agregando JS a html
 El tag ``script`` nos permite ejecutar codigo JavaScript en html, tambien nos permite mandar a llamar codigo ``JS`` desde un archivo ``.js``.
@@ -820,7 +820,7 @@ todosList.innerHTML = todosTemplate.join('');
 ```
 ``todoList`` es la variable que hace referencia al id tag que se esta manejando.
 
-# Array.splice
+# Eliminando elementos de un array con ``.splice()``
 Haci como podemos añadir elementos de lista a HMTL tambien podemos eliminarlos, mendian la funcion ``.splice()``. Esta funcion pide como paramentros los valores de rango a eliminar, el primer argumento o parametro que pide es la posicion del elemento y el segundo valor es la cantidad de elementos a eleminar.
 
 Ejemplo de codigo
