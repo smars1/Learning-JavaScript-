@@ -837,8 +837,8 @@ Se puede ver como, para arr elimina el solo 1 elemento de la posicion 0.
 # Buscar elementos y agregar eventos al seleccionarlos
 | Glosary |
 |------------|
-[Function ``.querySelectorAll``]()
-[Conversion de un listado a array]()
+[Function ``.querySelectorAll``](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#function-queryselectorall)
+[Conversion de un listado a array](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#Conversion de un listado a array)
 
 ## Function ``.querySelectorAll``
 
