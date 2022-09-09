@@ -627,6 +627,7 @@ El ``dom`` se refiere al todo el arbol de html que nosotros vamos a tener dentro
 [Agregando Elementos HTML a otro elemento HTML metodo .innerHTML](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#agregando-elementos-html-a-otro-elemento-html-propiedad-innerhtml)
 [Agregando elementos a un array con ``.map``](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#agregando-elemntos-a-un-array-con-map)
 [Eliminando elementos de un array con ``.splice()``](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#eliminando-elementos-de-un-array-con-splice)
+[Buscar elementos y agregar eventos al seleccionarlos]()
 
 ## Agregando JS a html
 El tag ``script`` nos permite ejecutar codigo JavaScript en html, tambien nos permite mandar a llamar codigo ``JS`` desde un archivo ``.js``.
@@ -832,3 +833,46 @@ Se puede ver como, para arr elimina el solo 1 elemento de la posicion 0.
 
 ## Salida
 ![image](https://user-images.githubusercontent.com/42829215/189268635-2021ff28-096d-4b00-b245-ba0ab35e59b9.png)
+
+# Buscar elementos y agregar eventos al seleccionarlos
+| Glosary |
+|------------|
+[Function ``.querySelectorAll``]()
+[Conversion de un listado a array]()
+
+## Function ``.querySelectorAll``
+
+La funcion ``.querySelectorAll`` nos permite buscar nuestros elementos que se encuentran en nuestros listados y asignarles una funcon que sera ejecutada cuando nosotros le hagamos click a nuestros elementos. Esta funcion nos permitira ir a buscar por ID, Class, tag, siempre comenzando con un ``#`` antes del nombre del valor id, class o tag.
+
+Estructura de ``.querySelectorAll``:
+podemos llamar un elemento tag de HMTL por su ``Id`` por ejemplo 
+```.js
+const todoList = document.querySelectorAll('#MyID');
+```
+## Conversion de un listado a array
+
+Podemos tambien convertir un listado HTML en un ``array`` para poder manipularlo en ``JS`` esto lo podemos hacer con la funcion ``array.from(todoList);`` esto lo podemos visualizar mejor en un ejemplo de codigo.
+
+Ejemplo: 
+```.js
+// llamamos todo lo que esta en el tag con id = "todo-list"
+const todoList = document.querySelectorAll('#todo-list');
+// convertimos en arreglo nuestro listado
+Array.from(todoList);
+
+const elementos = document.querySelectorAll('#todo-list li'); 
+elementos ;
+```
+![image](https://user-images.githubusercontent.com/42829215/189273098-03d5e608-4ba6-4792-b036-121091eb8a18.png)
+
+Ahora podemo manipular este arreglo de una manera menos compleja, utilizando forEach o math o algun otra herramienta que nos permita manipular estos elementos.
+
+Ejemplo con ``forEach``:
+
+```.js
+elementos.forEach(x => console.log(x));
+```
+A esta estructura le podemos asignar una funcion para poder agregar eventos a los siguientes listados que se pueden observar en la salida.
+### Salida
+![image](https://user-images.githubusercontent.com/42829215/189273870-86fe3d22-48a7-4003-99b0-1bdf4cd836af.png)
+
