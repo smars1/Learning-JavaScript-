@@ -839,7 +839,7 @@ Se puede ver como, para arr elimina el solo 1 elemento de la posicion 0.
 |------------|
 [Function ``.querySelectorAll``](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#function-queryselectorall)
 [Conversion de un listado a array](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#conversion-de-un-listado-a-array)
-[Metodo ``.addEventListener`` ](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#Metodo-``.addEventListener`` )
+[Metodo ``.addEventListener`` ]https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#metodo-addeventlistener)
 
 ## Function ``.querySelectorAll``
 
