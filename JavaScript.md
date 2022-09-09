@@ -625,7 +625,7 @@ El ``dom`` se refiere al todo el arbol de html que nosotros vamos a tener dentro
 [getElementByld y window.onload](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#getelementbyld-y-windowonload)
 [Manipular text metodo .innertext](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#manipular-texto-propiedad-innertext)
 [Agregando Elementos HTML a otro elemento HTML metodo .innerHTML](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#agregando-elementos-html-a-otro-elemento-html-propiedad-innerhtml)
-
+[Agregando elemntos a un array con ``.map``]()
 
 
 ## Agregando JS a html
@@ -791,3 +791,31 @@ window.onload = () => {
 ### Salida: 
 ![image](https://user-images.githubusercontent.com/42829215/188562056-5c62bdeb-3270-4235-8c68-7cbd15c75716.png)
 
+# Agregando elemntos a un array con ``.map``
+El metodo ``.map`` nos permite iterar nuestros arreglos sin necesidad de que nosostros le vayamos indicando los indices o las operaciones que tengamos que realizar. Esto nos permitira poder simplificar todo el bucle ``for`` por una sola linea de codigo y poder hacer lo mismo
+
+Estructura de ``.map``
+```.js
+const todosTemplate = todos.map(t => {
+return <li> + t +</li>;
+})
+```
+Lo que hace nuestra funcion ``todos.map``  es hacer que ``t`` retorne un elemento tipo``<li></li>``
+
+
+tambien podemos simplificarlo a una sola linea ejemplo:
+```.js
+const todosTemplate = todos.map(t => <li> + t +</li>);
+```
+Podemos ver la funcion como, a todos los elementos ``t`` concatenalos al principio y al final con ``<li>`` y ``</li>`` lo que nos permitira ir creando un listado de elementos.
+
+Sin embargo para poder colocar el listado dentro de nuestro HTML deberemos usar la funcion ``join()`` debido a que nosostros no podemos colocar un arreglo dentro de nuestro HTML, ``join()`` lo que nos permitira hacer es juntar todos los elementos de un arreglo con una instrucion dada.
+
+Por ejemplo podemos decirle que nos junte todos los elementos de un arreglo en un ``string`` vacio
+
+Ejemplo:
+```.js
+const todosTemplate = todos.map(t => <li> + t + </li>);
+todosList.innerHTML = todosTemplate.join(''); 
+```
+``todoList`` es la variable que hace referencia al id tag que se esta manejando.
