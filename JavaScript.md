@@ -625,7 +625,7 @@ El ``dom`` se refiere al todo el arbol de html que nosotros vamos a tener dentro
 [getElementByld y window.onload](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#getelementbyld-y-windowonload)
 [Manipular text metodo .innertext](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#manipular-texto-propiedad-innertext)
 [Agregando Elementos HTML a otro elemento HTML metodo .innerHTML](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#agregando-elementos-html-a-otro-elemento-html-propiedad-innerhtml)
-[Agregando elemntos a un array con ``.map``]()
+[Agregando elemntos a un array con ``.map``](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#agregando-elemntos-a-un-array-con-map)
 
 
 ## Agregando JS a html
