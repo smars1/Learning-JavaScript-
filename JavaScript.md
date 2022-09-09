@@ -627,7 +627,7 @@ El ``dom`` se refiere al todo el arbol de html que nosotros vamos a tener dentro
 [Agregando Elementos HTML a otro elemento HTML metodo .innerHTML](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#agregando-elementos-html-a-otro-elemento-html-propiedad-innerhtml)
 [Agregando elementos a un array con ``.map``](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#agregando-elemntos-a-un-array-con-map)
 [Eliminando elementos de un array con ``.splice()``](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#eliminando-elementos-de-un-array-con-splice)
-[Buscar elementos y agregar eventos al seleccionarlos]()
+[Buscar elementos y agregar eventos al seleccionarlos](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#buscar-elementos-y-agregar-eventos-al-seleccionarlos)
 
 ## Agregando JS a html
 El tag ``script`` nos permite ejecutar codigo JavaScript en html, tambien nos permite mandar a llamar codigo ``JS`` desde un archivo ``.js``.
@@ -838,7 +838,7 @@ Se puede ver como, para arr elimina el solo 1 elemento de la posicion 0.
 | Glosary |
 |------------|
 [Function ``.querySelectorAll``]()
-[Conversion de un listado a array](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#buscar-elementos-y-agregar-eventos-al-seleccionarlos)
+[Conversion de un listado a array]()
 
 ## Function ``.querySelectorAll``
 
