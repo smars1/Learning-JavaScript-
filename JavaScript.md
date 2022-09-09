@@ -869,6 +869,8 @@ elementos ;
 Ahora podemo manipular este arreglo de una manera menos compleja, utilizando forEach o math o algun otra herramienta que nos permita manipular estos elementos.
 
 Ejemplo con ``forEach``:
+¿Cómo funciona el ciclo forEach?
+El bucle foreach es un tipo especial de bucle que permite recorrer estructuras que contienen varios elementos (como matrices, recursos u objetos) sin necesidad de preocuparse por el número de elementos.
 
 ```.js
 elementos.forEach(x => console.log(x));
@@ -889,3 +891,4 @@ const elementos = document.querySelectorAll('#todo-list li');
             });
         });
 ```
+``forEach()`` ejecuta la función callback una vez por cada elemento del array; a diferencia de map() o reduce() este siempre devuelve el valor undefined y no es encadenable.
