@@ -625,8 +625,8 @@ El ``dom`` se refiere al todo el arbol de html que nosotros vamos a tener dentro
 [getElementByld y window.onload](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#getelementbyld-y-windowonload)
 [Manipular text metodo .innertext](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#manipular-texto-propiedad-innertext)
 [Agregando Elementos HTML a otro elemento HTML metodo .innerHTML](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#agregando-elementos-html-a-otro-elemento-html-propiedad-innerhtml)
-[Agregando elemntos a un array con ``.map``](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#agregando-elemntos-a-un-array-con-map)
-
+[Agregando elementos a un array con ``.map``](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#agregando-elemntos-a-un-array-con-map)
+[Eliminando elementos de un array con ``.splice()``]
 
 ## Agregando JS a html
 El tag ``script`` nos permite ejecutar codigo JavaScript en html, tambien nos permite mandar a llamar codigo ``JS`` desde un archivo ``.js``.
@@ -819,3 +819,16 @@ const todosTemplate = todos.map(t => <li> + t + </li>);
 todosList.innerHTML = todosTemplate.join(''); 
 ```
 ``todoList`` es la variable que hace referencia al id tag que se esta manejando.
+
+# Array.splice
+Haci como podemos añadir elementos de lista a HMTL tambien podemos eliminarlos, mendian la funcion ``.splice()``. Esta funcion pide como paramentros los valores de rango a eliminar, el primer argumento o parametro que pide es la posicion del elemento y el segundo valor es la cantidad de elementos a eleminar.
+
+Ejemplo de codigo
+```.js
+const arr = [1, 2, 3, 4];
+arr.splice(0, 1):
+```
+Se puede ver como, para arr elimina el solo 1 elemento de la posicion 0.
+
+## Salida
+![image](https://user-images.githubusercontent.com/42829215/189268635-2021ff28-096d-4b00-b245-ba0ab35e59b9.png)
