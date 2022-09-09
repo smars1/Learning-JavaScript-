@@ -839,6 +839,7 @@ Se puede ver como, para arr elimina el solo 1 elemento de la posicion 0.
 |------------|
 [Function ``.querySelectorAll``](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#function-queryselectorall)
 [Conversion de un listado a array](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#conversion-de-un-listado-a-array)
+[Metodo ``.addEventListener`` ](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#Metodo-``.addEventListener`` )
 
 ## Function ``.querySelectorAll``
 
@@ -876,3 +877,15 @@ A esta estructura le podemos asignar una funcion para poder agregar eventos a lo
 ### Salida
 ![image](https://user-images.githubusercontent.com/42829215/189273870-86fe3d22-48a7-4003-99b0-1bdf4cd836af.png)
 
+## Metodo ``.addEventListener`` 
+Podemos tambien agregar el metodo ``.addEventListener`` para agregar un evento al hacer click en un elemento:
+
+Estructura: 
+```.js
+const elementos = document.querySelectorAll('#todo-list li');
+    elementos.forEach((elementos, i) => {
+            elementos.addEventListener('click', () => {
+                console.log(elementos, i);
+            });
+        });
+```
