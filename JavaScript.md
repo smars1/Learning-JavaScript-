@@ -628,6 +628,7 @@ El ``dom`` se refiere al todo el arbol de html que nosotros vamos a tener dentro
 [Agregando elementos a un array con ``.map``](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#agregando-elemntos-a-un-array-con-map)
 [Eliminando elementos de un array con ``.splice()``](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#eliminando-elementos-de-un-array-con-splice)
 [Buscar elementos y agregar eventos al seleccionarlos](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#buscar-elementos-y-agregar-eventos-al-seleccionarlos)
+[Persistencia de datos  ``localStorage``]()
 
 ## Agregando JS a html
 El tag ``script`` nos permite ejecutar codigo JavaScript en html, tambien nos permite mandar a llamar codigo ``JS`` desde un archivo ``.js``.
@@ -892,3 +893,24 @@ const elementos = document.querySelectorAll('#todo-list li');
         });
 ```
 ``forEach()`` ejecuta la función callback una vez por cada elemento del array; a diferencia de map() o reduce() este siempre devuelve el valor undefined y no es encadenable.
+
+# Persistencia de datos ``localStorage``
+
+``.localStorage`` Guarda información que permanecerá almacenada por tiempo indefinido; sin importar que el navegador se cierre.
+
+- Permiten almacenar entre 5MB y 10MB de información; incluyendo texto y multimedia
+- La información está almacenada en la computadora del cliente y NO es enviada en cada petición del servidor, a diferencia de las cookies
+- Utilizan un número mínimo de peticiones al servidor para reducir el tráfico de la red
+- Previenen pérdidas de información cuando se desconecta de la red
+- La información es guardada por domino web (incluye todas las páginas del dominio)
+
+# Estructura
+
+``localStorage`` recibe como argumento un string y el segundo tambien debe ser un string, esto se puede ver como elementos ``clave : valor``
+
+```.js
+// Guardamos el elemento con su clave y valor
+localStorage.setItem('clave', 'valor');
+// Llamos el elemento 
+localStorage.getItem(clave);
+```
