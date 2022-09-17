@@ -914,3 +914,41 @@ localStorage.setItem('clave', 'valor');
 // Llamos el elemento 
 localStorage.getItem(clave);
 ```
+
+# Spread operator
+El Spread Operator corresponde a un operador el cuál distribuye los elementos de un arreglo u objeto, para asignarlos a alguna variable/constante/función.
+
+Su sintáxis de uso es la siguiente:
+
+```.js 
+a = [1,2];
+b = [ ...a ];
+c = [ ...a, 3];
+
+console.log(b);
+// output = b = [1,2]
+console.log(c);
+// output = b = [1, 2, 3]
+
+```
+Otro ejemplo de spread operator
+
+```.js
+const o1 = {
+    a1: 'valor1',
+    a2: 'valor2',
+}
+const o2 = {
+    a3: 0,
+    ...o1,
+}
+console.log(o1) // {a1: 'valor1', a2: 'valor'2}
+console.log(o2) // {a3: 0, a1: 'valor1', a2:'valor2'}
+const l1 = [1,2,3]
+const l2 = [...l1, 4, 5]
+console.log(l1) // [1,2,3]
+console.log(l2) // [1,2,3,4,5]
+```
+
+# Promesas: ``resolve`` and ``then``
+
