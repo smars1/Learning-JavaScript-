@@ -629,6 +629,7 @@ El ``dom`` se refiere al todo el arbol de html que nosotros vamos a tener dentro
 [Eliminando elementos de un array con ``.splice()``](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#eliminando-elementos-de-un-array-con-splice)
 [Buscar elementos y agregar eventos al seleccionarlos](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#buscar-elementos-y-agregar-eventos-al-seleccionarlos)
 [Persistencia de datos  ``localStorage``](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#persistencia-de-datos-localstorage)
+[Spread Operator](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#spread-operator)
 
 ## Agregando JS a html
 El tag ``script`` nos permite ejecutar codigo JavaScript en html, tambien nos permite mandar a llamar codigo ``JS`` desde un archivo ``.js``.
