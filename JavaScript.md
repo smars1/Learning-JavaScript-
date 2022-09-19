@@ -27,7 +27,7 @@ node index.js
 [Fat Arrow Function](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#fat-arrow-function)
 [Function anonimas](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#function-anonima)
 [Intro a Dom](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#dom-javascript)
-
+[NodeJS]()
 
 # Hola munndo 
 
@@ -951,5 +951,47 @@ console.log(l1) // [1,2,3]
 console.log(l2) // [1,2,3,4,5]
 ```
 
-# Promesas: ``resolve`` and ``then``
+# Promesas 
+| Glosary |
+|-------|
+[Ejemplo promesas](https://es.javascript.info/promise-basics)
+[``resolve`` and ``then``]()
+[``reject`` and ``catch`` ]()
+[``new`` Promise]()
 
+
+# NodeJS 
+| Glosary |
+|---------|
+[Intro:  Que es una API rest? ]()
+
+Intro:  Que es una API rest?
+
+- Cliente : es quien va consumir nuestra api rest (telefono, PC, dispositivo etc )
+- Base de datos: Herramienta de almancenamiento de datos .
+- API Rest: Aplicacion que  puede comunicarse con disitintos dispositivos, entregando a estos dispositivos distintos datos esta puede estar contenida en un servidor o nube, la api rest necesita una herramienta de almacenamiento a lo que le llamamos base de datos, como mongoDB por ejemplo.
+
+El funcionamiento de una api rest puede verse de la siguiente manera
+
+El cliente se conecta a nuestra API REST, la API REST ira a nuestra base de datos a buscar los datos de nuestro cliente en especifico y nuestra base de datos se los va a devolver a nuestra API REST y finalmente nuestra API REST  los va devolver al cliente.
+
+para poder conectarse a una API REST existen formas estandar para hacerlo,:
+
+## Formas de conectarse:
+
+Verbos :
+
+- GET / users - /users/:id
+    - GET ``users`` llama un array de usuarios ``[]`` pero si usamos  ``- /users/:id`` llama al usuario especifico como un objeto ``{}``
+
+- POST /users
+    - Crear users 
+
+- PUT /users/:id
+    - Remplazar users, podemos utilizarlo para actualizar 
+
+- PATH / users/:id
+    - Actualiza path 
+
+- DELETE / users/:id
+    - Borra un user 
