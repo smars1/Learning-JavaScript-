@@ -968,7 +968,7 @@ console.log(l2) // [1,2,3,4,5]
 [Creando una API](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#creando--un-api)
 [Formas de Conectarse](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#formas-de-conectarse)
 
-Intro:  Que es una API rest?
+## Intro:  Que es una API rest?
 
 Antes de construir una API rest deberemos tener en cuenta los siguientes conceptos para poder compprender el como se ira consumiendo nuestra API Rest.
 
