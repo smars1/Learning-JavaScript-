@@ -27,7 +27,7 @@ node index.js
 [Fat Arrow Function](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#fat-arrow-function)
 [Function anonimas](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#function-anonima)
 [Intro a Dom](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#dom-javascript)
-[NodeJS](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#nodejs)
+[NodeJS: Intro a API Rest](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#nodejs)
 
 # Hola munndo 
 
@@ -964,8 +964,13 @@ console.log(l2) // [1,2,3,4,5]
 | Glosary |
 |---------|
 [Intro:  Que es una API rest? ]()
+[Inicializando una API Rest]()
+[Creando una API]()
+[Formas de Conectarse]()
 
 Intro:  Que es una API rest?
+
+Antes de construir una API rest deberemos tener en cuenta los siguientes conceptos para poder compprender el como se ira consumiendo nuestra API Rest.
 
 - Cliente : es quien va consumir nuestra api rest (telefono, PC, dispositivo etc )
 - Base de datos: Herramienta de almancenamiento de datos .
@@ -976,6 +981,81 @@ El funcionamiento de una api rest puede verse de la siguiente manera
 El cliente se conecta a nuestra API REST, la API REST ira a nuestra base de datos a buscar los datos de nuestro cliente en especifico y nuestra base de datos se los va a devolver a nuestra API REST y finalmente nuestra API REST  los va devolver al cliente.
 
 para poder conectarse a una API REST existen formas estandar para hacerlo,:
+
+## Inicializando una API Rest
+
+***Nota: npm es node package module, npm nos permitira gestionar dependencias en nuestros proyectos de node***
+
+Primeramente deberemos crear una ruta, direccion o carperta donde alojaremos la API rest, una vez creada esta carpeta con ``mkdir <filename>`` nos dirigimos a la carpeta y dentro de esta, si ya tienes Node y npm, y deseas comenzar a construir tu proyecto, ejecuta el comando ``npm init`` . Esto activará la inicialización de tu proyecto. Este comando funciona como una herramienta para crear el archivo ``package. json`` de un proyecto. ``package. json`` contendra un archivo .JSON con datos de nombre, version, scripts, keywords, licencias etc.
+
+```.node.js
+npm init
+```
+
+###  Contenido del archivo ``package. json``
+```.json
+diego@DESKTOP-N53A4LS MINGW64 ~/Desktop/workspace_js/api
+$ cat package.json
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Diego_Atzin_Pineda_Cota",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
+```
+
+Despues de inicializar con ``npm init`` instalaremos una dependencia llamada express para comenzar a trabajar.
+```.node.js
+npm install -S express
+```
+La opcion ``-S``  (save) nos guarda dentro de nuestro archivo de package.json
+
+Una Vez instalada podremos ver un nuevo archivo llamado ``package-lock.json`` este archivo contiene un formato json con historial de todas las dependecias que se instalaron en nuestro proyecto, de este modo podremos saber que version de ``express`` se instalo por ejemplo, tambien ademas de express se instalaran otras dependencias que express necesita, donde en este mismo historial tambien se pueden visualizar estas otras dependencias y sus versiones. El archivo de ``package-lock.json`` es muy importante ya que contiene todo el historial de las dependencias y versiones de nuestro proyecto, por lo que si nosotros queremos volver a instalar todas las dependencias de nuestro proyecto, podremos instalar las mismas dependencias con su misma version en lugar de las mismas dependencias en su ultima version, esto siempre y cuando hayamos creado un archivo ``package-lock.json``. Esto es muy recurrente en un ambiente laboral ya que no queremos que nuestras depencias se esten actualizando de forma automatica.
+
+## Creando  un API
+Para crear nuestra API comenzaremos con la siguiente linea de codigo:
+```.js
+const express = require('express');
+```
+- ``const express`` se refiere a la asignacion del framework de ``express``.
+- ``require('')`` nos permite importar dependencias de terceros que nosotros instalemos.
+- El String ``('express')``  es el nombre de la dependencia.
+  
+``const express`` puede pareser una constante pero en verdad es una funcion que nos va devolver una aplicacion. Lo siguiente que necesitamos hacer es ejecutar nuestra funcion de ``express``, para esto continuamos creando una constante que se llame app de la aplicacion que estamos creando, y esta se va crear a partir de la ejecucion de la funcion de ``express`` y le indicamos el puerto donde queremos que esta se ejecute. ahora escribimos ``app.get()`` en el get le daremos el string que le indicara la ruta a ``express`` cual es la ruta del navegador que tenemos que escribir para que se ejecute la funcion que le vamos a pasar a esta misma funcion como segundo argumento, osea en este caso la raiz ``('/', (req, res) =>{ } )`` ``request = req`` forma estandar para este arg, aqui viene todoa la peticion de un cliente , ``re.send = res`` aqui nos servra para enviar datos al usuario.
+
+```.js
+const express = require('express');
+// new code
+const app = express();
+const port = 3000;
+
+app.get('/', (req, res) =>{
+    rest.status(200).send('chanchito feliz')} )
+
+app.listen(port, () => {
+console.log('Arrancando la APP!!')})
+```
+``status`` permite a nosotros indicarle al cliente si es que nuestra respuesta tubo exito y si es que esta estubo acompañada con algun dato de esta.
+deberemos llamar a ``app.listen()`` a la cual le deberemos pasar como argumento el puerto de ejecucion y una funcion, la cual se ejecutara cuando nuestra aplicacion se encuentre corriendo con exito. Guardamos nuestra app y la ejecutamos.
+```.node.js
+node api.js
+```
+### SALIDA 
+#### Vista en git
+![image](https://user-images.githubusercontent.com/42829215/191431055-b7013dc9-9db2-4359-8bd2-2fd7833bcdce.png)
+#### Vista en navegador localhost:3000
+![image](https://user-images.githubusercontent.com/42829215/191432134-fd913146-266c-4149-ba78-f6fdcd531101.png)
+
+
 
 ## Formas de conectarse:
 
@@ -988,7 +1068,7 @@ Verbos :
     - Crear users 
 
 - PUT /users/:id
-    - Remplazar users, podemos utilizarlo para actualizar 
+    - Remplazar users, podemos utilizarlo para actualizar al igual que path
 
 - PATH / users/:id
     - Actualiza path 
