@@ -963,7 +963,7 @@ console.log(l2) // [1,2,3,4,5]
 # NodeJS 
 | Glosary |
 |---------|
-[Intro:  Que es una API rest? ]()
+[Intro:  Que es una API rest? ](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#intro--que-es-una-api-rest)
 [Inicializando una API Rest](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#inicializando-una-api-rest)
 [Creando una API](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#creando--un-api)
 [Formas de Conectarse](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#formas-de-conectarse)
