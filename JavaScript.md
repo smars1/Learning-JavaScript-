@@ -1055,6 +1055,27 @@ node api.js
 #### Vista en navegador localhost:3000
 ![image](https://user-images.githubusercontent.com/42829215/191432134-fd913146-266c-4149-ba78-f6fdcd531101.png)
 
+# Agregando endpoint POST
+
+Un endpoint es una ruta a la cual puedes llegar, ya sea por una peticion realizada por una app web o mobil.
+El primer metodo que usamos fue ``get``, este nos permite ingresar a la ruta por medio del explorador web, pero secincllamente escribiendo la ruto en el explorador.
+El metodo de ``post`` no permite acceder directamente a la ruta atra vez del navegador web, tendremos que uitlizar otra herramienta como postman o nuestra terminal''
+
+### Ejemplo
+```.js
+app.post('/', (req, res) => {
+	res.status(201).send('creando chanchito');
+})
+
+```
+## paramentros de ``status()``
+
+- ``status(200)``:  devuelve un ok  y ademas devuelve datos a nuestro cliente, un arreglo un objeto, string o cualquier otra cosa.
+
+- ``status(201)``: devuelve un ok y esto significa creado y no es necesario devolverle datos al cliente, algunos developers devuelven el ID de lo que se a creado.
+
+-``status(204)``: Devuelve ok, pero tambien signfica no countent, el cual es mas especifico y no devuelve nada. Usaremos ``status(204)`` para ``put``, ``path``, ``delete``.  
+
 
 
 ## Formas de conectarse:
