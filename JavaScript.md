@@ -966,6 +966,7 @@ console.log(l2) // [1,2,3,4,5]
 [Intro:  Que es una API rest? ](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#intro--que-es-una-api-rest)
 [Inicializando una API Rest](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#inicializando-una-api-rest)
 [Creando una API](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#creando--un-api)
+[Agregando endpoint POST]()
 [Formas de Conectarse](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#formas-de-conectarse)
 
 ## Intro:  Que es una API rest?
@@ -1089,7 +1090,8 @@ Verbos :
     - Crear users 
 
 - PUT /users/:id
-    - Remplazar users, podemos utilizarlo para actualizar al igual que path
+    - La petición HTTP PUT crea un nuevo elemento o reemplaza una representación del elemento de destino con los datos de la petición. Remplazar users, podemos utilizarlo para actualizar al igual que path. 
+    - Si el elemento de destino no existe y la petición PUT lo crea de forma satisfactoria, entonces el servidor debe informar al usuario enviando una respuesta ``201`` (Created) .
 
 - PATH / users/:id
     - Actualiza path 
