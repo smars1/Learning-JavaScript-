@@ -966,7 +966,7 @@ console.log(l2) // [1,2,3,4,5]
 [Intro:  Que es una API rest? ](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#intro--que-es-una-api-rest)
 [Inicializando una API Rest](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#inicializando-una-api-rest)
 [Creando una API](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#creando--un-api)
-[Agregando endpoint POST]()
+[Agregando endpoint POST](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#agregando-endpoint-post)
 [Formas de Conectarse](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#formas-de-conectarse)
 
 ## Intro:  Que es una API rest?
