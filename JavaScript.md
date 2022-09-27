@@ -28,6 +28,7 @@ node index.js
 [Function anonimas](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#function-anonima)
 [Intro a Dom](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#dom-javascript)
 [NodeJS: Intro a API Rest](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#nodejs)
+[Intro a MongoDB]()
 
 # Hola munndo 
 
@@ -1098,3 +1099,39 @@ Verbos :
 
 - DELETE / users/:id
     - Borra un user 
+
+# Intro a MongoDB
+
+| Glosary |
+|-------|
+[Conectandonos a un cluster de mongoDB]()
+
+
+## Conectandonos a un cluster de mongoDB
+
+Podemos conectarnos de diferentes maneras a nuestro servidor de mongoDB, para este caso lo haremos con la ayuda de una dependencia la cual deberemos instalar con el administrador de paquetes ``npm``
+
+### instalando la dependencia de mongosse
+
+mongosse es una libreria la cual nos va ayudar a conectarnos a nuestra base de datos de mongoDB que se encuentra en la nube
+
+```.nodejs
+npm i -S mongoose
+```
+### Instalando 
+recordar estar en la ruta de la carpeta del proyecto al instalar la depencia
+![image](https://user-images.githubusercontent.com/42829215/192471309-994999d4-4ced-4d2d-8cfb-9cdc173a577d.png)
+
+## Conexion a nuestra base de datos mongoDB en la nube
+Podemos copiar la ``url`` que se nos dio al crear el cluster, para conectearnos a nuetra ``BS``.
+
+### ``URL`` obtenida
+![image](https://user-images.githubusercontent.com/42829215/192471820-f1804e86-a315-47b2-9e7a-e85b88c47c59.png)
+
+### Desglose de la ``URL``
+![image](https://user-images.githubusercontent.com/42829215/192472170-0780b11c-b5e8-4f51-b6db-a2b6cf4ce1c1.png)
+
+### Estrucutura de conexion 
+```.js
+
+```
