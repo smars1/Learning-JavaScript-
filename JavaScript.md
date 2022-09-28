@@ -28,7 +28,7 @@ node index.js
 [Function anonimas](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#function-anonima)
 [Intro a Dom](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#dom-javascript)
 [NodeJS: Intro a API Rest](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#nodejs)
-[Intro a MongoDB]()
+[Intro a MongoDB](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#intro-a-mongodb)
 
 # Hola munndo 
 
@@ -1133,5 +1133,44 @@ Podemos copiar la ``url`` que se nos dio al crear el cluster, para conectearnos 
 
 ### Estrucutura de conexion 
 ```.js
+// importamos la libreria de mongoose una vez instalada
+const mongoose = require('mongoose');
 
+// Conexion a nuestra base datos: <user> : <password> <@ruta-server>   /<nameDB>?
+mongoose.connect('mongodb+srv://smars1:asddsa12@cluster0.3a9hre8.mongodb.net/Cluster0?retryWrites=true&w=majority');
 ```
+
+### Creando un modelo de base datos  
+Podeos crear un objeto el cual va hacer la funcion de modelo para nuestra base de datos, este objeto contendra todo lo necesario para nuestro cometido, en este caso sera para un User.
+
+### Estructura:
+```.js
+// importamos la libreria de mongoose una vez instalada
+const mongoose = require('mongoose');
+
+// Conexion a nuestra base datos: <user> : <password> <@ruta-server>   /<nameDB>?
+mongoose.connect('mongodb+srv://smars1:asddsa12@cluster0.3a9hre8.mongodb.net/Cluster0?retryWrites=true&w=majority');
+
+// modelo de base de datos, a menera de objeto
+const User = mongoose.model('User',{
+    username: String,
+    edad: Number,
+})
+
+// Funcion de crear usuarios
+const crear = async () => {
+    const user = new User({username:'Chanchito feliz', edad: 24})
+    // user.save().then()
+    const saveUser = await user.save()
+    console.log(saveUser)
+}
+
+// ejutamos la funcion de crear
+crear()
+```
+Una vez ejecutado este codigo se creara el ``User`` con ``username:'chachito feliz'`` y ``edad:24`` dado que son las caracteristicas que le dimos al objeto ``User`` ademas se creara un ``ID`` para el User creado el cual nos permitira diferenciarlo de otros ``user``.
+### Ejecutando el codigo en git bash
+![image](https://user-images.githubusercontent.com/42829215/192709862-79f1c7bf-f12b-40af-a4e3-d435992be216.png)
+
+
+**Nota: Como parte de una convecion de codigo estandar se debe utilizar mayuscula en el objeto:  ``User`` y para llamarlo en otra parte se debe nombrar sin la letra mayuscula, esta se cambia a minuscula ``user``, esto es una buena practica ya que esta convencion estandar nos permite crear un codigo mas legible**
