@@ -13,7 +13,7 @@ const port = 3000;
 app.use(express.json());
 
 // Conexion a nuestra base datos: <user> : <password> <@ruta-server>   /<nameDB>?
-mongoose.connect('mongodb+srv://smars1:asddsa12@cluster0.3a9hre8.mongodb.net/Cluster0?retryWrites=true&w=majority');
+mongoose.connect('mongodb+srv://<Acount>:<password>@cluster0.3a9hre8.mongodb.net/Cluster0?retryWrites=true&w=majority');
 
 app.get('/', User.list); // <<== Cuando son mas de un elemento
 app.post('/', User.create);
