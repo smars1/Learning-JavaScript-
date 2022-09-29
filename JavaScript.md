@@ -1138,7 +1138,7 @@ Podemos copiar la ``url`` que se nos dio al crear el cluster, para conectearnos 
 const mongoose = require('mongoose');
 
 // Conexion a nuestra base datos: <user> : <password> <@ruta-server>   /<nameDB>?
-mongoose.connect('mongodb+srv://smars1:asddsa12@cluster0.3a9hre8.mongodb.net/Cluster0?retryWrites=true&w=majority');
+mongoose.connect('mongodb+srv://<Acount>:<password>@cluster0.3a9hre8.mongodb.net/Cluster0?retryWrites=true&w=majority');
 ```
 
 ### Creando un modelo de base datos  
@@ -1150,7 +1150,7 @@ Podeos crear un objeto el cual va hacer la funcion de modelo para nuestra base d
 const mongoose = require('mongoose');
 
 // Conexion a nuestra base datos: <user> : <password> <@ruta-server>   /<nameDB>?
-mongoose.connect('mongodb+srv://smars1:asddsa12@cluster0.3a9hre8.mongodb.net/Cluster0?retryWrites=true&w=majority');
+mongoose.connect('mongodb+srv://<Acount>:<password>@cluster0.3a9hre8.mongodb.net/Cluster0?retryWrites=true&w=majority');
 
 // modelo de base de datos, a menera de objeto
 const User = mongoose.model('User',{
@@ -1186,7 +1186,7 @@ EL CRUD son las siglas de las acciones de Create, Read, Update, Delete, estas ac
 const mongoose = require('mongoose');
 
 // Conexion a nuestra base datos: <user> : <password> <@ruta-server>   /<nameDB>?
-mongoose.connect('mongodb+srv://smars1:asddsa12@cluster0.3a9hre8.mongodb.net/Cluster0?retryWrites=true&w=majority');
+mongoose.connect('mongodb+srv://<Acount>:<password>@cluster0.3a9hre8.mongodb.net/Cluster0?retryWrites=true&w=majority');
 
 // modelo de base de datos, a menera de objeto
 const User = mongoose.model('User',{
