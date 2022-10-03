@@ -2,7 +2,7 @@
 const mongoose = require('mongoose');
 
 // Conexion a nuestra base datos: <user> : <password> <@ruta-server>   /<nameDB>?
-mongoose.connect('mongodb+srv://smars1:asddsa12@cluster0.3a9hre8.mongodb.net/Cluster0?retryWrites=true&w=majority');
+mongoose.connect('mongodb+srv://<User>:<password>@cluster0.3a9hre8.mongodb.net/Cluster0?retryWrites=true&w=majority');
 
 // modelo de base de datos, a menera de objeto
 const User = mongoose.model('User',{
