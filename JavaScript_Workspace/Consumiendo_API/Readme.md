@@ -2,6 +2,16 @@
 
 Se hara uso de la API construida (``api_3_0``) y sobre esta se construida una aplicacion, el objetivo de esto sera interactuar con una API Rest que ya hayamos cosntruido utilizando JavaScript, 
 
+
+| Glosary |
+|-----------------|
+[Consumiendo la API](https://github.com/smars1/Learning-JavaScript-/tree/main/JavaScript_Workspace/Consumiendo_API#cosumiendo-la-api)
+[Funcionalidades de la API](https://github.com/smars1/Learning-JavaScript-/tree/main/JavaScript_Workspace/Consumiendo_API#funcionalidades-de-la-api)
+[Sirviendo archivos](https://github.com/smars1/Learning-JavaScript-/tree/main/JavaScript_Workspace/Consumiendo_API#sirviendo-archivos)
+[Cargar plantillas HTML y formularios desde JavaScript](https://github.com/smars1/Learning-JavaScript-/tree/main/JavaScript_Workspace/Consumiendo_API#cargar-plantillas-html-y-formularios-desde-javascript)
+[Enviando datos a la API]()
+[Buscar a los usuarios en la DB]()
+
 # Funcionalidades de la API
 
  Las funcionalidades de la aplicacion seran:
@@ -126,3 +136,59 @@ la mejor alternativa para obtener los datos de nuestro formulario es utilizando 
         // pasamos los valores de nuestro formulario a un objeto
         const data = Object.fromEntries(formData.entries());
 ```
+
+# Enviando datos a la API
+
+Una vez obtenido datos, lo que nos falta sera poder enviar los datos a nuestra API para que esta cree un usuario en nuestra base de datos en mongo.
+
+Debemos hacer un llamdo a ``await`` por nos interesa que se termine de crear el usuario antes de pasar a la siguiente instruccion, y usamos ``fetch('/<users>')`` ya que haremos un llamado a nuestro endpoint de ``users``.  Como estamos creando deberemos pasarle un objeto de configuracion  dentro del objeto deberemos indicar el metodo de ``POST`` debido a que estamos creando. Seguido de esto le debemos  entregar el cuerpo del mensaje, el cual seria el objeto de ``data`` el cual contiene todos los valores de nuestro formulario, la menera de mandar el cuerpo del mensaje sera en un string por lo que utilizaremos ``body: JSON.stringify(data)``. Nuestro servisor de express necesita algo mas para reconocer que le estamos pasando un objeto JSON y eso es una cavecera (``headers``) la cual se llama ``Content-Type``, por lo que dentro de la propiedad de headers se le agregara un objeto el cual tendra la propiedad de ``Content-Type`` le asignamos ``application/json`` y esto lo que hara sera enviar los datos a  nuestra API  y nos va crear el usuario. Una de nuestras funcionalidades tambiene es que una vez ingresados los datos de entrada estos se limpien del formulario para ello utilzaremos el metodo  ``.reset()`` por lo que llamamos al formulario una vez creado el usuario y le agregamos el metodo ``.reset()``, ``useForm.reset();``
+
+## Estructura JS: Enviando datos a la API para crear un usuario 
+
+```.js
+await fetch('/users', {
+method: 'POST'},
+body: JSON.stringify(data),
+headers : 'Content-Type' : 'application/json'
+}
+// limpiamos el formulario
+useForm.reset();
+```
+La propiedad ``Content-Type`` debe ir entre comillas ``''`` debido a que tiene un ``-`` el cual de no tener ``''`` no sera reconocido
+
+## Estructura JS: Funcion completa, enviadno datos a la api
+Agregamos la plantilla anterior a la ``funntion fat arrow``  ``addForm`Listener()``
+
+```.js
+const addFormListener = () =>{
+    // llamamos a formulario con nuestra referencia
+    const userForm = document.getElementById('user-form');
+    userForm.onsubmit = async (e) =>{
+        // evitamos que la pagina se refresque cuando presionamos el boton enviar
+        e.preventDefault();
+        // buscamos todos los datos dentro del formulario
+        const formData = new FormData(userForm);
+        // pasamos los valores de nuestro formulario a un objeto
+        const data = Object.fromEntries(formData.entries());
+        console.log(data);
+        
+        // llamado a await, creamos el usuario antes de pasar a la siguiente instruccion
+        await fetch('/users', {
+            // endpoint post, creamos 
+            method: 'POST',
+            body: JSON.stringify(data), // Pasamos a json el cuerpo de data
+            headers:{'Content-Type' : 'application/json'} // esta propiedad nos permite reconecer el json
+            });
+            // llamamos a useForm y limpiamos el formulario con .reset()
+            userForm.reset();
+    }
+}
+```
+Esta funcion deberia de recibir nuestros datos y enviarlos con formato JSON a nuestra api la cual los enviara a la base de datos, podemos ver esto en el payload
+
+![image](https://user-images.githubusercontent.com/42829215/194657008-6a628aaa-b186-4837-8847-1ea86ae69cda.png)
+Se puede visualizar que se realizo un llamado al endpoint de ``users`` en el se puede ver el payload creado y en response podremos ver como se nos devuelve el id del payload recien creado por lo que el usuario se a creado con exito.
+
+# Buscar los usuarios en la DB
+
+Una vez creado los usuarios, el siguiete paso sera el poder buscarlos a los usuarios en nuestra base de datos con el fin de poder manipular estos datos y pintarlos en nuestra interfaz. Para esto debemos crear una funcion, la cual llamaremos ``getUsers()`` esta se encargara tambien de pintar en la interfaz a los usuarios que haya encontrado.
