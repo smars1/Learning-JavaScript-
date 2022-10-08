@@ -32,7 +32,7 @@ const User = {
         // si existe el recurso que viene en la petision 
         // remplazamos los datos existentes con los de la petision
         const {id} = req.params;
-        const user = await Users.findOne({_id:id});
+        const user = await Users.findOne({_id: id});
         Object.assign(user, req.body);
         await user.save();
         //devolvemos un 204
