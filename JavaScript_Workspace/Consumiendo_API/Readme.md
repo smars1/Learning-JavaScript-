@@ -434,3 +434,37 @@ window.onload = () =>{
     getUsers();
 }
 ```
+
+# Corrigiendo bug
+
+Al testear la ``api`` se dio el problema de que borraba la interfaz pero no ejecutaba los metodos GET, POST, PUT, PATH DELETE, de manera correcta, y es que cuando ponemos la ruta de estos en el archivo de ``api_3_0.js`` la escribimos como  ' /users:id ' podemos notar que nos falta algo, si vemos la ruta que damos al fetch en ``controller_2_0.js`` por ejemplo:
+
+```.js
+await fetch(`/users/${user._id}`)
+```
+
+aqui le damos la misma ruta  de usuario por id, por medio de fetch, pero  cuando escribimos la ruta en el archivo api.js , en la parte donde nombramos las rutas de los metodos lo hicimos de la siguiente manera:
+
+```.js
+ app.get('/users:id', User.get);
+```
+
+ si te fijas nos falta el ``/`` despues de ``/users`` y antes de ``:id``, quedando de la siguiente manera 
+```.js
+    app.get('/users/:id', User.get);
+```
+y es que este ``/`` lo que hace es que le dice cual es la siguiente direccion despues de seleccionar la direccion de /users, por eso solo nos funcionava el metodo get plural y el de post. Ya que estos solo llegan hasta la ruta /users y no les daba problema el /users:id.
+
+## Resolviendo 
+Ahora comprendiendo lo anterior solo tendremos que escribir bien la ruta al llamar a los metodos en la ``api``, puesto que nos falta separar la ruta de ``users:id`` puesto como se puede ver son 2 rutas diferentes las cuales no esta separas por un ``/``. A si que deberemos separar la ruta del nodo padre ``users`` con la ruta del nodo hijo ``:id`` lo que quedaria de la siguiente manera ``/users/:id``.
+
+### Implementando en el codigo 
+
+```js
+app.get('/users', User.list); // <<== Cuando son mas de un elemento
+app.post('/users', User.create);
+app.get('/users/:id', User.get); // <<== este get es para cuando es un solo elemento
+app.put('/users/:id', User.update);
+app.patch('/users/:id', User.update);
+app.delete('/users/:id', User.destroy);
+```
