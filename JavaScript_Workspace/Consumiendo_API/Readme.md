@@ -192,3 +192,123 @@ Se puede visualizar que se realizo un llamado al endpoint de ``users`` en el se 
 # Buscar los usuarios en la DB
 
 Una vez creado los usuarios, el siguiete paso sera el poder buscarlos a los usuarios en nuestra base de datos con el fin de poder manipular estos datos y pintarlos en nuestra interfaz. Para esto debemos crear una funcion, la cual llamaremos ``getUsers()`` esta se encargara tambien de pintar en la interfaz a los usuarios que haya encontrado.
+
+Comenzamos creando una constante con la cual se hara una llamada `` await fetch`` al endpoint de ``/users``, seguido de esto debemos transformar la respuesta de lo que nos devuelve ``fetch('')`` en un json, para ello creamos una nueva constante, donde llamamos ``await`` y la constante que hace la llamada, a esta primera constante la llamaremos ``response``,  quedaria de la siguiente manera, igualamos la segunda constante, esta la llamamos ``users`` = ``await response.json()``
+
+La respuesta que nos devuelve ``fetch('/users')`` en este caso dentro del objeto de ``response`` cuenta con un metodo de json, el cual permite transformar estas respuestas en un objeto de ``JS``.
+
+## Estructura de la funcion ``getUsers();``
+
+```.js
+const getUsers = async () => {
+    const response = await fetch('/users'); // llamamos al endpoint
+    const users = await response.json(); // convertimos lo obtenido de response en un json 
+    console.log(users);
+}
+```
+Al ejecutar esta funcion deberemos poder ver una lista de los usaruarios en consele de nuestro navegador
+
+![image](https://user-images.githubusercontent.com/42829215/194673158-08ffbbb1-5ce7-41d7-9177-3bf248606d3c.png)
+
+Ahora dentro de nuestra funcion ``getUsers()`` podemos crear un template para imprimir a nuestros usuarios, por lo que creamos una constante la cual sera igual a una funcion la cual lo que hara sera devolver un template string con las propiedades que tiene el usuario ``${user.name}`` y ``${user.lastname}`` tambien daremos el ``${user._id}`` para buscar llamar al usuario por su ``ID`` y efectuar los eventos o llamados correspondientes al usuario por medio de su ``id`` .
+
+```.js
+// creamos plantilla de que imprime usuarios
+const template = user => `
+    <li>
+    ${user.name} ${user.lastname} <button data-id = "${user._id}">Eliminar</button>
+    </li>
+    `
+```
+
+Como siguiente paso debemos llamar a nuestra lista no ordenada la cual creamos en el template de la funcion ``loadInitialTemplate()`` esta lista no ordenara le pusimos el id como ``user-list``. Una vez llamada remplazamos su ``innert.HTML`` con ``users.map()``, esto lo que hara sera iterar a los usuarios que la API nos haya devuelto. ``users.map()`` recibe un usuario y lo que queremos hacer es ejecutar la funcion de la plantilla, pero le queremos pasar el usuario. ``users.map(user => template(user))``, esto lo que hara sera devolver un arreglo con muchos string, donde se va encontrar aqui mismo la plantilla del usuario,  pero tendremos que transformar este arreglo en un gran string, para eso nosotros llamamos el metodo ``.join('')`` utilizando las comillas simples para que este arreglo cuando se una no coloque comas ni espacios, lo que ocurrida es que todo el arreglo se unira todo sin siquiera un espacio, y esto el lo que nosotros le mandaremos a nuestro inner. HTML.
+ 
+ ```.js
+  const userList = document.getElementById(user-list);
+  userList.innerHTML = user.map(user => template(user)).join('');
+```
+
+## Estructura JS: Implementando en el main.js
+
+```.js
+// Creamos e inyectamos un template HTML en codigo JS
+const loadInitialTemplate = () =>{
+    // se usa `` para los templates HTML no '' ni ""
+    const Template = `
+    <h1>Usuarios</h1>
+    <form id="user-form">
+        <div>
+            <lavel>Nombre</lavel>
+            <input name="name" />
+        </div>
+        <div>
+            <lavel>Lastname</lavel>
+            <input name="lastname" />
+        </div>
+        <button type="submit">Enviar</button>
+    </form>
+    <ul id="user-list" ></ul>
+    `
+    // adjuntamos el texto HMTL dentro de la etiqueta de body
+    const body = document.getElementsByTagName('body')[0];
+    //pasamos la plantilla HTML a cargar 
+    body.innerHTML = Template;
+}
+
+// obtenemos usuarios de nuestra DB 
+const getUsers = async () => {
+    const response = await fetch('/users'); // llamamos al endpoint
+    const users = await response.json(); // convertimos lo obtenido de response en un json 
+    //console.log(users);
+
+    // creamos plantilla de que imprime usuarios
+    const template = user => `
+    <li>
+    ${user.name} ${user.lastname} <button data-id = "${user._id}">Eliminar</button>
+    </li>
+    `
+    // buscamos listado con id = user-list
+    const userList = document.getElementById('user-list');
+    // transformamos el arreglo a un string, join('') para que no haya `,` ni `espacios`
+    userList.innerHTML = users.map(user => template(user)).join(''); // remplazaamos el inner.HMTL
+}
+
+// Enviamos datos ala api y Creamos usuarios 
+const addFormListener = () =>{
+    // llamamos a formulario con nuestra referencia
+    const userForm = document.getElementById('user-form');
+    userForm.onsubmit = async (e) =>{
+        // evitamos que la pagina se refresque cuando presionamos el boton enviar
+        e.preventDefault();
+        // buscamos todos los datos dentro del formulario
+        const formData = new FormData(userForm);
+        // pasamos los valores de nuestro formulario a un objeto
+        const data = Object.fromEntries(formData.entries());
+        console.log(data);
+        // llamado a await, creamos el usuario antes de pasar a la siguiente instruccion
+        await fetch('/users', {
+            // endpoint post, creamos 
+            method: 'POST',
+            body: JSON.stringify(data), // Pasamos a json el cuerpo de data
+            headers:{'Content-Type' : 'application/json' // esta propiedad nos permite reconecer el json
+            }
+        });
+        userForm.reset();
+        getUsers();
+    }
+}
+
+
+// Aseguramos el el HMTL cargue antes que JavaScript
+window.onload = () =>{
+    // ejecutamos el codigo 
+    loadInitialTemplate();
+    addFormListener();
+    getUsers();
+}
+```
+## Salida
+Si todo se ejecuto de forma exitosa podremos ver como se imprime nuestro usuario en pantalla, gracias a que estamos remplazando el ``innert.HTML`` de nuestro ``user-list`` con los datos de nuestros usuarios.
+
+![image](https://user-images.githubusercontent.com/42829215/194677962-e854a80a-5110-4fe0-ba13-a4e2fb65e047.png)
+Se puede apreciar como se muestra la lista no ordenara que estamos inyectando desde JS ademas del tag ``button`` que tambien estamos inyectando
