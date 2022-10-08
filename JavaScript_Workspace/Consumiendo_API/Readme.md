@@ -11,6 +11,7 @@ Se hara uso de la API construida (``api_3_0``) y sobre esta se construida una ap
 [Cargar plantillas HTML y formularios desde JavaScript](https://github.com/smars1/Learning-JavaScript-/tree/main/JavaScript_Workspace/Consumiendo_API#cargar-plantillas-html-y-formularios-desde-javascript)
 [Enviando datos a la API]()
 [Buscar a los usuarios en la DB]()
+[Eliminando usuarios]()
 
 # Funcionalidades de la API
 
@@ -311,4 +312,125 @@ window.onload = () =>{
 Si todo se ejecuto de forma exitosa podremos ver como se imprime nuestro usuario en pantalla, gracias a que estamos remplazando el ``innert.HTML`` de nuestro ``user-list`` con los datos de nuestros usuarios.
 
 ![image](https://user-images.githubusercontent.com/42829215/194677962-e854a80a-5110-4fe0-ba13-a4e2fb65e047.png)
-Se puede apreciar como se muestra la lista no ordenara que estamos inyectando desde JS ademas del tag ``button`` que tambien estamos inyectando
+Se puede apreciar como se muestra la lista no ordenara que estamos inyectando desde JS ademas del tag ``button`` que tambien estamos inyectando.
+
+# Eliminando usuarios
+
+Ahora debemos darle funcionalidad al ``<botton>`` eliminar, para ello deberemos ir de forma manual a colocar un ``event-listener`` a cara uno de los botones y colocarle la propiedad de ``.onclick`` para poder asignar el comportamiento de eliminar a un usuario.
+
+En la funcion ``getUsers()`` podemos llamar a ``users.forEach()``, en lugar de ``map()`` por que aqui no vamos a retornar absolutamente nada. lo unico que queremos hacer es asignarle comportamiento a cada uno de los nodos de estos botones de eliminar.
+
+``forEach()`` recibe una funcion la cual va recibir el user, aqui lo que debemos hacer es ir a buscar el boton eliminar con ``document.querySelector()`` y le indicamos el selector que vamos a utlizar,  cuando nosotros utilizamos una propiedad custom, como en este caso vendria siendo la de ``data-id`` tenemos que pasarle este valor de la siguiente manera  ('[data-id="" ]') , luego de esto podemos hacer uso del template string  donde vamos a pasarle el ``${user._id}``, de esta manera esto renderiza o cuando vaya a buscar finalmente el boton lo va hacer por el ``data-id`` que contenga el ``id`` del usuario.
+
+Una vez que ya tengamos creado nuestro userNode, vamos a llamar a la propiedad de ``.onclick`` y lo que vamos hacer es que se la vamos a remplazar por una funcion ``async``, por que aqui es donde nosotros vamos a hacer el llamado en nuestro codigo para eliminar el usuario en nuestra base de datos. Lo que vamos hacer es que vamos a llamar al ``endpoint`` de user con el id correspondiente,  asi que lo que vamos hacer dentro de la funcion de ``userNode.onclick`` le pasamos el ``fetch`` con el endpoint ``user`` y el ``id`` del usuario a eliminar. Seguido de esto debemos indicarle que el metodo que vamos utilizar para comunicarnos con la API sera en este caso el verbo sera el de ``DELETE``, a si que debemos colocar en el codigo el metodo a utlizar que es ``DELETE``. Una vez eliminadno el usuario de la base de datos nsosotros podemos proceder a quitar el elemento HMTL de la interfaz, para esto debemos usar el metodo ``remove()`` en el ``userNode`` para que al puchar el boton eliminar este se borre pero no borrara la lista ya que estamos borrando el nodo del``button``, es por ello que tambien deberemos hacer uso del metodo parenthNode, debido a que ``parentNode`` nos permite subir un nodo dentro del arbol de HTML y ya que el ``button`` esta dentro del la lista ``<li>`` al utilizar  parenthNode estariamos subiendo a ``<li>`` y por ende eliminariamos el tag de ``<li>`` junto con el ``button`` ya que este se encuentra dentro de la lista. 
+Por ello utilizamos : ``userNode.parentNode.remove()``
+
+```.js
+users.forEach(user => {
+    //buscamos por el id
+    const userNode = document.querySelector('[data-id="${user._id}"]');
+    userNode.onclick = async e => {
+        await fetch(`/users/${user._id}`, {
+            method:'DELETE'
+        })
+        userNode.parentNode.remove();
+        alert('Eliminando con exito');
+    }
+}); 
+```
+Con esto nosotros ya estamos llamando a la API y eliminando el usuario, como se puede ver nosotros necesitabamos el uso de ``forEach`` para poder iterar cada uno de los usuarios para poder asignarle este comportamiento de ``onclick`` de que cuando nosotros pinchamos en el boton elimininar se elimina un usuario. Con lo cual esto no elimina a todos los usuarios si no que elimina al usuario del cual pinchamos el boton.
+
+**Nota: En este caso no le estamos pasando el `headers` : `Content-Type = application/json` por que y es por que en nuestro backend, nosotros no estamos utilizando la propiedad de ``body`` de nuestro objeto de ``request``, esta es la razon por la cual no es necesario pasarle el ``Content-Type``**   
+
+## Estructura JS: Implementando el codigo en main.js
+
+```.js
+// Creamos e inyectamos un template HTML en codigo JS
+const loadInitialTemplate = () =>{
+    // se usa `` para los templates HTML no '' ni ""
+    const Template = `
+    <h1>Usuarios</h1>
+    <form id="user-form">
+        <div>
+            <lavel>Nombre</lavel>
+            <input name="name" />
+        </div>
+        <div>
+            <lavel>Lastname</lavel>
+            <input name="lastname" />
+        </div>
+        <button type="submit">Enviar</button>
+    </form>
+    <ul id="user-list" ></ul>
+    `
+    // adjuntamos el texto HMTL dentro de la etiqueta de body
+    const body = document.getElementsByTagName('body')[0];
+    //pasamos la plantilla HTML a cargar 
+    body.innerHTML = Template;
+}
+
+// obtenemos usuarios de nuestra DB 
+const getUsers = async () => {
+    const response = await fetch('/users'); // llamamos al endpoint
+    const users = await response.json(); // convertimos lo obtenido de response en un json 
+    //console.log(users);
+
+    // creamos plantilla de que imprime usuarios
+    const template = user => `
+    <li>
+    ${user.name} ${user.lastname} <button data-id = "${user._id}">Eliminar</button>
+    </li>
+    `
+    // buscamos listado con id = user-list
+    const userList = document.getElementById('user-list');
+    // transformamos el arreglo a un string, join('') para que no haya `,` ni `espacios`
+    userList.innerHTML = users.map(user => template(user)).join(''); // remplazaamos el inner.HMTL
+    
+users.forEach(user => {
+    //buscamos por el id
+    const userNode = document.querySelector(`[data-id="${user._id}"]`);
+    userNode.onclick = async e => {
+        await fetch(`/users/${user._id}`, {
+            //eliminamos el id buscado por el endpoit DELETE
+            method:'DELETE',
+        })
+        // borramos el html de la interfaz
+        userNode.parentNode.remove();
+        alert('Eliminando con exito');
+    }
+});
+}
+
+// Enviamos datos ala api y Creamos usuarios 
+const addFormListener = () =>{
+    // llamamos a formulario con nuestra referencia
+    const userForm = document.getElementById('user-form');
+    userForm.onsubmit = async (e) =>{
+        // evitamos que la pagina se refresque cuando presionamos el boton enviar
+        e.preventDefault();
+        // buscamos todos los datos dentro del formulario
+        const formData = new FormData(userForm);
+        // pasamos los valores de nuestro formulario a un objeto
+        const data = Object.fromEntries(formData.entries());
+        console.log(data);
+        // llamado a await, creamos el usuario antes de pasar a la siguiente instruccion
+        await fetch('/users', {
+            // endpoint post, creamos 
+            method: 'POST',
+            body: JSON.stringify(data), // Pasamos a json el cuerpo de data
+            headers:{'Content-Type' : 'application/json' // esta propiedad nos permite reconecer el json
+            }
+        });
+        userForm.reset();
+        getUsers();
+    }
+}
+
+// Aseguramos el el HMTL cargue antes que JavaScript
+window.onload = () =>{
+    // ejecutamos el codigo 
+    loadInitialTemplate();
+    addFormListener();
+    getUsers();
+}
+```
