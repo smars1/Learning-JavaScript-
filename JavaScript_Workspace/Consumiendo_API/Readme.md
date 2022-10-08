@@ -9,10 +9,10 @@ Se hara uso de la API construida (``api_3_0``) y sobre esta se construida una ap
 [Funcionalidades de la API](https://github.com/smars1/Learning-JavaScript-/tree/main/JavaScript_Workspace/Consumiendo_API#funcionalidades-de-la-api)
 [Sirviendo archivos](https://github.com/smars1/Learning-JavaScript-/tree/main/JavaScript_Workspace/Consumiendo_API#sirviendo-archivos)
 [Cargar plantillas HTML y formularios desde JavaScript](https://github.com/smars1/Learning-JavaScript-/tree/main/JavaScript_Workspace/Consumiendo_API#cargar-plantillas-html-y-formularios-desde-javascript)
-[Enviando datos a la API]()
-[Buscar a los usuarios en la DB]()
-[Eliminando usuarios]()
-[Testeando la API]()
+[Enviando datos a la API](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript_Workspace/Consumiendo_API/Readme.md#enviando-datos-a-la-api)
+[Buscar a los usuarios en la DB](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript_Workspace/Consumiendo_API/Readme.md#buscar-los-usuarios-en-la-db)
+[Eliminando usuarios](https://github.com/smars1/Learning-JavaScript-/tree/main/JavaScript_Workspace/Consumiendo_API#eliminando-usuarios)
+[Testeando la API](https://github.com/smars1/Learning-JavaScript-/tree/main/JavaScript_Workspace/Consumiendo_API#corrigiendo-bug)
 
 # Funcionalidades de la API
 
