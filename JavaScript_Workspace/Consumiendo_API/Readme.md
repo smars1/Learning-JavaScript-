@@ -12,6 +12,7 @@ Se hara uso de la API construida (``api_3_0``) y sobre esta se construida una ap
 [Enviando datos a la API]()
 [Buscar a los usuarios en la DB]()
 [Eliminando usuarios]()
+[Testeando la API]()
 
 # Funcionalidades de la API
 
@@ -468,3 +469,4 @@ app.put('/users/:id', User.update);
 app.patch('/users/:id', User.update);
 app.delete('/users/:id', User.destroy);
 ```
+
