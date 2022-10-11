@@ -15,10 +15,15 @@ La ``autentificacion`` es cuando el servidor reconoce quienes somos y nos entreg
 
 Posterior a esta etapa de ``autentificacion`` lo siguiente que debemos ver es la etapa de ``autorizacion``, la cual consiste en que el servidor nos puede indicar si tenemos permisos para acceder a algun recurso o no. 
 
-En si la autorizacion se tratra de un usuario que intenta acceder a los recursos de nuestra aplicacion.
+En si la autorizacion se tratra de un usuario que intenta acceder a los recursos de nuestra aplicacion. Tambien puede verse como una especie de firewall
 
 ![image](https://user-images.githubusercontent.com/42829215/194811899-48a88ae3-5c84-40bc-ab66-87fc0f799783.png)
 
+## Cosideraciones a tener al estar trabajando con autetificacion
 
+- Robo de base de datos
+- Encriptar contraseñas
+- Encriptar con salt 
+- JSON web token = llave
 
 
