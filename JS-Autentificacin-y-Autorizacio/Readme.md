@@ -8,6 +8,7 @@ Es esta seccion veremos como poder hacer uso de login y registro en nuestras apl
 |-------|
 [Autentificacion y autorizacion]()
 [Instalando dependencias y creando modelo]()
+[Creando modelo de la base de datos]()
 
 # Autentificacion y Autorizacion 
 La ``autentificacion`` es cuando el servidor reconoce quienes somos y nos entrega una ``llave``, esta llave nos permitira  acceder a partes privadas, como una cuenta en especifico como el muro de facebook, o diferentes priviliegios de acceso, segun la llave que se nos entregue.
@@ -47,3 +48,48 @@ como siguiente paso necesitamos instalar las librerias necesarias, en este caso 
 npm i -S express mongoose bcrypt jsonwebtoken express-jwt
 ```
 una vez instaladas procedemos y creamos un archivo ``index.js`` dentro de la misma carpta.
+
+# Creando el modelo para la base datos
+Una vez creado el ``package.json`` e instalando las librerias podremos comenzar a construir nuestro codigo. Dentro del archivo que creamos ``index.js`` comenzaremos llamando a las librerias que anteriormente instalmamos, ya que las necesitaremos. y nos conectamos a mongoDB.
+### Llamando a las librerias
+```.js
+const express = require('express');
+const mongoose = require('mongoose');
+const bcript = require('bcrypt');
+const jwt = require('jsonwebtoken');
+const expressjwt = require('express-jwt');
+
+// conectamos a mongoDB,  new name: auth
+mongoose.connect('mongodb+srv://<Account>:<PassWord>@cluster0.3a9hre8.mongodb.net/auth?retryWrites=true&w=majority');
+```
+## Crear App Exprexx
+El siguiente paso sera crear nuestra aplicacion de ``express`` e indicarle en que formato recibira los datos que le enviemos
+```.js
+// creamos app de express
+const app = express();
+// indicamos que los datos se reciban en formato json
+app.use(express.json());
+```
+## Creando el modelo
+En este punto el siguiente paso sera crear el modelo, este modelo considerada las siguientes caracteristicas:
+- Email
+- Password
+- Salt
+
+Para comenzar a construirlo sera recomendable hacerlo en otro archivo.js este lo llamaremos ``user.js`` dentro  de este archivo crearemos el modelo, el cual exportaremos despues. Llamomos a ``mongoose`` y creamos el modelo este se define por el nombre de modelo : ``User`` y un ``objeto { }``  una vez terminado, indicamos que podemos exportarlo como un modulo en este caso de ``User``.
+
+```.js
+const mongoose = require('mongoose');
+
+// Creamos el modelo, le demos nombre: User y pasamos el esquema {}, el esquema es un objeto
+const User = mongoose.model('User', {
+    email: {type: String, required: true },
+    passwrord: {type: String, required: true},
+    salt: {type: String, required: true},
+})
+
+// exportamos el User
+module.exports = User;
+```
+
+
