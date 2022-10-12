@@ -26,4 +26,22 @@ En si la autorizacion se tratra de un usuario que intenta acceder a los recursos
 - Encriptar con salt 
 - JSON web token = llave
 
+Construiremos un registro e inicio de sesion, que funcione y contenga las consideraciones anteriores.
 
+# Instalando dependencias y creando modelo
+
+El primer paso para comenzar el proyecto es instalar las depencias a si como crear el ``packages.json`` de nuestro proyecto
+
+Creamos la carpeta de nuestro proyecto, estando dentro de la carpeta creada utilizamos el comando:
+```.bash
+npm init
+```
+El cual nos crea el ``package.JSON``. 
+
+## Instalando libreria
+como siguiente paso necesitamos instalar las librerias necesarias, en este caso necesitaremos ``express``, ``mongoose``, ``bycrypt`` para encriptar nuestras contreñas, ``jsonwebtoken`` esta libreria nos va ayudar a poder crear jsonwebtoken y poder validarlos y por ultimo ``express-jwt`` esta es una libreria que nos ayuda hacer la implementacion de validacion de tokens de una manera mas agil.
+
+### Instalando las librerias
+```.bash
+npm i -S express mongoose bcrypt jsonwebtoken express-jwt
+```
