@@ -84,7 +84,7 @@ const mongoose = require('mongoose');
 // Creamos el modelo, le demos nombre: User y pasamos el esquema {}, el esquema es un objeto
 const User = mongoose.model('User', {
     email: {type: String, required: true },
-    passwrord: {type: String, required: true},
+    password: {type: String, required: true},
     salt: {type: String, required: true},
 })
 
@@ -99,11 +99,71 @@ El primer ``endpoint`` que se construida sera el de ``register``, con el cual no
 ## Metodo ``POST``
 Recordemos  que el metodo para crear es el metodo de ``POST``, por lo tanto utilizaremos este metodo para crear nuestro ``endpoint`` ``register``
 
+### Estructura del ``<endpoint>``
 ```.js
+//Creando endpoint register
 app.post('/register', async (req, res) => {
-    const {}
-})
+    //sacamos el body dentro de nuestro objeto en req, dentro de body estara el email y password
+    const { body } = req;
+    console.log({ body });
+    try{
+        // buscamos el username, verificamos si el user existe 
+        const isUser = await User.findOne( { email : body.email}); // << modelo de usuario buscamos email dentro de body
+        if (isUser){
+            // status(403) se refiere a operacion no permitira
+            return res.status(403).send('Usuario ya existe');
+        }
+
+        // crear salt, se crea apartir de la libreria bcript con el metodo genSalt()
+        const salt = await bcript.genSalt();
+        // encriptamos Password,           <PW>, <salt>
+        const hashed = await bcript.hash(body.password, salt);
+        //creamos al user
+        const user = await User.create({email: body.email, password: hashed}); // << pasamos el PW con hashed  
+        
+        res.send({_id : user._id});
+
+
+    } catch (err) {
+        console.log(err);
+        // return status, enviamos el error junto con un mensaje 
+        res.status(500).send(err.message);
+    }
+});
 ```
+## Testeando el endpoint en Postman 
 
+Postman es una herramienta que nos puede ayudar a testear los metodos de nuestras aplicaciones, en este caso serian nuestros endpoint. Para testear nuestra aplicacion, necesitaremos tener el endpoint a testear y saber que metodo utiliza dicho endpoint en este caso es el endpoint ``register`` y contiene el metodo ``POST`` el cual permite crear, ya que la finalidad de este endpoint consiste en crear un usuario. como segundo paso necesitamos tener ejecutar nuestra aplicacion y tener un puerto de escucha.
 
+### Estructura JS: App.listening
+Le pasamos puerto y un call back que devuelva un ``console.log('')`` para saber que esta corriendo. una vez que la ejecutemos
+```.js
+// aplicacion de escucha, le pasamos puerto
+app.listen(3000, () => {
+    console.log('listening in port 3000');
+});
+```
+Una vez corriendo abrimos postman y seleccionamos el metodo ``POST``, y en headers devemos tener como configuracion de ```key = Content-Type`` y ``value = application/json``
 
+![image](https://user-images.githubusercontent.com/42829215/195794194-1b30dc33-3520-420b-a86c-b6cc5de498fa.png)
+
+Como siguiente paso nos dirigimos a body y aqui escribiremos el json con el username con propiedad ``email`` y ``password`` y enviaremos la peticion.
+
+### Se aprecia que como nos falta un dato en la peticion el ``catch`` no captura el error y nos devuelve un codigo de status 500 ya que el salt es requerido.
+![image](https://user-images.githubusercontent.com/42829215/195795729-7c458fbd-6d0d-4468-b1fc-d6f18eac90cb.png)
+
+Para arreglar esto le debemos pasar el salt cuando creamos a nuestro user, esto lo podemos hacer agregando el salt que creamos al hashed
+
+### Estructura JS: Agregando el salt
+agregamos el salt despues de hashed
+```.js
+        //creamos al user
+        const user = await User.create({email: body.email, password: hashed, salt}); // << pasamos el PW con hashed  
+```
+Volvemos a ejecutar y volvemos a enviar la peticion, esto nos debera crear al user y devolvernos su id como lo solicitamos en la parte final.
+### Postman
+![image](https://user-images.githubusercontent.com/42829215/195797640-dae2383c-5c6b-4925-82c4-ca99cb57f617.png)
+### Terminal 
+![image](https://user-images.githubusercontent.com/42829215/195797942-ef8c09f6-8eda-4a8b-8f04-e410cc54f3ca.png)
+
+La idea es que este ``id`` este encriptado y sea como una llave para poder entrar a la aplicacion. Por lo que el ``id`` que recibimos tendremos que encriptarlo para mantenerlo seguro de posibles amenazas y en lugar del ``id`` recibir un ``jsonwebtoken``.
