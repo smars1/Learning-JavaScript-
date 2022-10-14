@@ -92,4 +92,18 @@ const User = mongoose.model('User', {
 module.exports = User;
 ```
 
+# Construyendo el primer ``endpoint``
+
+El primer ``endpoint`` que se construida sera el de ``register``, con el cual nos registraremos dentro de nuestra aplicacion. El funcionamiento de este consistira en en recibir un objeto JSON, el cual tendra un ``username`` en este caso un email, y un ``password``, lo que haremos es que tomaremos el ``username`` y lo iremos a buscar a la base de datos, en el caso de este ``username`` exista indicaremos que el usuario existe, de no existir el ``username`` creamos un nuevo usuario.
+
+## Metodo ``POST``
+Recordemos  que el metodo para crear es el metodo de ``POST``, por lo tanto utilizaremos este metodo para crear nuestro ``endpoint`` ``register``
+
+```.js
+app.post('/register', async (req, res) => {
+    const {}
+})
+```
+
+
 
