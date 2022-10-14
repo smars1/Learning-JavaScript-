@@ -26,6 +26,7 @@ node index.js
 [Callbacks](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#callbacks)
 [Fat Arrow Function](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#fat-arrow-function)
 [Function anonimas](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#function-anonima)
+[``try``, ``catch``]()
 [Intro a Dom](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#dom-javascript)
 [NodeJS: Intro a API Rest](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#nodejs)
 [Intro a MongoDB](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#intro-a-mongodb)
@@ -613,6 +614,22 @@ sumar (2, 3, function (r) {
           console.log('Soy una funcion anonima y el resultado es :', r);
 })
 ```
+
+# ``try``, ``catch``
+
+## Estructura ``try catch``
+```.js
+try{
+ 
+    } catch (err) {
+ 
+    }
+```    
+Lo que ``try`` va hacer es que va intentar realizar una instruccion que contenga dentro de las llaves de ``try{ }``, si la instruccion se ejecuta con exito  no pasara nada pero si esta llegara a fallar por cualquier cosa, problemas de conexion, un dato no valido o algo que se nos olvido, ``catch (err){ }`` captudara el error, y se ejecutara la porcion de codigo que contenga entre sus llaves ``{ }``, es como un ``if else`` pero este nos permite capturar un error sin parar el codigo, lo que nos permite seguir con el codigo en funcionamiento.
+
+
+
+
 
 # Dom JavaScript
 
