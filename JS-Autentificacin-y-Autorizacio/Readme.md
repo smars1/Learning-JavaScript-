@@ -9,7 +9,7 @@ Es esta seccion veremos como poder hacer uso de login y registro en nuestras apl
 [Autentificacion y autorizacion]()
 [Instalando dependencias y creando modelo]()
 [Creando modelo de la base de datos]()
-
+[Construyendo el primer ``endpoint``](https://github.com/smars1/Learning-JavaScript-/blob/main/JS-Autentificacin-y-Autorizacio/Readme.md#construyendo-el-primer-endpoint)
 # Autentificacion y Autorizacion 
 La ``autentificacion`` es cuando el servidor reconoce quienes somos y nos entrega una ``llave``, esta llave nos permitira  acceder a partes privadas, como una cuenta en especifico como el muro de facebook, o diferentes priviliegios de acceso, segun la llave que se nos entregue.
 
