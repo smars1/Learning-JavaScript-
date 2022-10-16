@@ -143,7 +143,7 @@ app.listen(3000, () => {
     console.log('listening in port 3000');
 });
 ```
-Una vez corriendo abrimos postman y seleccionamos el metodo ``POST``, y en headers devemos tener como configuracion de ```key = Content-Type`` y ``value = application/json``
+Una vez corriendo abrimos postman y seleccionamos el metodo ``POST``, y en headers devemos tener como configuracion de ``key = Content-Type`` y ``value = application/json``
 
 ![image](https://user-images.githubusercontent.com/42829215/195794194-1b30dc33-3520-420b-a86c-b6cc5de498fa.png)
 
@@ -167,3 +167,6 @@ Volvemos a ejecutar y volvemos a enviar la peticion, esto nos debera crear al us
 ![image](https://user-images.githubusercontent.com/42829215/195797942-ef8c09f6-8eda-4a8b-8f04-e410cc54f3ca.png)
 
 La idea es que este ``id`` este encriptado y sea como una llave para poder entrar a la aplicacion. Por lo que el ``id`` que recibimos tendremos que encriptarlo para mantenerlo seguro de posibles amenazas y en lugar del ``id`` recibir un ``jsonwebtoken``.
+
+
+
