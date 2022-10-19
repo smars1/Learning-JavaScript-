@@ -168,5 +168,108 @@ Volvemos a ejecutar y volvemos a enviar la peticion, esto nos debera crear al us
 
 La idea es que este ``id`` este encriptado y sea como una llave para poder entrar a la aplicacion. Por lo que el ``id`` que recibimos tendremos que encriptarlo para mantenerlo seguro de posibles amenazas y en lugar del ``id`` recibir un ``jsonwebtoken``.
 
+# Firmando el JWT
+
+Lo que haremos es tomar un objeto el cual tendra una propiedad de _id y encriptarlo para que tenga un formato de ``JWT``, luego este ``JWT``  el cual sera la llave nosotros se la enviaremos al  user y este tendra que adjuntar este  ``JWT``  de manera constante dentro sus headers, de esta manerea lo que nosotros haremos es que cada vez que el usuario mande una peticion vamos a ir a revisar sus headers y vamos a ver si es que se encuetra este ``JWT``  y lo vamos a desencriptar para obtener finalmente este objeto que contiene la id de user, y con este id de user lo que haremos sera ir a busccar a ese user en nuestra base de datos, y se lo vamos a asignar a nuestro objeto de req en la propiedad de user.
+
+El motivo por el que se utiliza JWT es para demostrar que los datos enviados y recibidos fueron creados por una fuente auténtica reconocida. Los datos de la firma permiten verificar al receptor (su aplicación y nuestra API) la autenticidad de la fuente de los datos.
+
+La funcion jwt.sing viene dentro de la libreria jwt, lo que hace es que encripta el argumento que le pasamos
+
+Le debemos pasar el objeto que queremos encripta, luego debemos indicarle como queremos encriptar nuestro jsonwebtoken
+
+```.js
+jwt.sing({ _id: user._id }, 'mi-string-secreto')
+```
+
+Este es un mero ejemplo para comprender como funciona esto, pero no es una buena practica el realizar el encriptado de esta manera ya que se puede ver en el codigo el salt con el que se ha encriptado el  argumento.
+
+Como tambien utilizaremos esta misma autentificacion en nuestra funcion de inicio de sesion es recomendable realizar una funcion para que nuestra funcion de signed pueda ser llamada por otra y asi optimizar codigo reutilizandolo
+
+## Funcion signToken
+
+```.js
+const signToken = _id => jwt.sign({ _id }, 'mi-string-secreto');
+```
+Esta funcion sera  igual a que recibe un ID, en donde nosotros no necesitamos pasarle el user id ya que utilizamos la convencion de { _id } y al llamarlo podemos usar ``user._id``
+
+## Estructura JS: Utilizando sigToken en nuestro entpoint ``register``
+
+```.js
+// creamos funcion que recibira y firmada un id
+const signToken = _id => jwt.sign({ _id }, 'mi-string-secreto');
+
+//Creando endpoint register
+app.post('/register', async (req, res) => {
+    //sacamos el body dentro de nuestro objeto en req, dentro de body estara el email y password
+    const { body } = req;
+    console.log({ body });
+    try{
+        // buscamos el username, verificamos si el user existe 
+        const isUser = await User.findOne( { email : body.email}); // << modelo de usuario buscamos email dentro de body
+        if (isUser){
+            // status(403) se refiere a operacion no permitira
+            return res.status(403).send('Usuario ya existe');
+        }
+
+        // crear salt, se crea apartir de la libreria bcript con el metodo genSalt()
+        const salt = await bcript.genSalt();
+        // encriptamos Password,           <PW>, <salt>
+        const hashed = await bcript.hash(body.password, salt);
+        //creamos al user
+        const user = await User.create({email: body.email, password: hashed, salt}); // << pasamos el PW con hashed  
+        // firmamos y encriptamos el id del user creado 
+        const signed = signToken(user._id);
+        //status 201 un recurso fue creado
+        res.status(201).send(signed);
+
+        res.send({_id : user._id});
 
 
+    } catch (err) {
+        console.log(err);
+        // return status, enviamos el error junto con un mensaje 
+        res.status(500).send(err.message);
+    }
+});
+```
+# Endpoint de Inicio de sesion
+
+En nuestro inicio de sesion tambien vamos a delvolver un ``JWT``, es por ello que creamos la funcion signToken, puesto que ya siendo una funcion podemos reutilizarla en otra funcion como por ejemplo en nuestro endpoint de inicio de sesion. Este ``JWT``  lo utilizaremos tambien para validar al usuario y que este pueda entrar a rutas que no podria entrar si no inicia sesion.
+
+El inicio de sesion funcionara de la siguiente manera tomamos las credenciales de user y password, estas las utlizamos para ir a buscar a los usuarios a la base de datos, primero iremos a buscar al user si este no existe, colocaremos una decision o if, si este no existe mandaremos user o pass incorrecto, en caso de exisitir el user, lo que haremos sera comparar el password con el del user con el password de ese mismo user en la base de datos, en caso de no ser iguales se mandara un mensaje de user o password invalida, si las 2 son iguales devolvemos al user un ``jwt`` firmado.
+
+## Estructura JS: endpoint login
+
+```.js
+// creamos nuestro endpoint inicio de sesion 
+app.post('/login', async (req, res) => {
+    // sacamos el cuerpo de la peticion, ya que se envian por el metodo de post
+    const {body} = req;
+    
+    try {
+        const user = await User.findOne({email: body.email});
+        if(!user){
+            res.status(403).send('User o password invalida');
+        }
+        else{
+            // comparamos el password del body.req con el encriptado de la base de datos user.password, el metodo devuelve un boolean
+            const isMatch = await bcript.compare(body.password, user.password);
+            if(isMatch){
+                // si password es igual devolvemos el id del user,  llamamos a la funcion signToken
+                const signed = signToken(user._id);
+                res.status(200).send(signed);
+            }
+            else{
+                res.status(403).send('User o password invalida');
+            }
+
+        }
+    }
+    catch(err){
+        res.status(500).send(err.message);
+    }
+})
+```
+## Salida exitosa en postman
+![image](https://user-images.githubusercontent.com/42829215/196639080-35c31d54-d4c6-494b-9cfe-6df74e206204.png)
