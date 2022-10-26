@@ -986,6 +986,7 @@ console.log(l2) // [1,2,3,4,5]
 [Creando una API](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#creando--un-api)
 [Agregando endpoint POST](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#agregando-endpoint-post)
 [Formas de Conectarse](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#formas-de-conectarse)
+[Middlewares en express]()
 
 ## Intro:  Que es una API rest?
 
@@ -1116,6 +1117,31 @@ Verbos :
 
 - DELETE / users/:id
     - Borra un user 
+
+
+# Middlewares en express
+Los middlewares los hemos estado viendo en el transcurso del curso, los hemos utilizado pero no sabemos como funcionan estos por debajo. Por lo que veremos su funcionamiento con un pequeño ejemplo.
+
+Creamos un nuevo endpoint que reciba (req, res) pero le agregamos un tercer argumento que tambien fuese una funcion con estas mismas caracteristicas de recibir (req, res) y adema un tercer argumento el cual llamaremos next, si llamamos a {next ()}, esta se ejecutara como tercer argumento.
+
+```.js
+// middleware en express , se ejecutan de izquierda a derecha
+app.get('/lele', (req, res, next) => {next()}, (req, res, next) => {
+    console.log('lala');
+    res.send('ok');
+})
+```
+Esta funcion devolvera un console.log('lala') y  res.send('ok');  al momento de hacer la peticion, podemos ver esto al correr la aplicacion y probar  hacer una peticion en postman.
+
+![image](https://user-images.githubusercontent.com/42829215/198118024-9b408e46-0e60-4191-b956-853ad889568b.png)
+
+Tambien se observa el console.log 
+
+![image](https://user-images.githubusercontent.com/42829215/198118195-8f5b5afa-ce65-4276-addf-cf751bb2cc81.png)
+
+Podemos agregar tantos middleware como queramos y estos se ejecutaran, siempre y cuando llamemos a la funcion de next. 
+Ahora que es lo que pasaria si nosotros le agramos a nuestro objeto de request un objeto que contenga la propiedad de {id: 'lele'}
+
 
 # Intro a MongoDB
 
