@@ -986,7 +986,7 @@ console.log(l2) // [1,2,3,4,5]
 [Creando una API](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#creando--un-api)
 [Agregando endpoint POST](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#agregando-endpoint-post)
 [Formas de Conectarse](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#formas-de-conectarse)
-[Middlewares en express]()
+[Middlewares en express](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#middlewares-en-express)
 
 ## Intro:  Que es una API rest?
 
@@ -1141,6 +1141,27 @@ Tambien se observa el console.log
 
 Podemos agregar tantos middleware como queramos y estos se ejecutaran, siempre y cuando llamemos a la funcion de next. 
 Ahora que es lo que pasaria si nosotros le agramos a nuestro objeto de request un objeto que contenga la propiedad de {id: 'lele'}
+
+Otros ejemplos
+
+// middleware en express , se ejecutan de izquierda a derecha
+```.js
+app.get('/lele2', (req, res, next) => {/*Write yo code here, remember call the function next in the end*/}, (req, res, next) => {
+    console.log('lala');
+    res.send('ok');
+})
+```
+
+```.js
+app.get('/lele2', (req, res, next) => {
+    req.user = {id: 'lele'}
+    next();
+},
+(req, res, next) =>{
+    console.log('lala', req.user);
+    res.send('ok');
+})
+```
 
 
 # Intro a MongoDB
