@@ -10,6 +10,11 @@ Es esta seccion veremos como poder hacer uso de login y registro en nuestras apl
 [Instalando dependencias y creando modelo](https://github.com/smars1/Learning-JavaScript-/blob/main/JS-Autentificacin-y-Autorizacio/Readme.md#instalando-dependencias-y-creando-modelo)
 [Creando modelo de la base de datos](https://github.com/smars1/Learning-JavaScript-/blob/main/JS-Autentificacin-y-Autorizacio/Readme.md#creando-el-modelo-para-la-base-datos)
 [Construyendo el primer ``endpoint``](https://github.com/smars1/Learning-JavaScript-/blob/main/JS-Autentificacin-y-Autorizacio/Readme.md#construyendo-el-primer-endpoint)
+[Firmando el JWT](https://github.com/smars1/Learning-JavaScript-/blob/main/JS-Autentificacin-y-Autorizacio/Readme.md#firmando-el-jwt)
+[Endpoint de Inicio de sesion]()
+[Validando el JsonWebToken]()
+
+
 # Autentificacion y Autorizacion 
 La ``autentificacion`` es cuando el servidor reconoce quienes somos y nos entrega una ``llave``, esta llave nos permitira  acceder a partes privadas, como una cuenta en especifico como el muro de facebook, o diferentes priviliegios de acceso, segun la llave que se nos entregue.
 
@@ -339,6 +344,26 @@ Se puede observar que al momento de loguernos se nos devuelve un JWT, este con e
 Copiamos este JWT. Como siguiente paso vamos a headers y agregamos Key: ``Authorization``, value: ``bearer`` ``pegamos el JWT``
 
 ![image](https://user-images.githubusercontent.com/42829215/200154641-f35c0d6b-f865-43de-80a3-bf45b887dfe5.png)
+
+ahora cambiamos al metodo get y cambiamos en la ruta a ``/login`` por ``/lele`` puesto que el ``endpoint`` ``/lele`` es del metodo get, posteriormente llevamos a cabo la peticion. si todo sale bien nos debe de devolver un ok en postman, y en la consola el string lala, un objeto con un ``id`` y la fecha de creacion del JWT en un ``iat`` (issued at)
+
+### Postman
+
+![image](https://user-images.githubusercontent.com/42829215/200160366-a9782b85-2aed-4316-83dc-1c01c6f03124.png)
+
+### Consola 
+Autentificacion valida 
+![image](https://user-images.githubusercontent.com/42829215/200160399-760379fb-0cab-4ae8-860c-ee42c3fec6a0.png)
+
+Auntentificacion no valida, si quitamos un letra o escrbimos mal el un caracter del ``JWT`` no  nos deja realizar la peticion.
+
+![image](https://user-images.githubusercontent.com/42829215/200160523-37a0d53e-d67a-42aa-b5a1-c43594190a95.png)
+
+La aplicacion no se detiene si el JWT no es valido pero no deja realizar peticiones a menos que el JWT sea valido. 
+
+![image](https://user-images.githubusercontent.com/42829215/200160538-e970a712-8f19-4662-aa43-777d06006a9d.png)
+
+
 
 
 
