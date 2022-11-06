@@ -273,3 +273,73 @@ app.post('/login', async (req, res) => {
 ```
 ## Salida exitosa en postman
 ![image](https://user-images.githubusercontent.com/42829215/196639080-35c31d54-d4c6-494b-9cfe-6df74e206204.png)
+
+# Validando el JsonWebToken 
+Para poder validar los JWT que nosotros recibamos a tra vez de nuestros headers, vamos a necesitar utilizar la libreria de ``expressJwt``. para esto vamos a comenzar creando una funcion, la cual sera nuestro middleware.
+
+### Version anterior
+```.js
+const validateJwt  =  expressJwt( { secret: 'mi-string-secreto', algorithms: ['HS256'] } );
+```
+
+### Version actualizada
+```.js
+//Fucion valida JWT la cual sera nuestro middleware, utilizamos la libreria JWT Argumentos, secreto y algoritmo
+const validateJwt = jwt({ secret: 'mi-string-secreto', algorithms: ['HS256'] }); // cap 148 notas, cambio de version cambio nomenclatura 
+```
+
+## Cambios de version
+
+Debido a que tenemos una version superior, a la que esta utilizamos en el ejemplo anterior, debemos hacer cambios en el codigo.
+
+- Cambios en la importacion  de ``express-jwt``
+
+- Cambios en el nombre de variable de la libreria ``jsonwebtoken``
+
+### Importacion anterior
+
+```.js
+const express = require('express');
+const mongoose = require('mongoose');
+const bcript = require('bcrypt');
+const jwt = require('jsonwebtoken');
+const expressjwt = require('express-jwt');
+```
+
+### Actualizacion
+
+```.js
+// librerias
+const express = require('express');
+const mongoose = require('mongoose');
+const bcript = require('bcrypt');
+const jsonwebtoken = require('jsonwebtoken');
+const {expressjwt: jwt} = require('express-jwt'); // cambio nomenclatura al actualizar,  
+```
+
+Ahora podemos pasar el middleware que creamos al endpoint de ``/lele`` en cual vamos a validar nuestro JWT.
+
+```.js 
+// Haciendo uso de middleware: validateJwt
+
+app.get('/lele', validateJwt, (req, res, next) => {
+    console.log('lala', req.auth);// nuestro id estara en auth no en user, nuestro cluster de llama auth
+    res.send('ok');
+} ) 
+```
+Ahora podemos probar nuestro nuevo ``endpoint`` en postman, lo que hara este endpoint de ``/lele`` sera validar si nuestro JWT es valido o no, si es valido nos dejara hacer las peticiones si no es valido no nos dejara hacer las peticiones.
+
+El primer paso sera loguearnos con el endpoint de ``/login`` el cual tiene el metodo ``post``
+
+![image](https://user-images.githubusercontent.com/42829215/200154472-6d124655-bafb-4dc5-9f07-1c71c0b28a7d.png)
+
+Se puede observar que al momento de loguernos se nos devuelve un JWT, este con el cual nos autentificaremos con el metodo ``get`` en el metodo ``/lele``.
+
+![image](https://user-images.githubusercontent.com/42829215/200154551-848ed47c-5771-481a-a6c0-321210f3d403.png)
+Copiamos este JWT. Como siguiente paso vamos a headers y agregamos Key: ``Authorization``, value: ``bearer`` ``pegamos el JWT``
+
+![image](https://user-images.githubusercontent.com/42829215/200154641-f35c0d6b-f865-43de-80a3-bf45b887dfe5.png)
+
+
+
+
