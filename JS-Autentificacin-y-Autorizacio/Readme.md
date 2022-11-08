@@ -345,7 +345,7 @@ Copiamos este JWT. Como siguiente paso vamos a headers y agregamos Key: ``Author
 
 ![image](https://user-images.githubusercontent.com/42829215/200154641-f35c0d6b-f865-43de-80a3-bf45b887dfe5.png)
 
-ahora cambiamos al metodo get y cambiamos en la ruta a ``/login`` por ``/lele`` puesto que el ``endpoint`` ``/lele`` es del metodo get, posteriormente llevamos a cabo la peticion. si todo sale bien nos debe de devolver un ok en postman, y en la consola el string lala, un objeto con un ``id`` y la fecha de creacion del JWT en un ``iat`` (issued at)
+ahora cambiamos al metodo get y cambiamos en la ruta a ``/login`` por ``/lele`` puesto que el ``endpoint`` ``/lele`` es del metodo get, posteriormente llevamos a cabo la peticion. si todo sale bien nos debe de devolver un ok en postman, y en la consola el string lala, un objeto con un ``id`` y la fecha de creacion del JWT en un ``iat`` (issued at) este iat nos puede servir en caso de queder caducar el JWT.
 
 ### Postman
 
@@ -363,8 +363,87 @@ La aplicacion no se detiene si el JWT no es valido pero no deja realizar peticio
 
 ![image](https://user-images.githubusercontent.com/42829215/200160538-e970a712-8f19-4662-aa43-777d06006a9d.png)
 
+Ahora que nosotros ya tenemos el id de nuestro usuario, podmos crear otro middleware que se va a encargar de tomar la id de usuario y asignarlo a nuestro objeto de request, modificaremos el endpoint ``/lele``, en el fondo remplazaremos la propiedad de ``req.auth`` que contiene el id y iat  por el usuario completo ``req.auth._id``, el cual contiene un nombre de usuario, password y un salt. 
+
+realizamos un llamado a la base de datos y buscamos al usuario por su id.
+
+```.js
+// Haciendo uso de middleware 
+app.get('/lele', validateJwt, async (req, res, next) => {
+    try{
+        // llamado a base de datos, busca id user
+        const user =  await User.findById(req.auth._id);
+        if(!user){
+            // si el user no existe
+            return res.status(401).end();
+        }
+        req.user = user;
+        next();
+    }
+    catch(e){
+        // este sera nuestro middleware para el manejo de errores
+        next(e);
+    }
+}, (req, res) => {
+    res.send(req.user);
+});
+```
+### haciendo peticion en postman
+![image](https://user-images.githubusercontent.com/42829215/200663383-80881b71-fd77-434e-b68a-3c29b851715e.png)
+
+Se observa como ahora se nos devuelve el usuario completo.
+
+## optimizando codigo 
+
+Si bien nuestro codigo ya funciona, este se puede simplificar con la ayuda de otro middleware, por lo cual deberemos crear un segundo middleware en de crear la funcion en el mismo endpoint, por lo que tomamos la funcion y se la asignamos al segundo middleware que crearemos. quedadando de la siguiente manera:
+
+### Simplificando endpoint con middleware 
+```.js
+const findAndAssingUser = async (req, res, next) => {
+    try{
+        // llamado a base de datos, busca id user
+        const user =  await User.findById(req.auth._id);
+        if(!user){
+            // si el user no existe
+            return res.status(401).end();
+        }
+        req.user = user;
+        next();
+    }
+    catch(e){
+        // este sera nuestro middleware para el manejo de errores
+        next(e);
+    }
+}
+
+// Haciendo uso de middleware 
+app.get('/lele', validateJwt, findAndAssingUser, (req, res) => {
+    res.send(req.user);
+});
+
+```
+Ahora cuando nosotros queremos proteger una ruta, tenemos que pasarle el JWT BT y seguido de eso tenemos que pasarle el middleware que acabamos de crear ``findAndAssingUser`` y luego colocamos la logica del entpoint.
+
+## Propiedad express.Router.use()
+
+Comprendiendo esto podemos tambien hacer que este endpoint solo contenga un middleware, con el fin que este quede mejor simplificado. Express tiene una utilidad que nos permite poder pasarle middleware en este caso y esta lo que hara sera devolver un solo middleware, de esta manera solo necesitaremos pasar un solo middleware a los endpoint que queremos proteger y no los 2. Tambien se mantendran los middleware por separado por si es necesario hacer algo con ellos.
+
+## Estructura , definiendo un middleware con express.Router.use()
+
+```.js
+// pasamos los middleware creados, esta propiedad de express regresa un solo middleware
+const isAuthenticated = express.Router().use(validateJwt, findAndAssingUser);
+
+// Haciendo uso de middleware 
+app.get('/lele', isAuthenticated, (req, res) => {
+    res.send(req.user);
+});
 
 
+// aplicacion de escucha, le pasamos puerto
+app.listen(3000, () => {
+    console.log('listening in port 3000');
+});
 
-
-
+```
+Entonces ```Router.use()`` es la funcion que nos va ayudar a componer nuestros middleware. El middleware ``isAuthenticated`` indica que el usuario debe estar autenticado para poder ejecutar toda la logica que esta dentro de la ruta y en caso contrario nuestro middlware entregara un mensaje de error.
