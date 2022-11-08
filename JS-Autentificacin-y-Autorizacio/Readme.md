@@ -446,4 +446,4 @@ app.listen(3000, () => {
 });
 
 ```
-Entonces ```Router.use()`` es la funcion que nos va ayudar a componer nuestros middleware. El middleware ``isAuthenticated`` indica que el usuario debe estar autenticado para poder ejecutar toda la logica que esta dentro de la ruta y en caso contrario nuestro middlware entregara un mensaje de error.
+Entonces ``Router.use()`` es la funcion que nos va ayudar a componer nuestros middleware. El middleware ``isAuthenticated`` indica que el usuario debe estar autenticado para poder ejecutar toda la logica que esta dentro de la ruta y en caso contrario nuestro middlware entregara un mensaje de error.
