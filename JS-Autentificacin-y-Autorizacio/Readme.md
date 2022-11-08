@@ -11,8 +11,8 @@ Es esta seccion veremos como poder hacer uso de login y registro en nuestras apl
 [Creando modelo de la base de datos](https://github.com/smars1/Learning-JavaScript-/blob/main/JS-Autentificacin-y-Autorizacio/Readme.md#creando-el-modelo-para-la-base-datos)
 [Construyendo el primer ``endpoint``](https://github.com/smars1/Learning-JavaScript-/blob/main/JS-Autentificacin-y-Autorizacio/Readme.md#construyendo-el-primer-endpoint)
 [Firmando el JWT](https://github.com/smars1/Learning-JavaScript-/blob/main/JS-Autentificacin-y-Autorizacio/Readme.md#firmando-el-jwt)
-[Endpoint de Inicio de sesion]()
-[Validando el JsonWebToken]()
+[Endpoint de Inicio de sesion](https://github.com/smars1/Learning-JavaScript-/blob/main/JS-Autentificacin-y-Autorizacio/Readme.md#endpoint-de-inicio-de-sesion)
+[Validando el JsonWebToken](https://github.com/smars1/Learning-JavaScript-/blob/main/JS-Autentificacin-y-Autorizacio/Readme.md#validando-el-jsonwebtoken)
 
 
 # Autentificacion y Autorizacion 
