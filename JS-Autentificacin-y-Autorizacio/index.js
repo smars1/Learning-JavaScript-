@@ -7,7 +7,7 @@ const {expressjwt: jwt} = require('express-jwt'); // cambio nomenclatura al actu
 const User = require('./user'); //<<<=== importamos el modelo de User.js
 
 // conectamos a mongoDB,  new name: auth
-mongoose.connect('mongodb+srv://smars1:asddsa12@cluster0.3a9hre8.mongodb.net/auth?retryWrites=true&w=majority');
+mongoose.connect('mongodb+srv://<Account:Password>@cluster0.3a9hre8.mongodb.net/auth?retryWrites=true&w=majority');
 
 // creamos app de express
 const app = express();
