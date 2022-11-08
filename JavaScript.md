@@ -987,6 +987,7 @@ console.log(l2) // [1,2,3,4,5]
 [Agregando endpoint POST](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#agregando-endpoint-post)
 [Formas de Conectarse](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#formas-de-conectarse)
 [Middlewares en express](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#middlewares-en-express)
+[Middleware para manejo de errores]()
 
 ## Intro:  Que es una API rest?
 
@@ -1163,6 +1164,58 @@ app.get('/lele2', (req, res, next) => {
 })
 ```
 
+# Middleware para manejo de errores en express
+
+Cuando ocurre un error dentro de nuestro codigo este va hacer imediatamente captudaro por express y este tendra una forma estandar para manejar estos errores, o bien tambien podriamos nosotros hacer otra cosa como enviarle una web HTML que se encuentre bonita y que tambien tenga, por ejemplo error 500 algo ocurrio, te extraño, aqui veremos algo pararesido a eso, sin llegar a la parte de implementar el HMTL,  pero si se vera como podemos interceptarlo.
+
+## Estructura js
+
+``throw new Error('nuevo error');`` nos permite crear un error ficticio por asi decirlo 
+
+```.js
+// Haciendo uso de middleware 
+app.get('/lele', isAuthenticated, (req, res) => {
+    // arrojamos un error de manera ficticia
+    throw new Error('nuevo error');
+    res.send(req.user);
+});
+
+// aplicacion de escucha, le pasamos puerto
+app.listen(3000, () => {
+    console.log('listening in port 3000');
+});
+```
+## Testeando en proyecto autentificacion y login 
+![image](https://user-images.githubusercontent.com/42829215/200691997-f6b347c3-1f53-4a13-86e6-91d6a68c9a03.png)
+
+Como se puede ver entra directamente el error que creamos.
+Esto nosotros podriamos querer cambiarlo, a si que iremos hacerlo, y la forma en la que podemos manejar errores es que nosotros hagamos uso de ``app.use((err, req, res, next)) =>{}`` en este caso este middleware va recibir cuatro argumentos, un posible error, el objeto, el objeto de response y el ultimo es next, con esto podemos manejar la logica de que queremos qu ocurra dentro de este mismo middleware.
+
+## Estructura js 
+
+### Error que nosotros lanzamos 
+En este caso podriamos crear un log de los errores y enviarlos a un servicio aparte para poder gestionarlos
+```.js
+// imprime por consola el error
+app.use((err, req, res, next) => {
+    console.error('mi nuevo error', err.stack);
+    next(err);
+});
+```
+### Salida en consola
+![image](https://user-images.githubusercontent.com/42829215/200695704-218991f9-df10-4333-b740-1a1c2e7eb181.png)
+
+
+### Respuesta aun cliente ante posible error
+En este caso se devuelve un mensaje customizado al usuario, con esto perfectamente podriamos enviarle un archivo HTML al cliente
+```.js
+// manda al usuario, cliente un mensaje de error
+app.use((err, req, res, next) => {
+    res.send('Ha ocurrido un error >:(');
+});
+```
+### Test en postman 
+![image](https://user-images.githubusercontent.com/42829215/200695535-939d607c-0d8a-457b-9189-42918bd09c35.png)
 
 # Intro a MongoDB
 
