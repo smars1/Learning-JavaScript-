@@ -447,3 +447,49 @@ app.listen(3000, () => {
 
 ```
 Entonces ``Router.use()`` es la funcion que nos va ayudar a componer nuestros middleware. El middleware ``isAuthenticated`` indica que el usuario debe estar autenticado para poder ejecutar toda la logica que esta dentro de la ruta y en caso contrario nuestro middlware entregara un mensaje de error.
+
+# Ocultar el secreto (Variables de entorno) 
+
+Se encripto el nuestro JWT utilizando un string secreto, pero se cometio el error de dejar el string dentro del codigo, por lo que deberemos sacar este string de nuestro codigo para que no lo puedan ver otros desarrolladores y esto vuelva a nuestra aplicacion mas segura. Esto lo podemos hacer gracias a las variables de entorno.
+
+Primero deberemos comprender que es una variable de entorno, son variables que se encuentran corriendo en nuestro sistema operativo. Si estamos en un entorno de windows podemos utilizar la terminal de ``git bash`` para facilitar el manejo de estas variables.
+
+### Creamos una variable de entorno en la terminal de ``git bash``
+```.bash
+export SECRET=mi-string-secreto
+```
+![image](https://user-images.githubusercontent.com/42829215/200764293-eafce08d-b05a-4d2c-8813-cf529a6ed589.png)
+
+Para poder ver las variables de entorno podemos utilizar el comando env en la misma terminal de``git bash``
+```.js
+env
+```
+![image](https://user-images.githubusercontent.com/42829215/200764537-a31fc7b3-51e4-4767-922f-c12435e7c0dd.png)
+
+Antes de remplazar el string que tenemos en nuestro codigo, deberemos tener en cuenta el siguiente comando ``console.log(process.env)`` este comando imprime todas las variables de entorno. Solo necesitamo la variable que creamos ``SECRET`` por lo que este comando quedara de la siguiente manera.
+
+```.js
+console.log(process.env.SECRET)
+```
+Con esto solo imprimimos el valor de la variable de entorno ``SECRET`` por lo que ya podemos remplazar con este comando el string legible de nuestro codigo
+
+## Antes sin uso de variables de entorno y sin ocultar el secreto 
+
+```.js
+//Fucion valida JWT la cual sera nuestro middleware, utilizamos la libreria JWT Argumentos, secreto y algoritmo
+const validateJwt = jwt({ secret: 'mi-string-secreto', algorithms: ['HS256'] }); // cap 148 notas, cambio de version cambio nomenclatura 
+
+// creamos funcion que recibira y firmada un id
+const signToken = _id => jsonwebtoken.sign({ _id }, 'mi-string-secreto');
+```
+
+## Despues uso de variables de entorno para ocultar el secreto
+
+```.js
+//Fucion valida JWT la cual sera nuestro middleware, utilizamos la libreria JWT Argumentos, secreto y algoritmo
+const validateJwt = jwt({ secret: process.env.SECRET, algorithms: ['HS256'] }); // cap 148 notas, cambio de version cambio nomenclatura 
+
+// creamos funcion que recibira y firmada un id
+const signToken = _id => jsonwebtoken.sign({ _id }, process.env.SECRET);
+```
+De esta manera podemos ocultar el secreto. Esto es como podemos hacerlo en nuestra PC. Cuando pasemos a produccion tendremos que utlizar la configuracion de los servicios que vamos a utilizar para pasar a produccion nuestro codigo.
