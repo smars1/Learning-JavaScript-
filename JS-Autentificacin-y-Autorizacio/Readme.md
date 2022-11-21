@@ -13,7 +13,7 @@ Es esta seccion veremos como poder hacer uso de login y registro en nuestras apl
 [Firmando el JWT](https://github.com/smars1/Learning-JavaScript-/blob/main/JS-Autentificacin-y-Autorizacio/Readme.md#firmando-el-jwt)
 [Endpoint de Inicio de sesion](https://github.com/smars1/Learning-JavaScript-/blob/main/JS-Autentificacin-y-Autorizacio/Readme.md#endpoint-de-inicio-de-sesion)
 [Validando el JsonWebToken](https://github.com/smars1/Learning-JavaScript-/blob/main/JS-Autentificacin-y-Autorizacio/Readme.md#validando-el-jsonwebtoken)
-
+[Ocultar el secreto (variables de entorno)](https://github.com/smars1/Learning-JavaScript-/tree/main/JS-Autentificacin-y-Autorizacio#ocultar-el-secreto-variables-de-entorno)
 
 # Autentificacion y Autorizacion 
 La ``autentificacion`` es cuando el servidor reconoce quienes somos y nos entrega una ``llave``, esta llave nos permitira  acceder a partes privadas, como una cuenta en especifico como el muro de facebook, o diferentes priviliegios de acceso, segun la llave que se nos entregue.
