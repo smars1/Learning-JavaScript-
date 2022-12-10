@@ -14,6 +14,7 @@ Es esta seccion veremos como poder hacer uso de login y registro en nuestras apl
 [Endpoint de Inicio de sesion](https://github.com/smars1/Learning-JavaScript-/blob/main/JS-Autentificacin-y-Autorizacio/Readme.md#endpoint-de-inicio-de-sesion)
 [Validando el JsonWebToken](https://github.com/smars1/Learning-JavaScript-/blob/main/JS-Autentificacin-y-Autorizacio/Readme.md#validando-el-jsonwebtoken)
 [Ocultar el secreto (variables de entorno)](https://github.com/smars1/Learning-JavaScript-/tree/main/JS-Autentificacin-y-Autorizacio#ocultar-el-secreto-variables-de-entorno)
+[Desafio: Creacion de metodo delete]()
 
 # Autentificacion y Autorizacion 
 La ``autentificacion`` es cuando el servidor reconoce quienes somos y nos entrega una ``llave``, esta llave nos permitira  acceder a partes privadas, como una cuenta en especifico como el muro de facebook, o diferentes priviliegios de acceso, segun la llave que se nos entregue.
@@ -493,3 +494,25 @@ const validateJwt = jwt({ secret: process.env.SECRET, algorithms: ['HS256'] }); 
 const signToken = _id => jsonwebtoken.sign({ _id }, process.env.SECRET);
 ```
 De esta manera podemos ocultar el secreto. Esto es como podemos hacerlo en nuestra PC. Cuando pasemos a produccion tendremos que utlizar la configuracion de los servicios que vamos a utilizar para pasar a produccion nuestro codigo.
+
+# Desafio: Creacion de metodo delete
+
+Ahora con lo aprendido deberemos crear un metodo que nos permita eliminar usuarios, como por ejemplo en el siguiente codigo.
+Creamos el endponint ``/elminte`` y como siguiente sacamos el body de nuestro objeto el cual contendra el email que necesitamos para eliminar la cuenta.
+
+El siguiente paso sera comparar este email con el que tenemos registrado en la base de datos con el que sacamos del body si estos son iguales se cumple la codicion y eliminamos al usuario.
+
+### Plantilla de metodo delete
+```.js
+app.delete('/eliminate', async (req, res) =>{
+    const {body} = req;
+    console.log({body});
+    const user = await User.findOne({email: body.email});
+    if(user){
+        user.remove();
+    }
+    res.status(204).send('acount user eliminated');
+    console.log('user elimated')
+});
+```
+## Colocar Test  de postman aqui tomorrow make notes here, take photos when been uses postman lab 

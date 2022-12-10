@@ -5,6 +5,7 @@ const bcript = require('bcrypt');
 const jsonwebtoken = require('jsonwebtoken');
 const {expressjwt: jwt} = require('express-jwt'); // cambio nomenclatura al actualizar,  
 const User = require('./user'); //<<<=== importamos el modelo de User.js
+const { findOne } = require('./user');
 
 // conectamos a mongoDB,  new name: auth
 mongoose.connect(`mongodb+srv://smars1:${process.env.MONGOPASSWORD}@cluster0.3a9hre8.mongodb.net/auth?retryWrites=true&w=majority`);
@@ -109,6 +110,18 @@ const isAuthenticated = express.Router().use(validateJwt, findAndAssingUser);
 // Haciendo uso de middleware 
 app.get('/lele', isAuthenticated, (req, res) => {
     res.send(req.user);
+});
+
+
+app.delete('/eliminate', async (req, res) =>{
+    const {body} = req;
+    console.log({body});
+    const user = await User.findOne({email: body.email});
+    if(user){
+        user.remove();
+    }
+    res.status(204).send('acount user eliminated');
+    console.log('user elimated')
 });
 
 
