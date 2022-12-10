@@ -7,7 +7,7 @@ const {expressjwt: jwt} = require('express-jwt'); // cambio nomenclatura al actu
 const User = require('./user'); //<<<=== importamos el modelo de User.js
 
 // conectamos a mongoDB,  new name: auth
-mongoose.connect('mongodb+srv://<Account:Password>@cluster0.3a9hre8.mongodb.net/auth?retryWrites=true&w=majority');
+mongoose.connect(`mongodb+srv://smars1:${process.env.MONGOPASSWORD}@cluster0.3a9hre8.mongodb.net/auth?retryWrites=true&w=majority`);
 
 // creamos app de express
 const app = express();
@@ -18,10 +18,10 @@ app.use(express.json());
 
 
 //Fucion valida JWT la cual sera nuestro middleware, utilizamos la libreria JWT Argumentos, secreto y algoritmo
-const validateJwt = jwt({ secret: 'mi-string-secreto', algorithms: ['HS256'] }); // cap 148 notas, cambio de version cambio nomenclatura 
+const validateJwt = jwt({ secret: process.env.SECRET, algorithms: ['HS256'] }); // cap 148 notas, cambio de version cambio nomenclatura 
 
 // creamos funcion que recibira y firmada un id
-const signToken = _id => jsonwebtoken.sign({ _id }, 'mi-string-secreto');
+const signToken = _id => jsonwebtoken.sign({ _id }, process.env.SECRET);
 
 //Creando endpoint register
 app.post('/register', async (req, res) => {
