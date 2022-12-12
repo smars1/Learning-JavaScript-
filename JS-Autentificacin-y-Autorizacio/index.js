@@ -113,19 +113,25 @@ app.get('/lele', isAuthenticated, (req, res) => {
 });
 
 
-app.delete('/eliminate', async (req, res) =>{
+app.delete('/eliminate', isAuthenticated, async (req, res) =>{
     const {body} = req;
     console.log({body});
     const user = await User.findOne({email: body.email});
-    if(user){
-        user.remove();
+    if(!user){
+        res.status(403).send('Invalidate acction, credentials incorrect');
     }
-    res.status(204).send('acount user eliminated');
-    console.log('user elimated')
+    else{
+        console.log('user elimated');
+        user.remove();
+        res.status(201).send('Account eliminated');
+    }
 });
+
 
 
 // aplicacion de escucha, le pasamos puerto
 app.listen(3000, () => {
     console.log('listening in port 3000');
 });
+
+
