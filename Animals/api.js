@@ -1,18 +1,26 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const app = express()
+
 const Animal = require('./animal.controller')
+const {auth, isAuthenticated} = require('./auth.controller')
 const port = 3000
 
 mongoose.connect('mongodb://localhost:27017/miapp')
 
 app.use(express.json())
 
-app.get('/animals', Animal.list)
-app.post('/animals', Animal.create)
-app.put('/animals/:id', Animal.update)
-app.patch('/animals/:id', Animal.update)
-app.delete('/animals/:id', Animal.destroy)
+// we protecting our endpoint with our function isAthenticated that created before
+app.get('/animals', isAuthenticated, Animal.list)
+app.post('/animals', isAuthenticated, Animal.create)
+app.put('/animals/:id', isAuthenticated, Animal.update)
+app.patch('/animals/:id', isAuthenticated, Animal.update)
+app.delete('/animals/:id', isAuthenticated, Animal.destroy)
+
+// endpoint login and register
+app.post('/login', auth.login);
+app.post('/register', auth.register);
+
 
 app.use(express.static('app'))
 
