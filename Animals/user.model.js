@@ -1,5 +1,5 @@
 const mongoose= require('mongoose');
-const User = require('../JS-Autentificacin-y-Autorizacio/user');
+//const User = require('../JS-Autentificacin-y-Autorizacio/user');
 
 const Users = mongoose.model('User', {
     email: {type: String, required: true, minLenght: 5},

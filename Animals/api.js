@@ -1,25 +1,28 @@
-const express = require('express')
-const mongoose = require('mongoose')
-const app = express()
+const express = require('express');
+const mongoose = require('mongoose');
+const app = express();
 
-const Animal = require('./animal.controller')
-const {auth, isAuthenticated} = require('./auth.controller')
-const port = 3000
+const Animal = require('./animal.controller');
+const {Auth, isAuthenticated} = require('./auth.controller');
+const port = 3000;
 
-mongoose.connect('mongodb://localhost:27017/miapp')
+// had been create mongo connect
+//mongoose.connect('mongodb+srv://smars1:asddsa12@cluster0.3a9hre8.mongodb.net/miapp?retryWrites=true&w=majority');
+mongoose.connect(`mongodb+srv://smars1:${process.env.MONGOPASS}@cluster0.3a9hre8.mongodb.net/myapp?retryWrites=true&w=majority`);
 
-app.use(express.json())
+app.use(express.json());
 
 // we protecting our endpoint with our function isAthenticated that created before
-app.get('/animals', isAuthenticated, Animal.list)
-app.post('/animals', isAuthenticated, Animal.create)
-app.put('/animals/:id', isAuthenticated, Animal.update)
-app.patch('/animals/:id', isAuthenticated, Animal.update)
-app.delete('/animals/:id', isAuthenticated, Animal.destroy)
+// now if wanting to access in a endpoint should pass for login access before go to access another endpoint
+app.get('/animals', isAuthenticated, Animal.list);
+app.post('/animals', isAuthenticated, Animal.create);
+app.put('/animals/:id', isAuthenticated, Animal.update);
+app.patch('/animals/:id', isAuthenticated, Animal.update);
+app.delete('/animals/:id', isAuthenticated, Animal.destroy);
 
 // endpoint login and register
-app.post('/login', auth.login);
-app.post('/register', auth.register);
+app.post('/login', Auth.login);
+app.post('/register', Auth.register);
 
 
 app.use(express.static('app'))

@@ -59,8 +59,46 @@ const addFormListener = () => {
 	}
 }
 
+// we have to make ensure that our users begin their login the correct way
+// them we can create a new constant in windon.onload in the which execute our checkLogin function 
+const checkLogin = () => {
+	// no yet defined, will have define them
+	localStorage.getItem('jwt');
+}
+
+// will execute all functions only if the user is loggedin correctly
+const animalPage = () => {
+	loadInitialTemplate();
+	addFormListener();
+  	getAnimals();
+} 
+
+// we have built the missed login template
+// 
+const loadLoginTemplate = () => {
+	const template = `
+		<h1>Login</h1>
+		<form id="login-form">
+			<div>
+				<label>Correo</label>
+				<input name="email" />
+			</div>
+			<div>
+				<label>password</label>
+				<input type="password" name="password" />
+			</div>
+			<button type="submit">Enviar</button>
+		</form>
+		<div id="error"></div>
+	`
+	const body = document.getElementsByTagName('body')[0];
+	body.innerHTML = template;
+}
+	
+
 window.onload = () => {
-	loadInitialTemplate()
-	addFormListener()
-  getAnimals()
+	const isLoggedIn = checkLogin();
+	if(isLoggedIn){
+		animalPage();
+	}
 }

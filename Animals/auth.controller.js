@@ -1,17 +1,20 @@
 // librarys export
 const express = require('express');
 const bcript = require('bcrypt');
-const {expressjwt: jwt} = require('express-jwt');
-const jsonwebtoken = require('jsonwebtoken');
+//const {expressjwt: jwt} = require('express-jwt');
+//const jsonwebtoken = require('jsonwebtoken');
+const expressjwt = require('express-jwt');
+const jwt = require('jsonwebtoken');
+
 
 // my modelDB export
 const User = require('./user.model'); 
 
 //  middleware to validate JWT
-const validateJwt = expressjwt({SECRET: process.env.SECRET, algorithms: ['HS256']});
+const validateJwt = expressjwt({ secret: process.env.SECRET, algorithms: ['HS256'] });
 
 // must use "_" before "id or anything arguments" to be able to use the short form to create objects 
-const signToken = _id => {_id, process.env.SECRET};
+const signToken = _id => jwt.sign({_id}, process.env.SECRET);
 
 const findAndAssingUser = async (req, res, next ) => {
     try {
