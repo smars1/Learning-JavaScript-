@@ -220,6 +220,24 @@ array.push('Hola');
 
 array.push(Variable);
 ```
+## Metodos para arrays
+
+### Math.min()
+El metodo ``math.min`` toma como argumento un array y devuelve el de menor valor
+
+```.js
+const arr = [34,2,3,4,5];  
+console.log(Math.min(...arr));
+//output: 2
+```
+### Math.max()
+El metodo ``math.max`` toma como argumento un array y devuelve el de mayor valor
+
+```.js
+const arr = [34,2,3,4,5];  
+console.log(Math.min(...arr));
+//output: 34
+```
 
 ## Listas
 La dieferencia entre listas y arrays consiste que para que una array sea considerado lista  todo su contenido debe se del mismo tipo de dato,
@@ -237,6 +255,7 @@ la siguiente no es una lista, si no un array dado a que tiene diferentes tipos d
 ```.js
 const array = [1, '2', 'hola', 'mundo'];
 ```
+
 
 # Operadores matematicos
 JavaScript tambien nos permite usar sintaxis para operaciones matematicas basicas.
