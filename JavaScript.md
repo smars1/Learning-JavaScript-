@@ -239,6 +239,62 @@ console.log(Math.min(...arr));
 //output: 34
 ```
 
+## Metodo join()
+El metodo ``join()`` convierte todos lo elementos de un array en una cadena y devuelve esta cadena
+```.js
+const elements = ['Fire', 'Air', 'Water'];
+
+console.log(elements.join());
+// expected output: "Fire,Air,Water"
+
+console.log(elements.join(''));
+// expected output: "FireAirWater"
+
+console.log(elements.join('-'));
+// expected output: "Fire-Air-Water"
+
+```
+
+
+## Metodo split()
+El metodo ``split()`` divide un objeto de tipo string en un array de cadenas mediante la se paracion de cadenas o subcadenas
+
+```.js
+let argStr = "hola mundo entero";
+
+// convertimos el str en array cada espacio en el string determina un elemento mas al array
+let A = argStr.split(' ') // <-- con el split indicamos que cada espacio determina la separacion para cada elemento
+console.log(A);
+//output: [ 'hola', 'mundo', 'entero' ]
+
+// volvemos hacer cadena a nuestro argumento determinamos
+console.log(A.join('-')); // con join tambien podemos seleccionar si queermos algun espacio o simbolo
+                          // entre cada elemento que se convertira en cadena en este caso es un '-' entre elemento
+                          // esto significa que separamos con un -  cada elemento al volverlo array
+//output: hola-mundo-entero
+```
+## Manipulando una cadena con metodo split()
+Podemos usar ``split`` tambien para limpiar datos de una cadena ya que este metodo nos permite dividir las cadenas, se puede ver en el siguiente ejemplo como podemos limpiar datos de una cadena de tal manera que solo devolvamos la ruta,
+
+### Ejemplo:
+En el siguiente ejercicio se deve devolver solo el valor del path debido a que con este valor daremos acceso a nuestro endpoint en nuestra api
+
+```.js
+// se recibe:
+let argjson = ['IdClient: dsadaf','Name: Atzin', 'Route: node3.: path/dsad'];
+
+console.log(argjson[2]);
+//output: Route: node3.: path/dsad
+
+console.log(argjson[2].split('/'));
+//output:[ 'Route: node3.: path', 'dsad' ]
+
+console.log(argjson[2].split('/')[1]);
+//output: dsad
+
+```
+
+
 ## Listas
 La dieferencia entre listas y arrays consiste que para que una array sea considerado lista  todo su contenido debe se del mismo tipo de dato,
 
