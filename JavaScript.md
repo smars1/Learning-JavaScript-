@@ -1052,6 +1052,27 @@ console.log(l2) // [1,2,3,4,5]
 [``reject`` and ``catch`` ]()
 [``new`` Promise]()
 
+## resolve and then 
+Se tiene promise, resolve y the, ``promise`` es un valor que se va resolver con ``resolve`` en algun momento, mientras que ``then`` resibira el valor de la promesa ya resuelto. 
+
+## Ejemplo
+```.js
+Promise.resolve(2)
+	.then( valor => console.log(valor))
+```
+Si bien ``Promise`` recibe un valor 2 y se le pasa el metodo ``resolve`` este no resolvera el Promise al momento si no al siguiente ciclo de ejecucion, para posterior mente pasar el ``Promise`` resuelto al ``then``. Podemos crear un nuevo metodo de ``then`` para retornar una promesa, se puede hacer esto de manera indefinida hasta dejar de escribir el ``.then``.
+## Ejemplo
+```.js
+Promise.resolve(2)
+	.then( valor => console.log(valor))
+	// OUT: 2
+	.then( valor => console.log(valor + 1))
+	//OUT: 3
+```
+## reject and catch
+
+ 
+
 
 # NodeJS 
 | Glosary |
