@@ -30,6 +30,7 @@ node index.js
 [Intro a Dom](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#dom-javascript)
 [NodeJS: Intro a API Rest](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#nodejs)
 [Intro a MongoDB](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#intro-a-mongodb)
+[Angular]()
 
 # Hola munndo 
 
@@ -1475,3 +1476,17 @@ const eliminar = async () =>{
 
 eliminar();
 ```
+
+# Angular 
+
+|-- indice --|
+|------------|
+[ Entorno de trabajo ]()
+
+# 
+
+- Angular Essentials ``jhon Papa``
+- Auto Import
+- Prettier - Code formatterPrettier - Code formatter
+- vscode-icons
+
