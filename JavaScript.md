@@ -1483,6 +1483,13 @@ eliminar();
 |------------|
 [ Entorno de trabajo ]()
 
+# Emtorno de trabajo
+
+- [nodeJS] (https://nodejs.org/en/)
+- 
+
+# paquetes 
+
 # 
 
 - Angular Essentials ``jhon Papa``
