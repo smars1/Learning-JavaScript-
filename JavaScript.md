@@ -30,7 +30,7 @@ node index.js
 [Intro a Dom](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#dom-javascript)
 [NodeJS: Intro a API Rest](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#nodejs)
 [Intro a MongoDB](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#intro-a-mongodb)
-[Angular]()
+[Angular](https://github.com/smars1/Learning-JavaScript-/blob/main/JavaScript.md#angular)
 
 # Hola munndo 
 
@@ -1486,14 +1486,35 @@ eliminar();
 # Emtorno de trabajo
 
 - [nodeJS] (https://nodejs.org/en/)
-- 
+- [typescript](https://www.typescriptlang.org/download)
+- [Angular](https://www.npmjs.com/package/@angular/cli)
 
-# paquetes 
-
-# 
+# Extensiones Para VisualCode 
 
 - Angular Essentials ``jhon Papa``
 - Auto Import
 - Prettier - Code formatterPrettier - Code formatter
 - vscode-icons
 
+# Que es Angular
+
+Angular es un framework de diseño de aplicaciones web de una sola pagina.
+Angular es una plataforma de desarrollo, construida en TypeScript. Como plataforma, Angular incluye:
+
+- Un marco basados en componentes para crear aplicaciones web escalbles.
+- Una coleccion de librerias bien integradas  que cubren una amplia variedad de aplicaciones incluidas, routing, forms management, cient-server communication, etc.
+- Un conjunto de herramientas para ayudarte a desarrollar, construir, probar y actualizar tu codigo.
+
+## Mas de angular en la documentacion oficial:
+### [Angular Web Odicial](https://angular.io/)
+
+## Angular application: The essentials
+En esta seccion se explica las ideas centrales detras de angular. el entender las ideas centrales de detras de angular puede ayudarnos a diseñar y construir nuestras aplicaciones de una forma mas eficiente.
+
+### Components en angular
+Los componetes son bloques construccion que componen una aplicacion. Un componente incluye una ``clase typecript`` con el decorador ``@Component()``, un ``HTML template`` y  un ``CSS template``. 
+El decorador ``@Component()`` especifica la siguiente informacion especifica de angular.
+
+- Un CSS selector que define como el componente es usado en el template. Los elementos HTML que coinsidan con su este selector se convertiran en instancias de este componente.
+- Un HTML template que indica a Angular como renderizar los coponentes.
+- Un conjunto de estilos CSS que define la apariencia de los elementos de nuestro HTML template.
